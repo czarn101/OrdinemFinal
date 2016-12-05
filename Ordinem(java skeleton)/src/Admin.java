@@ -128,21 +128,21 @@ public class Admin {
         return true;
     }
 
-    public void retrieveCredentials() {
-        System.out.println("----Organization Login Portal----");
+    public boolean retrieveCredentials(String _email, String _password) {
+        //System.out.println("----Organization Login Portal----");
         //Scanner input = new Scanner(System.in);
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 
         while(true){
             try{
-                System.out.print("Email: ");
-                this.email = reader.readLine();
-                System.out.print("Password: ");
-                this.password = reader.readLine();
+                //System.out.print("Email: ");
+                //this.email = reader.readLine();
+                //System.out.print("Password: ");
+                //this.password = reader.readLine();
 
-                System.out.println("One moment please...");
+                //System.out.println("One moment please...");
                 this.sql.pst = this.sql.mysql.prepareStatement("SELECT email FROM organizations WHERE email=?");
-                this.sql.pst.setString(1,this.email);
+                this.sql.pst.setString(1,_email);
                 String databaseEmail = "";
                 if(this.sql.runSelect()){
                     if(this.sql.data.next()){
@@ -150,7 +150,7 @@ public class Admin {
                     }
                 }
                 this.sql.pst = this.sql.mysql.prepareStatement("SELECT password FROM organizations WHERE email=?");
-                this.sql.pst.setString(1,this.email);
+                this.sql.pst.setString(1,_email);
 
                 String databasePassword = "";
                 if(this.sql.runSelect()){
@@ -159,23 +159,23 @@ public class Admin {
                     }
                 }
 
-                if(databaseEmail.trim().equals(this.email) && databasePassword.trim().equals(this.password)){
-                    System.out.println("Successfully Logged In\n");
+                if(databaseEmail.trim().equals(_email) && databasePassword.trim().equals(_password)){
+                    //System.out.println("Successfully Logged In\n");
 
                     Organization org = new Organization();
-                    org.setEmail(this.email,this.password);
+                    org.setEmail(_email,_password);
                     org.printMenu();
-                    break;
+
+                    return true;
                 }
                 else{
-                    System.out.println("Email Or Password Does Not Match\n");
-                    break;
-                }
-            }catch(IOException e){
-                e.printStackTrace();
+                    //System.out.println("Email Or Password Does Not Match\n");
+                    return false;
 
+                }
             }catch(SQLException e ){
-                System.out.println("SQL went wrong\n");
+                //System.out.println("SQL went wrong\n");
+                return false;
             }
         }
     }

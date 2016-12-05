@@ -30,7 +30,7 @@ public class Main {
            }
            if(choice == 1){
                Admin administration = new Admin();
-               administration.retrieveCredentials();
+               //administration.retrieveCredentials();
 
            }
            else if(choice == 2){

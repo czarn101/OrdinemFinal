@@ -1,4 +1,4 @@
-package sample;
+//package sample;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -20,11 +20,12 @@ import java.io.InputStreamReader;
 
 //import java.awt.*;
 
-public class Main extends Application {
+public class StartGUI extends Application {
 
     Stage window;
     private String emailStr = null;
     private String passwordStr = null;
+
 
     @Override
     public void start(Stage primaryStage) throws Exception{
@@ -69,7 +70,28 @@ public class Main extends Application {
 
 
         loginButton.setOnAction(e -> {
-            login(emailInput.getText(), passInput.getText());
+            if(login(emailInput.getText(), passInput.getText())){
+                try {
+                    FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/fxml/myEvents.fxml"));
+                    Parent root1 = (Parent) fxmlLoader.load();
+                    Stage stage = new Stage();
+                    stage.setScene(new Scene(root1));
+                    stage.show();
+                } catch(Exception a) {
+                    a.printStackTrace();
+                }
+
+            }else{
+                Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                alert.setTitle("Error");
+                alert.setHeaderText("Invalid Input");
+                alert.setContentText("Email or Password does not match");
+                alert.showAndWait().ifPresent(rs -> {
+                    if (rs == ButtonType.OK) {
+                        System.out.println("Pressed OK.");
+                    }
+                });
+            }
         });
 
         grid.getChildren().addAll(loginLabel,emailLabel,emailInput,passLabel,passInput,loginButton);
@@ -79,10 +101,21 @@ public class Main extends Application {
         window.show();
     }
 
-    private void login(String _email, String _password) {
+    private boolean login(String _email, String _password) {
         emailStr = String.valueOf( _email);
         passwordStr = String.valueOf(_password);
-        System.out.println("Got credentials: "+emailStr+", "+passwordStr);
+
+        Admin admin = new Admin();
+        if(admin.retrieveCredentials(emailStr,passwordStr)){
+            //take them to the next login page
+            return true;
+
+        }else{
+            return false;
+
+        }
+
+        //System.out.println("Got credentials: "+emailStr+", "+passwordStr);
     }
 
     private boolean isInt(TextField input, String message){
@@ -97,9 +130,6 @@ public class Main extends Application {
 
 
     public static void main(String[] args) {
-
-
-
         launch(args);
     }
 }
