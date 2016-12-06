@@ -71,27 +71,16 @@ public class StartGUI extends Application {
 
         loginButton.setOnAction(e -> {
             if(login(emailInput.getText(), passInput.getText())){
-                try {
-                    FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/fxml/myEvents.fxml"));
-                    Parent root1 = (Parent) fxmlLoader.load();
-                    Stage stage = new Stage();
-                    stage.setScene(new Scene(root1));
-                    stage.show();
-                } catch(Exception a) {
-                    a.printStackTrace();
-                }
+                //open up a new scene
 
             }else{
-                Alert alert = new Alert(Alert.AlertType.INFORMATION);
-                alert.setTitle("Error");
-                alert.setHeaderText("Invalid Input");
-                alert.setContentText("Email or Password does not match");
-                alert.showAndWait().ifPresent(rs -> {
-                    if (rs == ButtonType.OK) {
-                        System.out.println("Pressed OK.");
-                    }
-                });
+                //alert user email or password does not match
+
             }
+
+
+
+
         });
 
         grid.getChildren().addAll(loginLabel,emailLabel,emailInput,passLabel,passInput,loginButton);
@@ -112,7 +101,6 @@ public class StartGUI extends Application {
 
         }else{
             return false;
-
         }
 
         //System.out.println("Got credentials: "+emailStr+", "+passwordStr);
