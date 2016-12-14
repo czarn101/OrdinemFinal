@@ -72,7 +72,7 @@ public class createEventGUI implements Initializable{
     @FXML
     private Button createEventButton;
 
-    private ObservableList list = FXCollections.observableArrayList("12:00 AM","1:00 AM","2:00 AM","3:00 AM","4:00 AM","5:00 AM","6:00 AM","7:00 AM","8:00 AM","9:00 AM","10:00 AM","11:00 AM","12:00 PM","1:00 PM","2:00 PM","3:00 PM","4:00 PM","5:00 PM","6:00 PM","7:00 PM","8:00 PM","9:00 PM","10:00 PM","11:00 PM");
+    private ObservableList list = FXCollections.observableArrayList("00:00 AM","00:30 AM","1:00 AM","1:30 AM","2:00 AM","2:30 AM","3:00 AM","3:30 AM","4:00 AM","4:30 AM","5:00 AM","5:30 AM","6:00 AM","6:30 AM","7:00 AM","7:30 AM","8:00 AM","8:30 AM","9:00 AM","9:30 AM","10:00 AM","10:30 AM","11:00 AM","11:30 AM","12:00 PM","12:30 PM","1:00 PM","1:30 PM","2:00 PM","2:30 PM","3:00 PM","3:30 PM","4:00 PM","4:30 PM","5:00 PM","5:30 PM","6:00 PM","6:30 PM","7:00 PM","7:30 PM","8:00 PM","8:30 PM","9:00 PM","9:30 PM","10:00 PM","10:30 PM","11:00 PM","11:30 PM","Midnight");
     private String _email;
     private String _pass;
     private String nameOfEvent;
@@ -81,6 +81,7 @@ public class createEventGUI implements Initializable{
     private int points;
     private String eventDateFromPicker;
     private String time;
+    private String isLive = "Not Live";
     public secondPageGUI home;
 
     public createEventGUI(){
@@ -90,7 +91,7 @@ public class createEventGUI implements Initializable{
         this._email = email;
         this._pass = password;
         this.home = curr;
-        System.out.println(this._email + "," + this._pass);
+        //System.out.println(this._email + "," + this._pass);
 
     }
 
@@ -102,6 +103,9 @@ public class createEventGUI implements Initializable{
             timeComboBox.setVisibleRowCount(4);
             timeComboBox.setValue("12:00 AM");
             this.time = "12:00 AM";
+
+
+            this.eventDateFromPicker = LocalDate.now().toString();
             LocalDate timmer;
             eventDatePicker.setValue(LocalDate.now());
 
@@ -150,7 +154,7 @@ public class createEventGUI implements Initializable{
             this.setVar(eventPointsText.getText(),3);
 
 
-            if(createEvent(this._email,this._pass,this.nameOfEvent,this.description,this.eventDateFromPicker,this.time,this.location,this.points)){
+            if(createEvent(this._email,this._pass,this.nameOfEvent,this.description,this.eventDateFromPicker,this.time,this.location,this.points, this.isLive)){
                 //System.out.println("successsssss\n");
                 home.initData(this._email,this._pass);
                 AlertBox.display("Success","Successfully Created An Event");
@@ -176,15 +180,14 @@ public class createEventGUI implements Initializable{
 
     }
 
-    private boolean createEvent(String _email, String _pass, String _nameOfEvent,String _description,String _eventDateFromPicker,String _time,String _location,int _points) {
+    private boolean createEvent(String _email, String _pass, String _nameOfEvent,String _description,String _eventDateFromPicker,String _time,String _location,int _points, String _isLive) {
         //emailStr = String.valueOf( _email);
         //passwordStr = String.valueOf(_password);
 
 
         Organization org = new Organization();
         try{
-            org.addEvent(_email,_pass,_nameOfEvent,_description,_eventDateFromPicker,_time,_location,_points);
-
+            org.addEvent(_email,_pass,_nameOfEvent,_description,_eventDateFromPicker,_time,_location,_points, _isLive);
             return true;
         }catch(ParseException a){
             return false;

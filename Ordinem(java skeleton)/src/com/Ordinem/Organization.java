@@ -55,7 +55,7 @@ public class Organization {
                 if(choice == 1){ //not done
                     //edit organization
                     //stop the loop
-                    editOrg(this.email,this.password);
+                    //editOrg(this.email,this.password);
 
                 }
                 else if(choice == 2){ //not dont
@@ -108,26 +108,16 @@ public class Organization {
         return org;
     }
 
-    public void editOrg(String _email, String _password){
-        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+    public boolean editOrg(String _email, String _password,int _indexofCombo, String _NameNew, String _EmailNew, String _PassNew){
+        //BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
         ArrayList<String> orgNameByType = new ArrayList<String>();
         ArrayList<String> orgEmailByType = new ArrayList<String>();
-        int editChoice = 0;
         int orgID = 0;
         int orgType = 0;
 
         try{
-            /*
-            this.sql.pst = this.sql.mysql.prepareStatement("SELECT orgName,email,password,typeID FROM organizations WHERE email=? AND password=?");
-            this.sql.pst.setString(1,_email);
-            this.sql.pst.setString(2,_password);
-            if(this.sql.runSelect()){
-                String[] cols = {"orgName","email","password","typeID"};
-                String orgToEdit = this.sql.getColumns(cols);
-                //System.out.println(orgToEdit);
-            }
-            */
-
+            orgNameByType.clear();
+            orgEmailByType.clear();
             //get the typeID to get all organizations with that type u are editing
             this.sql.pst = this.sql.mysql.prepareStatement("SELECT typeID FROM organizations WHERE email=? AND password=?");
             this.sql.pst.setString(1,_email);
@@ -155,6 +145,24 @@ public class Organization {
                     e.printStackTrace();
                 }
             }
+            //get the organization names by type so u can compare names
+            this.sql.pst = this.sql.mysql.prepareStatement("SELECT orgName FROM organizations WHERE typeID = ?");
+            this.sql.pst.setInt(1,orgType);
+            if(this.sql.runSelect()){
+                while(this.sql.data.next()){
+                    String orgNameType = this.sql.data.getString(1).toLowerCase();
+                    orgNameByType.add(orgNameType);
+                }
+            }
+
+            this.sql.pst = this.sql.mysql.prepareStatement("SELECT email FROM organizations WHERE typeID = ?");
+            this.sql.pst.setInt(1,orgType);
+            if(this.sql.runSelect()){
+                while(this.sql.data.next()){
+                    String orgEmailType = this.sql.data.getString(1).toLowerCase();
+                    orgEmailByType.add(orgEmailType);
+                }
+            }
         }catch(SQLException e){
             System.out.println("SQL went wrong");
         }catch(Exception e){
@@ -162,127 +170,89 @@ public class Organization {
         }
 
 
-        while(true){
-            try{
-                /*
-                this.sql.pst = this.sql.mysql.prepareStatement("SELECT orgName,email,password,typeID FROM organizations WHERE orgID =?");
-                this.sql.pst.setInt(1,orgID);
-                if(this.sql.runSelect()){
-                    String[] cols = {"orgName","email","password","typeID"};
-                    String orgToEdit = this.sql.getColumns(cols);
-                    System.out.println(orgToEdit);
-                }
-                */
-                System.out.println("----Edit Organization----");
-                System.out.println("1. Edit Organization Name");
-                System.out.println("2. Edit Organization Email");
-                System.out.println("3. Edit Organization Password");
-                System.out.println("4. Go Back");
-                System.out.print("Enter Your Choice: ");
-                String tempChoice = reader.readLine();
-                editChoice = Integer.parseInt(tempChoice);
-                orgNameByType.clear();
-                orgEmailByType.clear();
-                //get the organization names by type so u can compare names
-                this.sql.pst = this.sql.mysql.prepareStatement("SELECT orgName FROM organizations WHERE typeID = ?");
-                this.sql.pst.setInt(1,orgType);
-
-                if(this.sql.runSelect()){
-                    while(this.sql.data.next()){
-                        String orgNameType = this.sql.data.getString(1).toLowerCase();
-                        orgNameByType.add(orgNameType);
-                    }
-                }
-                //get all emails by type
-
-                this.sql.pst = this.sql.mysql.prepareStatement("SELECT email FROM organizations WHERE typeID = ?");
-                this.sql.pst.setInt(1,orgType);
-
-                if(this.sql.runSelect()){
-                    while(this.sql.data.next()){
-                        String orgEmailType = this.sql.data.getString(1).toLowerCase();
-                        orgEmailByType.add(orgEmailType);
-                    }
-                }
-
-                if(editChoice == 1){
-                    //edit name
-                    String newOrgName = "";
-                    while(true){
-                        System.out.print("Enter The New Organization Name: ");
-                        newOrgName = reader.readLine();
-                        if(orgNameByType.contains(newOrgName.toLowerCase())){
-                          System.out.println("The name you entered already exists.\n");
-                        }
-                        else{
-                            //does not contain
-                            orgNameByType.add(newOrgName);
-                            //edit the database
-                            String insert_sql_events = "UPDATE organizations SET orgName = ? WHERE orgID = ?";
-                            this.sql.pst = this.sql.mysql.prepareStatement(insert_sql_events);
-                            this.sql.pst.setString(1,newOrgName);
-                            this.sql.pst.setInt(2,orgID);
-
-                            if(this.sql.runUpdate()){
-                                System.out.println("Successfully changed organization name!\n");
-                            }
-                            break;
-                        }
-                    }
-
-                }else if(editChoice == 2){
-                    //edit email
-                    String newOrgEmail = "";
-                    while(true){
-                        System.out.print("Enter The New Organization Email: ");
-                        newOrgEmail = reader.readLine();
-                        if(orgEmailByType.contains(newOrgEmail.toLowerCase())){
-                            System.out.println("The email you entered already exists.\n");
-                        }
-                        else{
-                            //does not contain
-                            orgEmailByType.add(newOrgEmail);
-                            //edit the database
-                            String insert_sql_events = "UPDATE organizations SET email = ? WHERE orgID = ?";
-                            this.sql.pst = this.sql.mysql.prepareStatement(insert_sql_events);
-                            this.sql.pst.setString(1,newOrgEmail);
-                            this.sql.pst.setInt(2,orgID);
-                            if(this.sql.runUpdate()){
-                                System.out.println("Successfully changed organization email!\n");
-                            }
-                            break;
-                        }
-                    }
-
-                }else if(editChoice == 3){
-                    //edit pass
-                    String newOrgPassword = "";
-                    System.out.print("Enter The New Organization Password: ");
-                    newOrgPassword = reader.readLine();
-                    String insert_sql_events = "UPDATE organizations SET password = ? WHERE orgID = ?";
-                    this.sql.pst = this.sql.mysql.prepareStatement(insert_sql_events);
-                    this.sql.pst.setString(1,newOrgPassword);
-                    this.sql.pst.setInt(2,orgID);
-                    if(this.sql.runUpdate()){
-                        System.out.println("Successfully changed organization password!\n");
-                    }
-                }else if(editChoice == 4) {
-                    //go Back
-                    System.out.println();
-                    break;
+        try{
+            if(_indexofCombo == 1){
+                //edit name
+                if(orgNameByType.contains(_NameNew.toLowerCase())){
+                    System.out.println("The name you entered already exists.\n");
+                    return false;
                 }
                 else{
-                    System.out.println("Input must be between 1 and 5!\n");
+                    //does not contain
+                    orgNameByType.add(_NameNew);
+                    //edit the database
+                    String insert_sql_events = "UPDATE organizations SET orgName = ? WHERE orgID = ?";
+                    this.sql.pst = this.sql.mysql.prepareStatement(insert_sql_events);
+                    this.sql.pst.setString(1,_NameNew);
+                    this.sql.pst.setInt(2,orgID);
+                    if(this.sql.runUpdate()){
+                        System.out.println("Successfully changed organization name!\n");
+                        return true;
+                    }
+
                 }
-            }catch(SQLException e){
-                System.out.println("SQL went wrong!\n");
-            }catch(Exception e){
-                System.out.println("Input must be an integer!\n");
+
+            }else if(_indexofCombo == 2){
+                //edit email
+                if(orgEmailByType.contains(_EmailNew.toLowerCase())){
+                    System.out.println("The email you entered already exists.\n");
+                    return false;
+                }
+                else{
+                    //does not contain
+                    orgEmailByType.add(_EmailNew);
+                    //edit the database
+                    String insert_sql_events = "UPDATE organizations SET email = ? WHERE orgID = ?";
+                    this.sql.pst = this.sql.mysql.prepareStatement(insert_sql_events);
+                    this.sql.pst.setString(1,_EmailNew);
+                    this.sql.pst.setInt(2,orgID);
+                    if(this.sql.runUpdate()){
+                        System.out.println("Successfully changed organization email!\n");
+                        return true;
+                    }
+                }
+
+            }else if(_indexofCombo == 3){
+                //edit pass
+
+                String insert_sql_events = "UPDATE organizations SET password = ? WHERE orgID = ?";
+                this.sql.pst = this.sql.mysql.prepareStatement(insert_sql_events);
+                this.sql.pst.setString(1,_PassNew);
+                this.sql.pst.setInt(2,orgID);
+                if(this.sql.runUpdate()){
+                    System.out.println("Successfully changed organization password!\n");
+                    return true;
+                }
             }
+            else{
+                System.out.println("Input must be between 1 and 5!\n");
+                return false;
+            }
+        }catch(SQLException e){
+            System.out.println("SQL went wrong!\n");
+        }catch(Exception e){
+            System.out.println("Input must be an integer!\n");
+        }
+        return true;
+
+    }
+
+    public void editLive(String _newVal, int _eventID) throws ParseException{
+        try{
+
+            String insert_sql_events = "UPDATE events SET isLive = ? WHERE eventID = ?";
+            this.sql.pst = this.sql.mysql.prepareStatement(insert_sql_events);
+            this.sql.pst.setString(1,_newVal);
+            this.sql.pst.setInt(2,_eventID);
+            if(this.sql.runUpdate()){
+                System.out.println("Successfully added an event!\n");
+            }
+        }catch(Exception e){
+            e.printStackTrace();
         }
     }
 
-    public void addEvent(String _email, String _password,String _eventName,String _eventDesc, String _eventDate,String _startTime, String _location, int _points) throws ParseException {
+    public void addEvent(String _email, String _password,String _eventName,String _eventDesc, String _eventDate,String _startTime, String _location, int _points, String _isLive) throws ParseException {
 
         try{
             this.sql.pst = this.sql.mysql.prepareStatement("SELECT orgID FROM organizations WHERE email=? AND password=?");
@@ -300,7 +270,7 @@ public class Organization {
 
             }
 
-            String insert_sql_events = "INSERT INTO events (eventName,description,hostOrgID,eventDate,startTime,location,pointsForAttending) " + "VALUES (?,?,?,?,?,?,?)";
+            String insert_sql_events = "INSERT INTO events (eventName,description,hostOrgID,eventDate,startTime,location,pointsForAttending,isLive) " + "VALUES (?,?,?,?,?,?,?,?)";
             this.sql.pst = this.sql.mysql.prepareStatement(insert_sql_events);
             this.sql.pst.setString(1,_eventName);
             this.sql.pst.setString(2,_eventDesc);
@@ -309,6 +279,7 @@ public class Organization {
             this.sql.pst.setString(5,_startTime);
             this.sql.pst.setString(6,_location);
             this.sql.pst.setInt(7,_points);
+            this.sql.pst.setString(8, _isLive);
 
             if(this.sql.runUpdate()){
                 System.out.println("Successfully added an event!\n");
@@ -448,22 +419,15 @@ public class Organization {
                 this.sql.pst = this.sql.mysql.prepareStatement("SELECT * FROM events WHERE hostOrgID=?");
                 this.sql.pst.setInt(1,orgID);
                 this.sql.runSelect();
-                String[] list = {"eventName","eventDate","startTime","location","pointsForAttending"};
+                String[] list = {"eventID","eventName","eventDate","startTime","location","pointsForAttending","isLive"};
                 //String colums = this.sql.getColumns(list);
                 //System.out.println(colums);
 
                 events = this.sql.getArrayCol(list);
 
-                //events.add("");
-
-                /*
                 for(int i = 0; i < events.size(); ++i){
-                    System.out.print(events.get(i));
-
+                    System.out.println(i + "." + events.get(i));
                 }
-                */
-
-                //System.out.println(output);
 
             }
         } catch (Exception e) {

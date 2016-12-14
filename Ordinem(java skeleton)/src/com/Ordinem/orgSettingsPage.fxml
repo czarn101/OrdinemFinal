@@ -33,15 +33,13 @@
             <TableColumn fx:id="Password" prefWidth="142.0" text="Password" />
         </columns>
       </TableView>
-      <ComboBox fx:id="choiceSelector" layoutX="130.0" layoutY="202.0" prefHeight="27.0" prefWidth="162.0" />
-      <Button fx:id="updateSettings" layoutX="96.0" layoutY="332.0" mnemonicParsing="false" prefHeight="20.0" prefWidth="241.0" text="Update Settings">
+      <Button fx:id="updateSettings" layoutX="88.0" layoutY="320.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="249.0" text="Update Settings">
          <font>
             <Font name="Avenir Black" size="13.0" />
          </font>
       </Button>
-      <Label fx:id="selectorChoiceLbl" layoutX="10.0" layoutY="242.0" prefHeight="33.0" prefWidth="116.0" textFill="WHITE" />
-      <TextField fx:id="selectorChoiceText" layoutX="130.0" layoutY="248.0" prefHeight="27.0" prefWidth="162.0" />
-      <TextField fx:id="passConfirmText" layoutX="130.0" layoutY="283.0" prefHeight="27.0" prefWidth="162.0" visible="false" />
-      <Label fx:id="passConfirmLbl" layoutX="10.0" layoutY="279.0" prefHeight="33.0" prefWidth="116.0" text="Confirm Password:" textFill="WHITE" visible="false" />
+      <Label fx:id="selectorChoiceLbl" alignment="CENTER" layoutX="-4.0" layoutY="276.0" prefHeight="29.0" prefWidth="113.0" text="New Name: " textFill="WHITE" />
+      <TextField fx:id="selectorChoiceText" layoutX="113.0" layoutY="278.0" prefHeight="27.0" prefWidth="192.0" />
+      <ComboBox fx:id="choiceSelector" layoutX="112.0" layoutY="233.0" prefHeight="29.0" prefWidth="192.0" />
    </children>
 </AnchorPane>

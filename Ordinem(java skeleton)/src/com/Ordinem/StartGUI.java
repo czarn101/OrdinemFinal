@@ -20,6 +20,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
 import javafx.geometry.*;
+//import java.io.*;
 
 //import java.awt.*;
 import java.io.IOException;
@@ -39,7 +40,7 @@ public class StartGUI extends Application {
     @FXML private Label passLabel;
     @FXML private TextField passInput;
     @FXML private Button loginButton;
-    @FXML private ImageView backGround;
+    //@FXML private ImageView backGround;
 
 
     @Override
@@ -58,11 +59,8 @@ public class StartGUI extends Application {
         window.setTitle("Ordinem");
 
         grid = new GridPane();
-        //Image img = new Image("ordinemBackground.png");
-       // BackgroundImage bgImg = new BackgroundImage(img,
-        //        BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT,
-         //       BackgroundPosition.DEFAULT,
-          //      new BackgroundSize(BackgroundSize.AUTO, BackgroundSize.AUTO, false, false, true, false));
+
+
 
         grid.setPadding(new Insets(10,10,10,10));
         grid.setAlignment(Pos.CENTER);
@@ -83,8 +81,6 @@ public class StartGUI extends Application {
         loginButton = new Button("Log In");
         GridPane.setConstraints(loginButton,2,3);
         //System.out.println(this.emailStr+", "+this.passwordStr);
-        //backGround = new ImageView(new Image());
-        //GridPane.setConstraints(backGround, 0, 0, 4, 4);
         grid.getChildren().addAll(loginLabel,emailLabel,emailInput,passLabel,passInput,loginButton);
 
 
