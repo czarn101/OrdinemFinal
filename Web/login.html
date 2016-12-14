@@ -1,0 +1,38 @@
+<!-- <form method="post" action="api.php/">
+<input name="username" value=""/>
+<input name="password" value=""/>
+<input type="submit" value="ok">
+</form> -->
+
+<head>
+<title>Ordinem</title>
+<link rel="shortcut icon" type="image/png" href="images/favicon.png"/>
+<link rel="stylesheet" type="text/css" href="css/styles.css">
+
+</head>
+
+<body>
+<!-- <h1>Ordinem</h1> -->
+<div align="center">
+  <img src="images/OrdinemLogoLong_Small.png" alt="Ordinem Logo" width="800" height="337">
+</div>
+<h2>Welcome! Please log in to continue.</h2>
+</body>
+
+<div class="login-page">
+  <div class="form">
+    <form class="register-form method="post" action="createAccount.php">
+      <input type="text" placeholder="Email"/>
+      <input type="password" placeholder="New Password"/>
+      <input type="text" placeholder="Student ID"/>
+      <button>create</button>
+      <p class="message">Already registered? <a href="#">Sign In</a></p>
+    </form>
+    <form class="login-form" method="post" action="loginResponse.php">
+      <input type="text" name="email" placeholder="Chapman email"/>
+      <input type="text" name="studentID" placeholder="Chapman ID Number"/>
+      <button>login</button>
+      <p class="message">Not registered? <a href="#">Create an account</a></p>
+    </form>
+  </div>
+</div>
