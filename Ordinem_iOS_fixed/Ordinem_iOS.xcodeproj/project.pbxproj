@@ -1,0 +1,619 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		381F3E0B1E0733D9002366A8 /* MyData.plist in Resources */ = {isa = PBXBuildFile; fileRef = 381F3E091E0733D9002366A8 /* MyData.plist */; };
+		381F3E0C1E0733D9002366A8 /* PlistManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 381F3E0A1E0733D9002366A8 /* PlistManager.swift */; };
+		381F3E0E1E07780E002366A8 /* PointView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 381F3E0D1E07780E002366A8 /* PointView.swift */; };
+		383F44381E021744003F7F28 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 383F44371E021744003F7F28 /* DetailView.swift */; };
+		386C2B6F1DFE342600F15658 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 386C2B6E1DFE342600F15658 /* AppDelegate.swift */; };
+		386C2B711DFE342600F15658 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 386C2B701DFE342600F15658 /* LoginView.swift */; };
+		386C2B741DFE342600F15658 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 386C2B721DFE342600F15658 /* Main.storyboard */; };
+		386C2B761DFE342600F15658 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 386C2B751DFE342600F15658 /* Assets.xcassets */; };
+		386C2B791DFE342600F15658 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 386C2B771DFE342600F15658 /* LaunchScreen.storyboard */; };
+		386C2B841DFE342600F15658 /* Ordinem_iOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 386C2B831DFE342600F15658 /* Ordinem_iOSTests.swift */; };
+		386C2B8F1DFE342600F15658 /* Ordinem_iOSUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 386C2B8E1DFE342600F15658 /* Ordinem_iOSUITests.swift */; };
+		386C2B9D1DFE64C200F15658 /* OrdinemLogo.png in Resources */ = {isa = PBXBuildFile; fileRef = 386C2B9C1DFE64C200F15658 /* OrdinemLogo.png */; };
+		386C2B9F1DFE64D300F15658 /* OrdinemLogo_white.png in Resources */ = {isa = PBXBuildFile; fileRef = 386C2B9E1DFE64D300F15658 /* OrdinemLogo_white.png */; };
+		386C2BA11DFE64DD00F15658 /* OrdinemLogoLong_White.png in Resources */ = {isa = PBXBuildFile; fileRef = 386C2BA01DFE64DD00F15658 /* OrdinemLogoLong_White.png */; };
+		386C2BA31DFE64E300F15658 /* OrdinemLogoLong.png in Resources */ = {isa = PBXBuildFile; fileRef = 386C2BA21DFE64E300F15658 /* OrdinemLogoLong.png */; };
+		386C2BA51DFE651800F15658 /* GUI_Background.png in Resources */ = {isa = PBXBuildFile; fileRef = 386C2BA41DFE651800F15658 /* GUI_Background.png */; };
+		386C2BA71DFE6A1F00F15658 /* OrdinemChapmanLogo.png in Resources */ = {isa = PBXBuildFile; fileRef = 386C2BA61DFE6A1F00F15658 /* OrdinemChapmanLogo.png */; };
+		386C2BA91DFE6B3A00F15658 /* LemonMilk.otf in Resources */ = {isa = PBXBuildFile; fileRef = 386C2BA81DFE6AFF00F15658 /* LemonMilk.otf */; };
+		386C2BAB1DFE6F0500F15658 /* textBox.png in Resources */ = {isa = PBXBuildFile; fileRef = 386C2BAA1DFE6F0500F15658 /* textBox.png */; };
+		386C2BAD1DFE782E00F15658 /* DatabaseConnector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 386C2BAC1DFE782E00F15658 /* DatabaseConnector.swift */; };
+		386C2BAF1DFE9BEA00F15658 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 386C2BAE1DFE9BEA00F15658 /* HomeView.swift */; };
+		386C2BB11DFEA43800F15658 /* EventCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 386C2BB01DFEA43800F15658 /* EventCell.swift */; };
+		386C2BB51DFF07D800F15658 /* AutoLoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 386C2BB41DFF07D800F15658 /* AutoLoginView.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		386C2B801DFE342600F15658 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 386C2B631DFE342600F15658 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 386C2B6A1DFE342600F15658;
+			remoteInfo = Ordinem_iOS;
+		};
+		386C2B8B1DFE342600F15658 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 386C2B631DFE342600F15658 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 386C2B6A1DFE342600F15658;
+			remoteInfo = Ordinem_iOS;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		381F3E091E0733D9002366A8 /* MyData.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = MyData.plist; sourceTree = "<group>"; };
+		381F3E0A1E0733D9002366A8 /* PlistManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlistManager.swift; sourceTree = "<group>"; };
+		381F3E0D1E07780E002366A8 /* PointView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PointView.swift; sourceTree = "<group>"; };
+		383F44371E021744003F7F28 /* DetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
+		386C2B6B1DFE342600F15658 /* Ordinem_iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Ordinem_iOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		386C2B6E1DFE342600F15658 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		386C2B701DFE342600F15658 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		386C2B731DFE342600F15658 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		386C2B751DFE342600F15658 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		386C2B781DFE342600F15658 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		386C2B7A1DFE342600F15658 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		386C2B7F1DFE342600F15658 /* Ordinem_iOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Ordinem_iOSTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		386C2B831DFE342600F15658 /* Ordinem_iOSTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ordinem_iOSTests.swift; sourceTree = "<group>"; };
+		386C2B851DFE342600F15658 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		386C2B8A1DFE342600F15658 /* Ordinem_iOSUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Ordinem_iOSUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		386C2B8E1DFE342600F15658 /* Ordinem_iOSUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ordinem_iOSUITests.swift; sourceTree = "<group>"; };
+		386C2B901DFE342600F15658 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		386C2B9C1DFE64C200F15658 /* OrdinemLogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = OrdinemLogo.png; sourceTree = "<group>"; };
+		386C2B9E1DFE64D300F15658 /* OrdinemLogo_white.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = OrdinemLogo_white.png; sourceTree = "<group>"; };
+		386C2BA01DFE64DD00F15658 /* OrdinemLogoLong_White.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = OrdinemLogoLong_White.png; sourceTree = "<group>"; };
+		386C2BA21DFE64E300F15658 /* OrdinemLogoLong.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = OrdinemLogoLong.png; sourceTree = "<group>"; };
+		386C2BA41DFE651800F15658 /* GUI_Background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = GUI_Background.png; sourceTree = "<group>"; };
+		386C2BA61DFE6A1F00F15658 /* OrdinemChapmanLogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = OrdinemChapmanLogo.png; sourceTree = "<group>"; };
+		386C2BA81DFE6AFF00F15658 /* LemonMilk.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = LemonMilk.otf; sourceTree = "<group>"; };
+		386C2BAA1DFE6F0500F15658 /* textBox.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = textBox.png; sourceTree = "<group>"; };
+		386C2BAC1DFE782E00F15658 /* DatabaseConnector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatabaseConnector.swift; sourceTree = "<group>"; };
+		386C2BAE1DFE9BEA00F15658 /* HomeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		386C2BB01DFEA43800F15658 /* EventCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventCell.swift; sourceTree = "<group>"; };
+		386C2BB41DFF07D800F15658 /* AutoLoginView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AutoLoginView.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		386C2B681DFE342600F15658 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		386C2B7C1DFE342600F15658 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		386C2B871DFE342600F15658 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		381F3E081E0733D9002366A8 /* PlistManager files */ = {
+			isa = PBXGroup;
+			children = (
+				381F3E091E0733D9002366A8 /* MyData.plist */,
+				381F3E0A1E0733D9002366A8 /* PlistManager.swift */,
+			);
+			path = "PlistManager files";
+			sourceTree = "<group>";
+		};
+		386C2B621DFE342600F15658 = {
+			isa = PBXGroup;
+			children = (
+				386C2B6D1DFE342600F15658 /* Ordinem_iOS */,
+				386C2B821DFE342600F15658 /* Ordinem_iOSTests */,
+				386C2B8D1DFE342600F15658 /* Ordinem_iOSUITests */,
+				386C2B6C1DFE342600F15658 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		386C2B6C1DFE342600F15658 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				386C2B6B1DFE342600F15658 /* Ordinem_iOS.app */,
+				386C2B7F1DFE342600F15658 /* Ordinem_iOSTests.xctest */,
+				386C2B8A1DFE342600F15658 /* Ordinem_iOSUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		386C2B6D1DFE342600F15658 /* Ordinem_iOS */ = {
+			isa = PBXGroup;
+			children = (
+				381F3E081E0733D9002366A8 /* PlistManager files */,
+				386C2BAC1DFE782E00F15658 /* DatabaseConnector.swift */,
+				386C2BA81DFE6AFF00F15658 /* LemonMilk.otf */,
+				386C2BAA1DFE6F0500F15658 /* textBox.png */,
+				386C2BA61DFE6A1F00F15658 /* OrdinemChapmanLogo.png */,
+				386C2BA41DFE651800F15658 /* GUI_Background.png */,
+				386C2BA21DFE64E300F15658 /* OrdinemLogoLong.png */,
+				386C2BA01DFE64DD00F15658 /* OrdinemLogoLong_White.png */,
+				386C2B9E1DFE64D300F15658 /* OrdinemLogo_white.png */,
+				386C2B9C1DFE64C200F15658 /* OrdinemLogo.png */,
+				386C2B6E1DFE342600F15658 /* AppDelegate.swift */,
+				386C2B701DFE342600F15658 /* LoginView.swift */,
+				386C2B721DFE342600F15658 /* Main.storyboard */,
+				381F3E0D1E07780E002366A8 /* PointView.swift */,
+				383F44371E021744003F7F28 /* DetailView.swift */,
+				386C2BB41DFF07D800F15658 /* AutoLoginView.swift */,
+				386C2BB01DFEA43800F15658 /* EventCell.swift */,
+				386C2BAE1DFE9BEA00F15658 /* HomeView.swift */,
+				386C2B751DFE342600F15658 /* Assets.xcassets */,
+				386C2B771DFE342600F15658 /* LaunchScreen.storyboard */,
+				386C2B7A1DFE342600F15658 /* Info.plist */,
+			);
+			path = Ordinem_iOS;
+			sourceTree = "<group>";
+		};
+		386C2B821DFE342600F15658 /* Ordinem_iOSTests */ = {
+			isa = PBXGroup;
+			children = (
+				386C2B831DFE342600F15658 /* Ordinem_iOSTests.swift */,
+				386C2B851DFE342600F15658 /* Info.plist */,
+			);
+			path = Ordinem_iOSTests;
+			sourceTree = "<group>";
+		};
+		386C2B8D1DFE342600F15658 /* Ordinem_iOSUITests */ = {
+			isa = PBXGroup;
+			children = (
+				386C2B8E1DFE342600F15658 /* Ordinem_iOSUITests.swift */,
+				386C2B901DFE342600F15658 /* Info.plist */,
+			);
+			path = Ordinem_iOSUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		386C2B6A1DFE342600F15658 /* Ordinem_iOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 386C2B931DFE342600F15658 /* Build configuration list for PBXNativeTarget "Ordinem_iOS" */;
+			buildPhases = (
+				386C2B671DFE342600F15658 /* Sources */,
+				386C2B681DFE342600F15658 /* Frameworks */,
+				386C2B691DFE342600F15658 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Ordinem_iOS;
+			productName = Ordinem_iOS;
+			productReference = 386C2B6B1DFE342600F15658 /* Ordinem_iOS.app */;
+			productType = "com.apple.product-type.application";
+		};
+		386C2B7E1DFE342600F15658 /* Ordinem_iOSTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 386C2B961DFE342600F15658 /* Build configuration list for PBXNativeTarget "Ordinem_iOSTests" */;
+			buildPhases = (
+				386C2B7B1DFE342600F15658 /* Sources */,
+				386C2B7C1DFE342600F15658 /* Frameworks */,
+				386C2B7D1DFE342600F15658 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				386C2B811DFE342600F15658 /* PBXTargetDependency */,
+			);
+			name = Ordinem_iOSTests;
+			productName = Ordinem_iOSTests;
+			productReference = 386C2B7F1DFE342600F15658 /* Ordinem_iOSTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		386C2B891DFE342600F15658 /* Ordinem_iOSUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 386C2B991DFE342600F15658 /* Build configuration list for PBXNativeTarget "Ordinem_iOSUITests" */;
+			buildPhases = (
+				386C2B861DFE342600F15658 /* Sources */,
+				386C2B871DFE342600F15658 /* Frameworks */,
+				386C2B881DFE342600F15658 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				386C2B8C1DFE342600F15658 /* PBXTargetDependency */,
+			);
+			name = Ordinem_iOSUITests;
+			productName = Ordinem_iOSUITests;
+			productReference = 386C2B8A1DFE342600F15658 /* Ordinem_iOSUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		386C2B631DFE342600F15658 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0810;
+				LastUpgradeCheck = 0810;
+				ORGANIZATIONNAME = Ordinem;
+				TargetAttributes = {
+					386C2B6A1DFE342600F15658 = {
+						CreatedOnToolsVersion = 8.1;
+						DevelopmentTeam = JTE4SBMYPN;
+						ProvisioningStyle = Manual;
+					};
+					386C2B7E1DFE342600F15658 = {
+						CreatedOnToolsVersion = 8.1;
+						DevelopmentTeam = V5256P9TCJ;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 386C2B6A1DFE342600F15658;
+					};
+					386C2B891DFE342600F15658 = {
+						CreatedOnToolsVersion = 8.1;
+						DevelopmentTeam = V5256P9TCJ;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 386C2B6A1DFE342600F15658;
+					};
+				};
+			};
+			buildConfigurationList = 386C2B661DFE342600F15658 /* Build configuration list for PBXProject "Ordinem_iOS" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 386C2B621DFE342600F15658;
+			productRefGroup = 386C2B6C1DFE342600F15658 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				386C2B6A1DFE342600F15658 /* Ordinem_iOS */,
+				386C2B7E1DFE342600F15658 /* Ordinem_iOSTests */,
+				386C2B891DFE342600F15658 /* Ordinem_iOSUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		386C2B691DFE342600F15658 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				386C2BAB1DFE6F0500F15658 /* textBox.png in Resources */,
+				386C2BA91DFE6B3A00F15658 /* LemonMilk.otf in Resources */,
+				381F3E0B1E0733D9002366A8 /* MyData.plist in Resources */,
+				386C2B791DFE342600F15658 /* LaunchScreen.storyboard in Resources */,
+				386C2BA51DFE651800F15658 /* GUI_Background.png in Resources */,
+				386C2B9F1DFE64D300F15658 /* OrdinemLogo_white.png in Resources */,
+				386C2B9D1DFE64C200F15658 /* OrdinemLogo.png in Resources */,
+				386C2B761DFE342600F15658 /* Assets.xcassets in Resources */,
+				386C2BA31DFE64E300F15658 /* OrdinemLogoLong.png in Resources */,
+				386C2B741DFE342600F15658 /* Main.storyboard in Resources */,
+				386C2BA11DFE64DD00F15658 /* OrdinemLogoLong_White.png in Resources */,
+				386C2BA71DFE6A1F00F15658 /* OrdinemChapmanLogo.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		386C2B7D1DFE342600F15658 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		386C2B881DFE342600F15658 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		386C2B671DFE342600F15658 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				386C2B711DFE342600F15658 /* LoginView.swift in Sources */,
+				386C2BB51DFF07D800F15658 /* AutoLoginView.swift in Sources */,
+				386C2BAF1DFE9BEA00F15658 /* HomeView.swift in Sources */,
+				381F3E0E1E07780E002366A8 /* PointView.swift in Sources */,
+				383F44381E021744003F7F28 /* DetailView.swift in Sources */,
+				381F3E0C1E0733D9002366A8 /* PlistManager.swift in Sources */,
+				386C2BB11DFEA43800F15658 /* EventCell.swift in Sources */,
+				386C2BAD1DFE782E00F15658 /* DatabaseConnector.swift in Sources */,
+				386C2B6F1DFE342600F15658 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		386C2B7B1DFE342600F15658 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				386C2B841DFE342600F15658 /* Ordinem_iOSTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		386C2B861DFE342600F15658 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				386C2B8F1DFE342600F15658 /* Ordinem_iOSUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		386C2B811DFE342600F15658 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 386C2B6A1DFE342600F15658 /* Ordinem_iOS */;
+			targetProxy = 386C2B801DFE342600F15658 /* PBXContainerItemProxy */;
+		};
+		386C2B8C1DFE342600F15658 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 386C2B6A1DFE342600F15658 /* Ordinem_iOS */;
+			targetProxy = 386C2B8B1DFE342600F15658 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		386C2B721DFE342600F15658 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				386C2B731DFE342600F15658 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		386C2B771DFE342600F15658 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				386C2B781DFE342600F15658 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		386C2B911DFE342600F15658 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		386C2B921DFE342600F15658 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		386C2B941DFE342600F15658 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = JTE4SBMYPN;
+				INFOPLIST_FILE = Ordinem_iOS/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.Ordinem.Ordinem-iOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "49addaff-0b5e-47c7-b780-554dc007226d";
+				PROVISIONING_PROFILE_SPECIFIER = Ordinem;
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		386C2B951DFE342600F15658 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				DEVELOPMENT_TEAM = JTE4SBMYPN;
+				INFOPLIST_FILE = Ordinem_iOS/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.Ordinem.Ordinem-iOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "2051f105-5462-4422-b73c-1819ca616327";
+				PROVISIONING_PROFILE_SPECIFIER = "XC: *";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		386C2B971DFE342600F15658 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = V5256P9TCJ;
+				INFOPLIST_FILE = Ordinem_iOSTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.Ordinem.Ordinem-iOSTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Ordinem_iOS.app/Ordinem_iOS";
+			};
+			name = Debug;
+		};
+		386C2B981DFE342600F15658 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = V5256P9TCJ;
+				INFOPLIST_FILE = Ordinem_iOSTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.Ordinem.Ordinem-iOSTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Ordinem_iOS.app/Ordinem_iOS";
+			};
+			name = Release;
+		};
+		386C2B9A1DFE342600F15658 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				DEVELOPMENT_TEAM = V5256P9TCJ;
+				INFOPLIST_FILE = Ordinem_iOSUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.Ordinem.Ordinem-iOSUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = Ordinem_iOS;
+			};
+			name = Debug;
+		};
+		386C2B9B1DFE342600F15658 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				DEVELOPMENT_TEAM = V5256P9TCJ;
+				INFOPLIST_FILE = Ordinem_iOSUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.Ordinem.Ordinem-iOSUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = Ordinem_iOS;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		386C2B661DFE342600F15658 /* Build configuration list for PBXProject "Ordinem_iOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				386C2B911DFE342600F15658 /* Debug */,
+				386C2B921DFE342600F15658 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		386C2B931DFE342600F15658 /* Build configuration list for PBXNativeTarget "Ordinem_iOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				386C2B941DFE342600F15658 /* Debug */,
+				386C2B951DFE342600F15658 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		386C2B961DFE342600F15658 /* Build configuration list for PBXNativeTarget "Ordinem_iOSTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				386C2B971DFE342600F15658 /* Debug */,
+				386C2B981DFE342600F15658 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		386C2B991DFE342600F15658 /* Build configuration list for PBXNativeTarget "Ordinem_iOSUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				386C2B9A1DFE342600F15658 /* Debug */,
+				386C2B9B1DFE342600F15658 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 386C2B631DFE342600F15658 /* Project object */;
+}
