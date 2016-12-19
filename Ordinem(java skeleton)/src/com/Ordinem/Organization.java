@@ -245,7 +245,7 @@ public class Organization {
             this.sql.pst.setString(1,_newVal);
             this.sql.pst.setInt(2,_eventID);
             if(this.sql.runUpdate()){
-                System.out.println("Successfully added an event!\n");
+                //System.out.println("Successfully started the event!\n");
             }
         }catch(Exception e){
             e.printStackTrace();
@@ -282,9 +282,10 @@ public class Organization {
             this.sql.pst.setString(8, _isLive);
 
             if(this.sql.runUpdate()){
-                System.out.println("Successfully added an event!\n");
+                AlertBox.display("Success","Successfully Created An Event!");
+                //System.out.println("Successfully added an event!\n");
             }
-            //date created
+
         }catch(Exception e){
             e.printStackTrace();
         }
@@ -424,10 +425,11 @@ public class Organization {
                 //System.out.println(colums);
 
                 events = this.sql.getArrayCol(list);
-
+                /*
                 for(int i = 0; i < events.size(); ++i){
                     System.out.println(i + "." + events.get(i));
                 }
+                */
 
             }
         } catch (Exception e) {
@@ -437,36 +439,68 @@ public class Organization {
         return events;
     }
 
-    public void viewPastEvents(){
+    public List<String> getCheckIn(int _eventID){
+        ArrayList<String> checkInTable = new ArrayList<String>();
 
-        //TODO display all past events for the specified organizer
-        DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
-        //get current date time with Date()
-        Date date = new Date();
+        try{
+            this.sql.pst = this.sql.mysql.prepareStatement("SELECT studentID,checkInTime FROM checkins WHERE eventID = ?");
+            this.sql.pst.setInt(1,_eventID);
+
+            if(this.sql.runSelect()){
+                String[] cols = {"studentID","checkInTime"};
+                //String orgToEdit = this.sql.getColumns(cols);
+                checkInTable = this.sql.getArrayCol(cols);
+                //System.out.println(checkInTable);
+            }
+        }catch (Exception e){
+            e.printStackTrace();
+
+        }
+        return checkInTable;
 
 
-        //get current date time with Calendar()
-        Calendar cal = Calendar.getInstance();
-        System.out.println(dateFormat.format(cal.getTime()));
-
-        //if date on the added events is less than current date, then display
-        //search database & compare to current time given above
     }
 
-    public void viewFutureEvents(){
+    public void insertID(int _studID, int _eventID){
+        ArrayList<String> studentIDs = new ArrayList<String>();
+        try{
+            //make the checkinID
 
-        //TODO display all future events for the specified organizer
-        DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
-        //get current date time with Date()
-        Date date = new Date();
+            this.sql.pst = this.sql.mysql.prepareStatement("SELECT studentID FROM checkins WHERE eventID = ?");
+            this.sql.pst.setInt(1,_eventID);
 
+            if(this.sql.runSelect()){
+                String[] cols = {"studentID"};
+                //String orgToEdit = this.sql.getColumns(cols);
+                studentIDs = this.sql.getArrayCol(cols);
+                //System.out.println(checkInTable);
+            }
 
-        //get current date time with Calendar()
-        Calendar cal = Calendar.getInstance();
-        System.out.println(dateFormat.format(cal.getTime()));
+            if(studentIDs.contains(Integer.toString(_studID))){
+                AlertBox.display("Error!","Student " + _studID + "Is ALREADY Checked In.");
+            }
 
-        //if date on the added events is greater than current date, then display
-        //search database & compare to current time given above
+            String temp = Integer.toString(_studID) + Integer.toString(_eventID);
+
+            int _checkinID = Integer.parseInt(temp);
+            String insert_sql_events = "INSERT INTO checkins (checkinID,studentID,eventID) " + "VALUES (?,?,?)";
+            this.sql.pst = this.sql.mysql.prepareStatement(insert_sql_events);
+            this.sql.pst.setInt(1,_checkinID);
+            this.sql.pst.setInt(2,_studID);
+            this.sql.pst.setInt(3,_eventID);
+
+            if(this.sql.runUpdate()){
+                AlertBox.display("Success","Successfully Checked In Student" + _studID + ".");
+                //System.out.println("Successfully checked in" + _studID + "!");
+            }else{
+                AlertBox.display("Error!","Student " + _studID + "Is Not In The Database");
+            }
+
+        }catch(Exception e){
+            e.printStackTrace();
+
+        }
+
     }
 }
 

@@ -102,6 +102,7 @@ public class createEventGUI implements Initializable{
             timeComboBox.setItems(this.list);
             timeComboBox.setVisibleRowCount(4);
             timeComboBox.setValue("12:00 AM");
+            eventPointsText.setText("0");
             this.time = "12:00 AM";
 
 
@@ -157,12 +158,11 @@ public class createEventGUI implements Initializable{
             if(createEvent(this._email,this._pass,this.nameOfEvent,this.description,this.eventDateFromPicker,this.time,this.location,this.points, this.isLive)){
                 //System.out.println("successsssss\n");
                 home.initData(this._email,this._pass);
-                AlertBox.display("Success","Successfully Created An Event");
+                //AlertBox.display("Success","Successfully Created An Event");
                 Stage stage = (Stage) createEventButton.getScene().getWindow();
                 stage.close();
-                //display alertbox
-            }
 
+            }
 
             //System.out.print("name: " + this.nameOfEvent + "\ndesc: " + this.description + "\nloc: " + this.location + "\npoints: "+ this.points + "\ndate: " + this.eventDateFromPicker + "\ntime: " + this.time +"\n");
         });
@@ -217,9 +217,9 @@ public class createEventGUI implements Initializable{
                 try{
                     this.points = Integer.parseInt(value);
                 }catch(NumberFormatException e){
-                    e.printStackTrace();
+
+                    //e.printStackTrace();
                 }
-                //this.points = value;
                 break;
         }
     }

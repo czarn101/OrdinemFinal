@@ -5,10 +5,12 @@ import javafx.application.Application;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 //import javafx.geometry.Insets;
+import javafx.scene.AccessibleRole;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.BackgroundImage;
 import javafx.scene.layout.Background;
@@ -71,12 +73,14 @@ public class StartGUI extends Application {
         emailLabel = new Label("Email:");
         GridPane.setConstraints(emailLabel,0,1);
         emailInput = new TextField();
+        emailInput.setPromptText("email");
         GridPane.setConstraints(emailInput,2,1);
         passLabel = new Label("Password:");
         GridPane.setConstraints(passLabel,0,2);
         //password input
-        passInput = new TextField();
+        passInput = new PasswordField();
         passInput.setPromptText("password");
+
         GridPane.setConstraints(passInput,2,2);
         loginButton = new Button("Log In");
         GridPane.setConstraints(loginButton,2,3);
@@ -109,8 +113,11 @@ public class StartGUI extends Application {
                 }
 
             }else{
+                AlertBox.display("Error!","Email Or Password Does Not Match.");
                 //alert user email or password does not match
-                System.out.println("Email or password does not match");
+                //System.out.println("Email or password does not match");
+                emailInput.clear();
+                passInput.clear();
 
             }
 

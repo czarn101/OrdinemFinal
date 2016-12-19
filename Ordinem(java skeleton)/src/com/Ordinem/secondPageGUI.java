@@ -248,7 +248,7 @@ public class secondPageGUI implements Initializable {
                     Event rowData = row.getItem();
                     currentID = Integer.parseInt(rowData.getID());
                     rowIndex = row.getIndex();
-                    System.out.println(rowIndex);
+                    //System.out.println(rowIndex);
                     Date todayDate = new Date();
 
                     String time1 = rowData.getTime();
@@ -361,6 +361,20 @@ public class secondPageGUI implements Initializable {
             try{
                 org.editLive("Live",this.currentID);
                 initData(this._email,this._pass);
+
+                FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("startEvent.fxml"));
+
+                Parent root1 = fxmlLoader.load();
+                Stage stage = new Stage();
+                stage.setTitle("Ordinem");
+                stage.setScene(new Scene(root1));
+                startEventGUI controller = fxmlLoader.<startEventGUI>getController();
+                //controller.home = this;
+                controller.initData(this.currentID);
+
+                stage.show();
+
+
             }catch(Exception a){
                 a.printStackTrace();
 
