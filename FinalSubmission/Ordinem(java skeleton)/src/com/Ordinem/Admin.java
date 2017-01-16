@@ -16,10 +16,10 @@ public class Admin {
 
     public Admin() {
 
-        this.sql = new SQLConnector("acsm_6cac058ec0c0df1", // database name
-                "jdbc:mysql://us-cdbr-azure-west-b.cleardb.com:3306/acsm_6cac058ec0c0df1", //connection url
-                "bdee9cb0c426b0", // username
-                "624cb96a"); // password
+        this.sql = new SQLConnector("chapman_university", // database name
+                "jdbc:mysql://us-cdbr-azure-west-b.cleardb.com:3306", //connection url
+                "b8adaded8c4294", // username
+                "67e46b7b"); // password
 
     }
 
@@ -151,18 +151,23 @@ public class Admin {
                 //this.password = reader.readLine();
 
                 //System.out.println("One moment please...");
-                this.sql.pst = this.sql.mysql.prepareStatement("SELECT email FROM organizations WHERE email=?");
+                this.sql.pst = this.sql.mysql.prepareStatement("SELECT (email, password) FROM organizations WHERE email=?");
                 this.sql.pst.setString(1,_email);
                 String databaseEmail = "";
+                String databasePassword = "";
+
                 if(this.sql.runSelect()){
                     if(this.sql.data.next()){
                         databaseEmail = this.sql.data.getString(1);
+                    }
+                    if(this.sql.data.next()){
+                        databasePassword = this.sql.data.getString(1);
                     }
                 }
                 this.sql.pst = this.sql.mysql.prepareStatement("SELECT password FROM organizations WHERE email=?");
                 this.sql.pst.setString(1,_email);
 
-                String databasePassword = "";
+
                 if(this.sql.runSelect()){
                     if(this.sql.data.next()){
                         databasePassword = this.sql.data.getString(1);
@@ -170,7 +175,7 @@ public class Admin {
                 }
 
                 if(databaseEmail.trim().equals(_email) && databasePassword.trim().equals(_password)){
-                    //System.out.println("Successfully Logged In\n");
+                    System.out.println("Successfully Logged In\n");
 
                     //Organization org = new Organization();
                     setEmail(_email,_password);
@@ -179,12 +184,21 @@ public class Admin {
                     return true;
                 }
                 else{
-                    //System.out.println("Email Or Password Does Not Match\n");
+                    if(databaseEmail.trim().equals(_email)) {
+                        System.out.println("Password Does Not Match\n");
+                        System.out.println(databasePassword.trim());
+                        System.out.println(_password);
+                    } else {
+                        System.out.println("Email Does Not Match\n");
+                        System.out.println(databaseEmail.trim());
+                        System.out.println(_email);
+                    }
+
                     return false;
 
                 }
             }catch(SQLException e ){
-                //System.out.println("SQL went wrong\n");
+                System.out.println("SQL went wrong\n");
                 return false;
             }
         }

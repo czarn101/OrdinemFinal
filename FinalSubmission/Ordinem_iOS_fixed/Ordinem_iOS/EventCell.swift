@@ -10,11 +10,12 @@ import Foundation
 import UIKit
 
 public class EventCell: UITableViewCell {
+    @IBOutlet var orgPic: UIImageView?
     @IBOutlet var eventName: UILabel?
     @IBOutlet var orgName: UILabel?
-    @IBOutlet var eventDescription: UILabel?
+    @IBOutlet var rsvp: UIImageView?
     @IBOutlet var eventTime: UILabel?
-    @IBOutlet var eventDate: UILabel?
+    @IBOutlet var eventPoints: UILabel?
     
     public var eventID: Int?
     public var orgID: Int?

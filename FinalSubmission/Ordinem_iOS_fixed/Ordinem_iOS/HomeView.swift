@@ -68,10 +68,10 @@ class HomeView: UIViewController, UITableViewDelegate, UITableViewDataSource {
         if self.source != nil {
             let cell: EventCell = tableView.dequeueReusableCell(withIdentifier: "EventCell") as! EventCell
             cell.eventName?.text = (self.source?[indexPath.row] as! NSArray)[1] as? String
-            cell.eventDescription?.text = (self.source?[indexPath.row] as! NSArray)[2] as? String
+            //cell.eventDescription?.text = (self.source?[indexPath.row] as! NSArray)[2] as? String
             //cell.eventID = source?[indexPath.row][2] as? String
             cell.orgName?.text = (self.source?[indexPath.row] as! NSArray)[3] as? String
-            cell.eventDate?.text = (self.source?[indexPath.row] as! NSArray)[4] as? String
+            //cell.eventDate?.text = (self.source?[indexPath.row] as! NSArray)[4] as? String
             cell.eventTime?.text = (self.source?[indexPath.row] as! NSArray)[5] as? String
             return cell
         } else {
