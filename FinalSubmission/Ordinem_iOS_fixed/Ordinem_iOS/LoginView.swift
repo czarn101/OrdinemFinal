@@ -28,9 +28,10 @@ class LoginView: UIViewController, UITextFieldDelegate {
             loadingMon?.startAnimating()
             dbc.userLogin(email: (emailField?.text)!, password: (passField?.text)!)
         } else {
-            print("Failure")
+            print("Incorrect Username/Password")
         }
     }
+    
     
     func loginSuccess() {
         print("Success")
@@ -46,6 +47,9 @@ class LoginView: UIViewController, UITextFieldDelegate {
         emailStr?.text = "Email* (Invalid)"
         passStr?.text = "Password* (Invalid)"
     }
+    
+
+
     
     func checkFields() -> Bool {
         if (emailField?.text?.isEmpty)! {
@@ -95,6 +99,19 @@ class LoginView: UIViewController, UITextFieldDelegate {
         self.emailField?.text = ""
         self.passField?.text = ""
     }
+    
+    
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        if textField == emailField{
+            passField!.becomeFirstResponder()
+        }
+        else{
+            passField!.resignFirstResponder()
+        }
+        return true
+        }
+
 
 }
 
