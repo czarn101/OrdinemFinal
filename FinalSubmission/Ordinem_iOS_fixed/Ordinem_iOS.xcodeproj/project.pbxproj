@@ -33,6 +33,7 @@
 		386C2BB51DFF07D800F15658 /* AutoLoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 386C2BB41DFF07D800F15658 /* AutoLoginView.swift */; };
 		386DB3EF1E28785E00F8FF7D /* yesRSVP.png in Resources */ = {isa = PBXBuildFile; fileRef = 386DB3ED1E28785E00F8FF7D /* yesRSVP.png */; };
 		386DB3F11E28791300F8FF7D /* noRSVP.png in Resources */ = {isa = PBXBuildFile; fileRef = 386DB3F01E28791300F8FF7D /* noRSVP.png */; };
+		38D2BACE1E30407500F78259 /* RewardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38D2BACD1E30407500F78259 /* RewardView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -85,6 +86,7 @@
 		386C2BB41DFF07D800F15658 /* AutoLoginView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AutoLoginView.swift; sourceTree = "<group>"; };
 		386DB3ED1E28785E00F8FF7D /* yesRSVP.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = yesRSVP.png; sourceTree = "<group>"; };
 		386DB3F01E28791300F8FF7D /* noRSVP.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = noRSVP.png; sourceTree = "<group>"; };
+		38D2BACD1E30407500F78259 /* RewardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RewardView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -160,6 +162,7 @@
 				386C2B6E1DFE342600F15658 /* AppDelegate.swift */,
 				386C2B701DFE342600F15658 /* LoginView.swift */,
 				386C2B721DFE342600F15658 /* Main.storyboard */,
+				38D2BACD1E30407500F78259 /* RewardView.swift */,
 				381F3E0D1E07780E002366A8 /* PointView.swift */,
 				383F44371E021744003F7F28 /* DetailView.swift */,
 				386C2BB41DFF07D800F15658 /* AutoLoginView.swift */,
@@ -343,6 +346,7 @@
 				386C2BAF1DFE9BEA00F15658 /* HomeView.swift in Sources */,
 				381F3E0E1E07780E002366A8 /* PointView.swift in Sources */,
 				383F44381E021744003F7F28 /* DetailView.swift in Sources */,
+				38D2BACE1E30407500F78259 /* RewardView.swift in Sources */,
 				381F3E0C1E0733D9002366A8 /* PlistManager.swift in Sources */,
 				386C2BB11DFEA43800F15658 /* EventCell.swift in Sources */,
 				386C2BAD1DFE782E00F15658 /* DatabaseConnector.swift in Sources */,
