@@ -74,8 +74,28 @@ class LoginView: UIViewController, UITextFieldDelegate {
         return emailTest.evaluate(with: testStr)
     }
 
+    func doneClicked(){
+        view.endEditing(true)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let flexibleSpace = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.flexibleSpace, target: nil, action: nil)
+        
+        let toolBar = UIToolbar()
+        
+        toolBar.sizeToFit()
+        
+        let doneButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.done, target: self, action: #selector(self.doneClicked))
+        
+        toolBar.setItems([flexibleSpace, doneButton], animated: false)
+        
+        emailField!.inputAccessoryView = toolBar
+        passField!.inputAccessoryView = toolBar
+        
+        
+        
         appDelegate.loginView = self
         loadingMon?.isHidden = true
         tapView?.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard)))
@@ -103,6 +123,10 @@ class LoginView: UIViewController, UITextFieldDelegate {
     @IBAction func backToLogin(segue: UIStoryboardSegue) {
         
     }
+    
+    
+    
+    
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         if textField == emailField{

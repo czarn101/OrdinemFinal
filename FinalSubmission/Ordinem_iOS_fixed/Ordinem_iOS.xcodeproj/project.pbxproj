@@ -55,6 +55,7 @@
 
 /* Begin PBXFileReference section */
 		181E51FF1E2FE4B5006859CA /* SignUp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUp.swift; sourceTree = "<group>"; };
+		181E52011E308DAB006859CA /* camera.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = camera.png; sourceTree = "<group>"; };
 		381F3E091E0733D9002366A8 /* MyData.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = MyData.plist; sourceTree = "<group>"; };
 		381F3E0A1E0733D9002366A8 /* PlistManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlistManager.swift; sourceTree = "<group>"; };
 		381F3E0D1E07780E002366A8 /* PointView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PointView.swift; sourceTree = "<group>"; };
@@ -152,6 +153,7 @@
 				381F3E081E0733D9002366A8 /* PlistManager files */,
 				386C2BAC1DFE782E00F15658 /* DatabaseConnector.swift */,
 				386C2BA81DFE6AFF00F15658 /* LemonMilk.otf */,
+				181E52011E308DAB006859CA /* camera.png */,
 				386C2BAA1DFE6F0500F15658 /* textBox.png */,
 				386C2BA61DFE6A1F00F15658 /* OrdinemChapmanLogo.png */,
 				386C2BA41DFE651800F15658 /* GUI_Background.png */,

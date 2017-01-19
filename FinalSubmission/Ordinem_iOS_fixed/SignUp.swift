@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SignUp: UITableViewController {
+class SignUp: UITableViewController, UIPickerViewDataSource, UIPickerViewDelegate {
 
     @IBOutlet weak var fName: UITextField!
     @IBOutlet weak var lastName: UITextField!
@@ -55,6 +55,36 @@ class SignUp: UITableViewController {
         self.scrollView.contentInset = contentInset
     }
     
+    
+    var list = ["Chapman"]
+    var picker = UIPickerView()
+    
+    
+    @available(iOS 2.0, *)
+    public func numberOfComponents(in pickerView: UIPickerView) -> Int{
+        return 1
+    }
+    
+    
+    @available(iOS 2.0, *)
+    public func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int{
+        return list.count
+    }
+    
+    
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        school.text = list[row]
+        skewl.text = list[row]
+        
+        
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return list[row]
+    }
+    
+    
     func closekeyboard() {
         self.view.endEditing(true)
     }
@@ -68,6 +98,12 @@ class SignUp: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
+        picker.delegate = self
+        picker.dataSource = self
+        school.inputView = picker
+        skewl.inputView = picker
         
         
         let flexibleSpace = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.flexibleSpace, target: nil, action: nil)
