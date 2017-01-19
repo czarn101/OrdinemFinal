@@ -1652,6 +1652,9 @@
                                                     <state key="normal" title="▷">
                                                         <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
+                                                    <connections>
+                                                        <segue destination="19u-rj-vSE" kind="show" id="Vhc-Va-qEs"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                             <constraints>
@@ -1702,6 +1705,9 @@
                                 <state key="normal" title="▷">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <segue destination="19u-rj-vSE" kind="show" id="Gba-Na-UvX"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100 pts = $10.00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V01-fm-b8X">
                                 <rect key="frame" x="16" y="126" width="207" height="34"/>
@@ -3139,7 +3145,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3hD-7R-9Ga" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4118" y="-236"/>
+            <point key="canvasLocation" x="4058" y="-236"/>
         </scene>
         <!--HomeView-->
         <scene sceneID="yrz-lB-CdT">
@@ -3571,7 +3577,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qfn-XW-ZBa">
-                                <rect key="frame" x="0.0" y="529" width="375" height="69"/>
+                                <rect key="frame" x="0.0" y="528" width="375" height="69"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="69" id="VgI-ea-da2"/>
@@ -3636,6 +3642,7 @@
     <inferredMetricsTieBreakers>
         <segue reference="ksP-Is-jYS"/>
         <segue reference="JkU-uc-cU9"/>
+        <segue reference="Vhc-Va-qEs"/>
         <segue reference="Ms9-WR-CVn"/>
         <segue reference="nfL-pc-w1k"/>
     </inferredMetricsTieBreakers>
