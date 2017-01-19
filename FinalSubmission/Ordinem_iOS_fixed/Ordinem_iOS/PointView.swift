@@ -12,14 +12,15 @@ import UIKit
 public class PointView: UIViewController {
     
     @IBOutlet var pointBal: UILabel?
-    @IBOutlet weak var stepper: UIStepper!
-    @IBOutlet weak var projectedAttendance: UITextField!
-    @IBOutlet weak var projectedCost: UILabel!
+    //@IBOutlet weak var stepper: UIStepper!
+    //@IBOutlet weak var projectedAttendance: UITextField!
+    //@IBOutlet weak var projectedCost: UILabel!
     
-    @IBAction func stepperStepped(_ sender: UIStepper) {
-        pointBal!.text = String(Int(sender.value))
-    }
+    //@IBAction func stepperStepped(_ sender: UIStepper) {
+    //    pointBal!.text = String(Int(sender.value))
+    //}
     
+    /*
     var points = Double(1)
     var attendance = Double(1)
     
@@ -38,6 +39,11 @@ public class PointView: UIViewController {
         let total = Double(getPoints()*attToInt()*0.05*1.05)
         projectedCost.text = String(total)
     }
+    */
+    
+    @IBAction func logout(sender: UIButton) {
+        self.performSegue(withIdentifier: "logout", sender: self)
+    }
     
     let appDelegate: AppDelegate = UIApplication.shared.delegate as! AppDelegate
     
@@ -45,12 +51,12 @@ public class PointView: UIViewController {
         super.viewDidLoad()
         self.pointBal?.text = appDelegate.pointBalance
         //code
-        stepper.maximumValue = 99
-        stepper.stepValue = 1
+        //stepper.maximumValue = 99
+        //stepper.stepValue = 1
         // Do any additional setup after loading the view.
         
         
-        
+        /*
         
         let flexibleSpace = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.flexibleSpace, target: nil, action: nil)
         
@@ -65,16 +71,16 @@ public class PointView: UIViewController {
         toolBar.setItems([flexibleSpace, doneButton], animated: false)
         
         
-        projectedAttendance.inputAccessoryView = toolBar
+        //projectedAttendance.inputAccessoryView = toolBar
         
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name:NSNotification.Name.UIKeyboardWillShow, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name:NSNotification.Name.UIKeyboardWillHide, object: nil)
 
-        
+        */
     }
     
-    @IBOutlet weak var theScrollView: UIScrollView!
-    
+   // @IBOutlet weak var theScrollView: UIScrollView!
+    /*
     func keyboardWillShow(notification:NSNotification){
         //give room at the bottom of the scroll view, so it doesn't cover up anything the user needs to tap
         var userInfo = notification.userInfo!
@@ -95,7 +101,7 @@ public class PointView: UIViewController {
     func doneClicked(){
         view.endEditing(true)
     }
-    
+    */
     override public func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         //code
