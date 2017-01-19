@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		181E52001E2FE4B5006859CA /* SignUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181E51FF1E2FE4B5006859CA /* SignUp.swift */; };
 		181E52051E309F37006859CA /* eventTemp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181E52041E309F37006859CA /* eventTemp.swift */; };
+		181E52071E31498D006859CA /* PersonOrdinem.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 181E52061E31498D006859CA /* PersonOrdinem.jpg */; };
+		181E520B1E314E83006859CA /* HouseOrdinem c.png in Resources */ = {isa = PBXBuildFile; fileRef = 181E520A1E314E83006859CA /* HouseOrdinem c.png */; };
 		381F3E0B1E0733D9002366A8 /* MyData.plist in Resources */ = {isa = PBXBuildFile; fileRef = 381F3E091E0733D9002366A8 /* MyData.plist */; };
 		381F3E0C1E0733D9002366A8 /* PlistManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 381F3E0A1E0733D9002366A8 /* PlistManager.swift */; };
 		381F3E0E1E07780E002366A8 /* PointView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 381F3E0D1E07780E002366A8 /* PointView.swift */; };
@@ -58,6 +60,8 @@
 		181E51FF1E2FE4B5006859CA /* SignUp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUp.swift; sourceTree = "<group>"; };
 		181E52011E308DAB006859CA /* camera.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = camera.png; sourceTree = "<group>"; };
 		181E52041E309F37006859CA /* eventTemp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = eventTemp.swift; sourceTree = "<group>"; };
+		181E52061E31498D006859CA /* PersonOrdinem.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = PersonOrdinem.jpg; sourceTree = "<group>"; };
+		181E520A1E314E83006859CA /* HouseOrdinem c.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "HouseOrdinem c.png"; sourceTree = "<group>"; };
 		381F3E091E0733D9002366A8 /* MyData.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = MyData.plist; sourceTree = "<group>"; };
 		381F3E0A1E0733D9002366A8 /* PlistManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlistManager.swift; sourceTree = "<group>"; };
 		381F3E0D1E07780E002366A8 /* PointView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PointView.swift; sourceTree = "<group>"; };
@@ -163,6 +167,8 @@
 				386C2BA01DFE64DD00F15658 /* OrdinemLogoLong_White.png */,
 				386C2B9E1DFE64D300F15658 /* OrdinemLogo_white.png */,
 				386C2B9C1DFE64C200F15658 /* OrdinemLogo.png */,
+				181E52061E31498D006859CA /* PersonOrdinem.jpg */,
+				181E520A1E314E83006859CA /* HouseOrdinem c.png */,
 				386C2B6E1DFE342600F15658 /* AppDelegate.swift */,
 				386C2B701DFE342600F15658 /* LoginView.swift */,
 				386C2B721DFE342600F15658 /* Main.storyboard */,
@@ -317,6 +323,8 @@
 				386C2B9F1DFE64D300F15658 /* OrdinemLogo_white.png in Resources */,
 				386DB3EF1E28785E00F8FF7D /* yesRSVP.png in Resources */,
 				386C2B9D1DFE64C200F15658 /* OrdinemLogo.png in Resources */,
+				181E52071E31498D006859CA /* PersonOrdinem.jpg in Resources */,
+				181E520B1E314E83006859CA /* HouseOrdinem c.png in Resources */,
 				386C2B761DFE342600F15658 /* Assets.xcassets in Resources */,
 				386C2BA31DFE64E300F15658 /* OrdinemLogoLong.png in Resources */,
 				386C2B741DFE342600F15658 /* Main.storyboard in Resources */,
