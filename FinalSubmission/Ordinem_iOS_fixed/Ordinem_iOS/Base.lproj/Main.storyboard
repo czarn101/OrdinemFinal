@@ -361,13 +361,13 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Orginaztion Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qPA-sO-Y6c">
-                                                    <rect key="frame" x="82" y="8" width="173" height="23"/>
+                                                    <rect key="frame" x="82" y="8" width="136.5" height="20"/>
                                                     <fontDescription key="fontDescription" name="LemonMilk" family="Lemon/Milk" pointSize="17"/>
                                                     <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Event Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6S4-9q-4GN">
-                                                    <rect key="frame" x="82" y="31" width="125" height="30"/>
+                                                    <rect key="frame" x="82" y="28" width="125" height="30"/>
                                                     <fontDescription key="fontDescription" name="Futura-Bold" family="Futura" pointSize="23"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -379,8 +379,8 @@
                                                         <constraint firstAttribute="width" secondItem="RXT-ue-sHb" secondAttribute="height" multiplier="1:1" id="vgm-oq-xZR"/>
                                                     </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12:00 AM" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TSs-1B-DoI">
-                                                    <rect key="frame" x="82" y="69" width="71" height="20"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10:00AM-12:00AM" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TSs-1B-DoI">
+                                                    <rect key="frame" x="82" y="66" width="136" height="20"/>
                                                     <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="15"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -2726,8 +2726,8 @@
                                                         <constraint firstAttribute="width" secondItem="ENV-6m-skL" secondAttribute="height" multiplier="1:1" id="jUr-vK-y2r"/>
                                                     </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12:00 AM" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a72-2b-Tin">
-                                                    <rect key="frame" x="82" y="66" width="71" height="20"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10:00AM-12:00AM" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a72-2b-Tin">
+                                                    <rect key="frame" x="82" y="66" width="136" height="20"/>
                                                     <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="15"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -2833,8 +2833,8 @@
     <inferredMetricsTieBreakers>
         <segue reference="rIg-om-U0p"/>
         <segue reference="JkU-uc-cU9"/>
-        <segue reference="vAB-Ag-nW9"/>
-        <segue reference="kOI-A6-C13"/>
-        <segue reference="nfL-pc-w1k"/>
+        <segue reference="ksP-Is-jYS"/>
+        <segue reference="BrC-xb-OID"/>
+        <segue reference="fEz-aJ-nqE"/>
     </inferredMetricsTieBreakers>
 </document>
