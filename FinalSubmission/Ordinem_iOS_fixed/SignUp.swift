@@ -57,7 +57,11 @@ class SignUp: UITableViewController, UIPickerViewDataSource, UIPickerViewDelegat
     
     
     var list = ["Chapman"]
-    var picker = UIPickerView()
+    var picker1 = UIPickerView()
+    
+    var types = ["Academic/Professional", "Civic Engagement","Diversity/ Cultural","Greek","Honor Society","Sport", "Leisure", "Recreational","Religious/Spiritual"]
+    
+    var picker2 = UIPickerView()
     
     
     @available(iOS 2.0, *)
@@ -68,7 +72,12 @@ class SignUp: UITableViewController, UIPickerViewDataSource, UIPickerViewDelegat
     
     @available(iOS 2.0, *)
     public func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int{
-        return list.count
+        if pickerView.tag == 0{
+            return list.count
+        }
+        else{
+            return types.count
+        }
     }
     
     
@@ -99,11 +108,17 @@ class SignUp: UITableViewController, UIPickerViewDataSource, UIPickerViewDelegat
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        picker1.tag = 0
+        picker2.tag = 1
         
-        picker.delegate = self
-        picker.dataSource = self
-        school.inputView = picker
-        skewl.inputView = picker
+        picker1.delegate = self
+        picker1.dataSource = self
+        school.inputView = picker1
+        skewl.inputView = picker1
+        
+        picker2.delegate = self
+        picker2.dataSource = self
+        orgType.inputView = picker2
         
         
         let flexibleSpace = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.flexibleSpace, target: nil, action: nil)

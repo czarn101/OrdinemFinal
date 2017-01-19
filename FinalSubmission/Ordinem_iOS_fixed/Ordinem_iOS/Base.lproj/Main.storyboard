@@ -20,7 +20,7 @@
         <scene sceneID="Dd9-8E-NO8">
             <objects>
                 <navigationController navigationBarHidden="YES" id="JSV-9r-caV" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="dcc-JC-rh7">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="dcc-JC-rh7">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -48,19 +48,19 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Student Login Portal" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tjJ-0i-Krm">
-                                <rect key="frame" x="101" y="189" width="173" height="25"/>
+                                <rect key="frame" x="101" y="188.5" width="173" height="25"/>
                                 <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="19"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Don't have an account?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JzG-IL-ANi">
-                                <rect key="frame" x="62" y="339" width="118" height="15"/>
+                                <rect key="frame" x="62" y="338.5" width="118" height="15"/>
                                 <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="11"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Chapman University" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MF2-Wf-rDk">
-                                <rect key="frame" x="66" y="140" width="243" height="24"/>
+                                <rect key="frame" x="66" y="139.5" width="243" height="24"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="MF2-Wf-rDk" secondAttribute="height" multiplier="81:8" id="NAG-Gm-A0L"/>
                                 </constraints>
@@ -69,7 +69,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="OrdinemChapmanLogo.png" translatesAutoresizingMaskIntoConstraints="NO" id="cNz-p2-EkJ">
-                                <rect key="frame" x="66" y="70" width="243" height="70"/>
+                                <rect key="frame" x="66" y="70" width="243" height="69.5"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="cNz-p2-EkJ" secondAttribute="height" multiplier="7:2" id="mHw-NK-tuK"/>
                                 </constraints>
@@ -79,14 +79,14 @@
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </view>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="textBox.png" translatesAutoresizingMaskIntoConstraints="NO" id="1fm-ec-jIH">
-                                <rect key="frame" x="62" y="286" width="250" height="49"/>
+                                <rect key="frame" x="62" y="286" width="250" height="48.5"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="1fm-ec-jIH" secondAttribute="height" multiplier="293:57" id="HVL-ab-meY"/>
                                     <constraint firstAttribute="width" constant="250" id="Wwm-Ol-EMF"/>
                                 </constraints>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="textBox.png" translatesAutoresizingMaskIntoConstraints="NO" id="xyA-aP-Y0o">
-                                <rect key="frame" x="63" y="222" width="250" height="48"/>
+                                <rect key="frame" x="63" y="221.5" width="250" height="48.5"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="250" id="1hm-Nn-Mbx"/>
                                     <constraint firstAttribute="width" secondItem="xyA-aP-Y0o" secondAttribute="height" multiplier="293:57" id="mMg-WC-Nan"/>
@@ -119,7 +119,7 @@
                                 </connections>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kdm-XN-cZh">
-                                <rect key="frame" x="71" y="222" width="30" height="16"/>
+                                <rect key="frame" x="71" y="221.5" width="30" height="16"/>
                                 <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="12"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
@@ -158,10 +158,10 @@
                                 </state>
                             </button>
                             <activityIndicatorView hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="APb-SX-c4E">
-                                <rect key="frame" x="169" y="385" width="37" height="37"/>
+                                <rect key="frame" x="169" y="384.5" width="37" height="37"/>
                             </activityIndicatorView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1bu-Zb-5hL">
-                                <rect key="frame" x="185" y="338" width="118" height="16"/>
+                                <rect key="frame" x="185" y="337.5" width="118" height="16"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="16" id="C98-uh-nVj"/>
                                 </constraints>
@@ -546,7 +546,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Current Point Balance" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MTA-KU-Zxn">
-                                <rect key="frame" x="16" y="196" width="343" height="95"/>
+                                <rect key="frame" x="16" y="196.5" width="343" height="94.5"/>
                                 <fontDescription key="fontDescription" name="LemonMilk" family="Lemon/Milk" pointSize="35"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
@@ -1756,7 +1756,7 @@
         <!--LoginView-->
         <scene sceneID="t7n-16-DoC">
             <objects>
-                <viewController title="LoginView" id="WJr-aC-U2O" customClass="LoginView" customModule="Ordinem_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="LoginView" id="WJr-aC-U2O" customClass="eventTemp" customModule="Ordinem_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="tFR-r2-4e0"/>
                         <viewControllerLayoutGuide type="bottom" id="oC9-Bi-anH"/>
@@ -1887,17 +1887,6 @@
                                             <segue destination="Na9-do-qBa" kind="show" id="l7E-Hm-Wvp"/>
                                         </connections>
                                     </button>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="textBox.png" translatesAutoresizingMaskIntoConstraints="NO" id="0QE-UL-KB9">
-                                        <rect key="frame" x="61" y="64" width="250" height="49"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Qi-s4-zcj">
-                                        <rect key="frame" x="69" y="64" width="65" height="16"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="12"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
                                     <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FgX-eM-6nV">
                                         <rect key="frame" x="2" y="0.0" width="372" height="590"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -1952,16 +1941,6 @@
                                                     <outlet property="delegate" destination="BYZ-38-t0r" id="9Ao-s5-3xM"/>
                                                 </connections>
                                             </textField>
-                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Select" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ytp-7H-1aj">
-                                                <rect key="frame" x="65" y="78" width="226" height="30"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="emailAddress" keyboardAppearance="alert" returnKeyType="next" enablesReturnKeyAutomatically="YES"/>
-                                                <connections>
-                                                    <outlet property="delegate" destination="BYZ-38-t0r" id="8VX-Is-Zl8"/>
-                                                </connections>
-                                            </textField>
                                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Location, Phone Numbers and Links are easily referenced here" translatesAutoresizingMaskIntoConstraints="NO" id="616-xG-hl9">
                                                 <rect key="frame" x="65" y="417" width="226" height="59"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -1970,6 +1949,15 @@
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                 <dataDetectorType key="dataDetectorTypes" phoneNumber="YES" link="YES" address="YES" calendarEvent="YES" lookupSuggestion="YES"/>
                                             </textView>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="OrdinemLogo.png" translatesAutoresizingMaskIntoConstraints="NO" id="E5u-Em-0tM">
+                                                <rect key="frame" x="65" y="52" width="61" height="61"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            </imageView>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rQx-Xu-nDM">
+                                                <rect key="frame" x="173" y="67" width="89" height="30"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <state key="normal" title="Select Image"/>
+                                            </button>
                                         </subviews>
                                     </scrollView>
                                 </subviews>
@@ -1988,12 +1976,19 @@
                     </view>
                     <navigationItem key="navigationItem" id="r5x-M0-PyT"/>
                     <connections>
+                        <outlet property="additionalInfo" destination="616-xG-hl9" id="mTT-ML-IEU"/>
+                        <outlet property="date" destination="YnE-RX-HMF" id="fvN-qD-NKR"/>
+                        <outlet property="eDate" destination="osG-fR-kkH" id="d0j-Yo-78Q"/>
+                        <outlet property="eventTitle" destination="l0c-81-qsk" id="kW6-JK-uU0"/>
+                        <outlet property="eventType" destination="vct-tg-5I0" id="2Ra-7c-8La"/>
+                        <outlet property="location" destination="bMF-am-GkW" id="97q-t4-1zb"/>
                         <outlet property="tapView" destination="5bF-xS-WSn" id="Mhu-sb-VEZ"/>
+                        <outlet property="theScrollView" destination="FgX-eM-6nV" id="XDX-pB-deg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="B4J-4u-7ym" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="233" y="-1567"/>
+            <point key="canvasLocation" x="232.80000000000001" y="-1567.4662668665669"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="81u-yz-jGU">
@@ -2364,13 +2359,13 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Reward Verification" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9CU-p1-3ho">
-                                <rect key="frame" x="103" y="189" width="169" height="25"/>
+                                <rect key="frame" x="103" y="188.5" width="169" height="25"/>
                                 <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="19"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Chapman University" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cUV-EP-rU5">
-                                <rect key="frame" x="66" y="140" width="243" height="24"/>
+                                <rect key="frame" x="66" y="139.5" width="243" height="24"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="cUV-EP-rU5" secondAttribute="height" multiplier="81:8" id="8cc-eQ-Wmo"/>
                                 </constraints>
@@ -2379,7 +2374,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="OrdinemChapmanLogo.png" translatesAutoresizingMaskIntoConstraints="NO" id="6Sv-Xu-u7c">
-                                <rect key="frame" x="66" y="70" width="243" height="70"/>
+                                <rect key="frame" x="66" y="70" width="243" height="69.5"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="6Sv-Xu-u7c" secondAttribute="height" multiplier="7:2" id="luv-7y-Tir"/>
                                 </constraints>
@@ -2389,14 +2384,14 @@
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </view>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="textBox.png" translatesAutoresizingMaskIntoConstraints="NO" id="tBW-Qk-yCJ">
-                                <rect key="frame" x="62" y="286" width="250" height="49"/>
+                                <rect key="frame" x="62" y="286" width="250" height="48.5"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="tBW-Qk-yCJ" secondAttribute="height" multiplier="293:57" id="BWM-Ku-1a8"/>
                                     <constraint firstAttribute="width" constant="250" id="nkT-RY-yO4"/>
                                 </constraints>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="textBox.png" translatesAutoresizingMaskIntoConstraints="NO" id="9sp-16-WGQ">
-                                <rect key="frame" x="63" y="222" width="250" height="48"/>
+                                <rect key="frame" x="63" y="221.5" width="250" height="48.5"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="9sp-16-WGQ" secondAttribute="height" multiplier="293:57" id="U85-12-Lm9"/>
                                     <constraint firstAttribute="width" constant="250" id="zZU-o3-xCa"/>
@@ -2429,7 +2424,7 @@
                                 </connections>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="E-Signature" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Oc6-Vj-Bwd">
-                                <rect key="frame" x="71" y="222" width="62" height="16"/>
+                                <rect key="frame" x="71" y="221.5" width="62" height="16"/>
                                 <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="12"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
@@ -2468,7 +2463,7 @@
                                 </state>
                             </button>
                             <activityIndicatorView hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="8xy-ZY-fWf">
-                                <rect key="frame" x="169" y="385" width="37" height="37"/>
+                                <rect key="frame" x="169" y="384.5" width="37" height="37"/>
                             </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -2955,9 +2950,9 @@
         <image name="yesRSVP.png" width="400" height="400"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="FmM-wN-MZl"/>
-        <segue reference="u1A-hj-xLA"/>
+        <segue reference="Ms9-WR-CVn"/>
         <segue reference="JkU-uc-cU9"/>
+        <segue reference="QBo-m3-9Fv"/>
         <segue reference="fEz-aJ-nqE"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -10,6 +10,8 @@ import UIKit
 
 class LoginView: UIViewController, UITextFieldDelegate {
     
+    //LOGIN PAGE
+    
     @IBOutlet var emailStr: UILabel?
     @IBOutlet var passStr: UILabel?
     @IBOutlet var emailField: UITextField?

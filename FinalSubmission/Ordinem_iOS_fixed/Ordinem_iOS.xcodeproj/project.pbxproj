@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		181E52001E2FE4B5006859CA /* SignUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181E51FF1E2FE4B5006859CA /* SignUp.swift */; };
+		181E52051E309F37006859CA /* eventTemp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181E52041E309F37006859CA /* eventTemp.swift */; };
 		381F3E0B1E0733D9002366A8 /* MyData.plist in Resources */ = {isa = PBXBuildFile; fileRef = 381F3E091E0733D9002366A8 /* MyData.plist */; };
 		381F3E0C1E0733D9002366A8 /* PlistManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 381F3E0A1E0733D9002366A8 /* PlistManager.swift */; };
 		381F3E0E1E07780E002366A8 /* PointView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 381F3E0D1E07780E002366A8 /* PointView.swift */; };
@@ -56,6 +57,7 @@
 /* Begin PBXFileReference section */
 		181E51FF1E2FE4B5006859CA /* SignUp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUp.swift; sourceTree = "<group>"; };
 		181E52011E308DAB006859CA /* camera.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = camera.png; sourceTree = "<group>"; };
+		181E52041E309F37006859CA /* eventTemp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = eventTemp.swift; sourceTree = "<group>"; };
 		381F3E091E0733D9002366A8 /* MyData.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = MyData.plist; sourceTree = "<group>"; };
 		381F3E0A1E0733D9002366A8 /* PlistManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlistManager.swift; sourceTree = "<group>"; };
 		381F3E0D1E07780E002366A8 /* PointView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PointView.swift; sourceTree = "<group>"; };
@@ -164,6 +166,7 @@
 				386C2B6E1DFE342600F15658 /* AppDelegate.swift */,
 				386C2B701DFE342600F15658 /* LoginView.swift */,
 				386C2B721DFE342600F15658 /* Main.storyboard */,
+				181E52041E309F37006859CA /* eventTemp.swift */,
 				38D2BACD1E30407500F78259 /* RewardView.swift */,
 				381F3E0D1E07780E002366A8 /* PointView.swift */,
 				383F44371E021744003F7F28 /* DetailView.swift */,
@@ -349,6 +352,7 @@
 				381F3E0E1E07780E002366A8 /* PointView.swift in Sources */,
 				383F44381E021744003F7F28 /* DetailView.swift in Sources */,
 				38D2BACE1E30407500F78259 /* RewardView.swift in Sources */,
+				181E52051E309F37006859CA /* eventTemp.swift in Sources */,
 				381F3E0C1E0733D9002366A8 /* PlistManager.swift in Sources */,
 				386C2BB11DFEA43800F15658 /* EventCell.swift in Sources */,
 				386C2BAD1DFE782E00F15658 /* DatabaseConnector.swift in Sources */,
