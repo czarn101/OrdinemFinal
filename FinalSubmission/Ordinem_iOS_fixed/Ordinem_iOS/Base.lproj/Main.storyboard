@@ -764,7 +764,7 @@
         <!--LoginView-->
         <scene sceneID="auO-Iy-fc5">
             <objects>
-                <viewController title="LoginView" id="GRI-8U-OrN" customClass="LoginView" customModule="Ordinem_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="LoginView" id="GRI-8U-OrN" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="fgc-OB-jTE"/>
                         <viewControllerLayoutGuide type="bottom" id="F2C-JX-DZR"/>
@@ -809,7 +809,6 @@
                                         <fontDescription key="fontDescription" name="LemonMilk" family="Lemon/Milk" pointSize="17"/>
                                         <state key="normal" title="Student"/>
                                         <connections>
-                                            <action selector="login" destination="BYZ-38-t0r" eventType="touchUpInside" id="DhK-EA-mzR"/>
                                             <segue destination="htr-6a-Oic" kind="show" id="Mpy-sn-RtN"/>
                                         </connections>
                                     </button>
@@ -822,7 +821,6 @@
                                         <fontDescription key="fontDescription" name="LemonMilk" family="Lemon/Milk" pointSize="17"/>
                                         <state key="normal" title="Organization"/>
                                         <connections>
-                                            <action selector="login" destination="BYZ-38-t0r" eventType="touchUpInside" id="XfF-nq-soI"/>
                                             <segue destination="pBp-6u-Pch" kind="show" id="pKb-1X-Yjg"/>
                                         </connections>
                                     </button>
@@ -872,9 +870,6 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="XlC-XZ-XPd"/>
-                    <connections>
-                        <outlet property="tapView" destination="0M9-YN-Oc4" id="4mk-9X-te4"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZLc-3s-XIj" sceneMemberID="firstResponder"/>
                 <exit id="OLB-af-yxy" userLabel="Exit" sceneMemberID="exit"/>
@@ -1015,9 +1010,6 @@
                                         </constraints>
                                         <fontDescription key="fontDescription" name="LemonMilk" family="Lemon/Milk" pointSize="17"/>
                                         <state key="normal" title="Sign Up"/>
-                                        <connections>
-                                            <action selector="login" destination="BYZ-38-t0r" eventType="touchUpInside" id="4hF-Of-6ZH"/>
-                                        </connections>
                                     </button>
                                     <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hxp-g8-qMe">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
@@ -1090,9 +1082,6 @@
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardAppearance="alert" returnKeyType="next" enablesReturnKeyAutomatically="YES" secureTextEntry="YES"/>
-                                                <connections>
-                                                    <outlet property="delegate" destination="BYZ-38-t0r" id="tZr-ah-TN1"/>
-                                                </connections>
                                             </textField>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Secrets" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cBB-hf-k2G">
                                                 <rect key="frame" x="74" y="551" width="226" height="30"/>
@@ -1102,9 +1091,6 @@
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardAppearance="alert" returnKeyType="next" enablesReturnKeyAutomatically="YES" secureTextEntry="YES"/>
-                                                <connections>
-                                                    <outlet property="delegate" destination="BYZ-38-t0r" id="xXt-0f-znk"/>
-                                                </connections>
                                             </textField>
                                         </subviews>
                                         <constraints>
@@ -1224,16 +1210,6 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="VLb-vI-BZC"/>
-                    <connections>
-                        <outlet property="email" destination="gUG-3E-iF0" id="Esl-oR-l4A"/>
-                        <outlet property="fName" destination="B3j-rT-IlB" id="wdf-eI-jQT"/>
-                        <outlet property="lastName" destination="dxA-X4-RrU" id="l61-gU-dU1"/>
-                        <outlet property="password" destination="Qc5-Zu-Vt2" id="oWm-wD-jFD"/>
-                        <outlet property="school" destination="rFW-jJ-EdD" id="5EX-9b-u90"/>
-                        <outlet property="studentID" destination="YOk-ia-yJm" id="d12-rF-UVV"/>
-                        <outlet property="theScrollView" destination="hxp-g8-qMe" id="jWg-XS-axk"/>
-                        <outlet property="verifyPwd" destination="cBB-hf-k2G" id="CW2-kM-hSU"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7PR-sQ-fdA" sceneMemberID="firstResponder"/>
             </objects>
@@ -3662,7 +3638,7 @@
         <segue reference="nfL-pc-w1k"/>
         <segue reference="QBo-m3-9Fv"/>
         <segue reference="29i-wZ-AfY"/>
-        <segue reference="Ms9-WR-CVn"/>
         <segue reference="Vhc-Va-qEs"/>
+        <segue reference="FmM-wN-MZl"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -41,11 +41,15 @@ public class PointView: UIViewController {
     }
     */
     
-    @IBAction func logout(sender: UIButton) {
-        self.performSegue(withIdentifier: "logout", sender: self)
-    }
+    
     
     let appDelegate: AppDelegate = UIApplication.shared.delegate as! AppDelegate
+    
+    @IBAction func logout(sender: UIButton) {
+        appDelegate.setLoginState(state: false, email: nil, password: nil)
+        self.performSegue(withIdentifier: "logout", sender: self)
+        
+    }
     
     override public func viewDidLoad() {
         super.viewDidLoad()
