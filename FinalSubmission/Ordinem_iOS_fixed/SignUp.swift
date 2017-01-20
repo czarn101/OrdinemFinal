@@ -8,15 +8,10 @@
 
 import UIKit
 
-class SignUp: UITableViewController, UIPickerViewDataSource, UIPickerViewDelegate {
 
-    @IBOutlet weak var fName: UITextField!
-    @IBOutlet weak var lastName: UITextField!
-    @IBOutlet weak var studentID: UITextField!
-    @IBOutlet weak var school: UITextField!
-    @IBOutlet weak var email: UITextField!
-    @IBOutlet weak var password: UITextField!
-    @IBOutlet weak var verifyPwd: UITextField!
+class SignUp: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
+
+
     
     
     @IBOutlet weak var orgName: UITextField!
@@ -28,11 +23,17 @@ class SignUp: UITableViewController, UIPickerViewDataSource, UIPickerViewDelegat
     @IBOutlet weak var vPassword: UITextField!
     
     
-    @IBOutlet weak var scrollView: UIScrollView!
-    
+
     
     
     @IBOutlet weak var theScrollView: UIScrollView!
+    
+    
+    @IBOutlet weak var studentButton: UIButton!
+    @IBOutlet weak var orgButton: UIButton!
+    
+    
+    
     
     func keyboardWillShow(notification:NSNotification){
         //give room at the bottom of the scroll view, so it doesn't cover up anything the user needs to tap
@@ -41,18 +42,18 @@ class SignUp: UITableViewController, UIPickerViewDataSource, UIPickerViewDelegat
         keyboardFrame = self.view.convert(keyboardFrame, from: nil)
         
         var contentInset:UIEdgeInsets = self.theScrollView.contentInset
-        var contentInset2:UIEdgeInsets = self.scrollView.contentInset
+        
 
         contentInset.bottom = keyboardFrame.size.height
         self.theScrollView.contentInset = contentInset
-        contentInset2.bottom = keyboardFrame.size.height
-        self.scrollView.contentInset = contentInset2
+        
+        
     }
     
     func keyboardWillHide(notification:NSNotification){
         let contentInset:UIEdgeInsets = UIEdgeInsets.zero
         self.theScrollView.contentInset = contentInset
-        self.scrollView.contentInset = contentInset
+        
     }
     
     
@@ -83,14 +84,21 @@ class SignUp: UITableViewController, UIPickerViewDataSource, UIPickerViewDelegat
     
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        school.text = list[row]
-        skewl.text = list[row]
-        
+        if pickerView.tag == 0{
+            skewl.text = list[row]
+        }
+        else{
+            orgType.text = types[row]
+        }
         
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return list[row]
+        if pickerView.tag == 0{
+            return list[row]}
+        else{
+            return types[row]
+        }
     }
     
     
@@ -108,13 +116,17 @@ class SignUp: UITableViewController, UIPickerViewDataSource, UIPickerViewDelegat
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
+        
         picker1.tag = 0
         picker2.tag = 1
         
         picker1.delegate = self
         picker1.dataSource = self
-        school.inputView = picker1
+ 
         skewl.inputView = picker1
+        
+
         
         picker2.delegate = self
         picker2.dataSource = self
@@ -131,14 +143,8 @@ class SignUp: UITableViewController, UIPickerViewDataSource, UIPickerViewDelegat
         
         toolBar.setItems([flexibleSpace, doneButton], animated: false)
         
-        fName.inputAccessoryView = toolBar
-        lastName.inputAccessoryView = toolBar
-        studentID.inputAccessoryView = toolBar
-        school.inputAccessoryView = toolBar
-        email.inputAccessoryView = toolBar
-        password.inputAccessoryView = toolBar
-        verifyPwd.inputAccessoryView = toolBar
-
+  
+        
         
         orgName.inputAccessoryView = toolBar
         orgType.inputAccessoryView = toolBar
@@ -147,6 +153,7 @@ class SignUp: UITableViewController, UIPickerViewDataSource, UIPickerViewDelegat
         sEmail.inputAccessoryView = toolBar
         sPassword.inputAccessoryView = toolBar
         vPassword.inputAccessoryView = toolBar
+        
         
 
 
@@ -159,39 +166,9 @@ class SignUp: UITableViewController, UIPickerViewDataSource, UIPickerViewDelegat
 
     // MARK: - Table view data source
 
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
-    }
-
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
-    }
 
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        if textField == fName{
-            lastName.becomeFirstResponder()
-        }
-        else if textField == lastName{
-            studentID.becomeFirstResponder()
-        }
-        else if textField == studentID{
-            school.becomeFirstResponder()
-        }
-        else if textField == school{
-            email.becomeFirstResponder()
-        }
-        else if textField == email{
-            password.becomeFirstResponder()
-        }
-        else if textField == password{
-            verifyPwd.becomeFirstResponder()
-        }
-        else{
-            verifyPwd.resignFirstResponder()
-        }
         
         if textField == orgName{
             orgType.becomeFirstResponder()

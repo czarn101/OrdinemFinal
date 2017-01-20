@@ -460,7 +460,7 @@
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uTk-4f-mse">
-                                <rect key="frame" x="269" y="28" width="98" height="67"/>
+                                <rect key="frame" x="269" y="28" width="98" height="67.5"/>
                                 <connections>
                                     <segue destination="3YT-wc-QX0" kind="show" id="BrC-xb-OID"/>
                                 </connections>
@@ -764,7 +764,7 @@
         <!--LoginView-->
         <scene sceneID="auO-Iy-fc5">
             <objects>
-                <viewController title="LoginView" id="GRI-8U-OrN" sceneMemberID="viewController">
+                <viewController title="LoginView" id="GRI-8U-OrN" customClass="directory" customModule="Ordinem_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="fgc-OB-jTE"/>
                         <viewControllerLayoutGuide type="bottom" id="F2C-JX-DZR"/>
@@ -809,7 +809,7 @@
                                         <fontDescription key="fontDescription" name="LemonMilk" family="Lemon/Milk" pointSize="17"/>
                                         <state key="normal" title="Student"/>
                                         <connections>
-                                            <segue destination="htr-6a-Oic" kind="show" id="Mpy-sn-RtN"/>
+                                            <segue destination="htr-6a-Oic" kind="show" id="AXL-j7-R6a"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Pn-Tt-yrf">
@@ -821,7 +821,7 @@
                                         <fontDescription key="fontDescription" name="LemonMilk" family="Lemon/Milk" pointSize="17"/>
                                         <state key="normal" title="Organization"/>
                                         <connections>
-                                            <segue destination="pBp-6u-Pch" kind="show" id="pKb-1X-Yjg"/>
+                                            <segue destination="pBp-6u-Pch" kind="show" id="7Vi-sf-tmq"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -879,7 +879,7 @@
         <!--LoginView-->
         <scene sceneID="jpM-X5-7HO">
             <objects>
-                <viewController title="LoginView" id="htr-6a-Oic" customClass="SignUp" customModule="Ordinem_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="user" title="LoginView" id="htr-6a-Oic" customClass="sSignUp" customModule="Ordinem_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="kX8-AR-E3g"/>
                         <viewControllerLayoutGuide type="bottom" id="9E6-K4-5LB"/>
@@ -1182,7 +1182,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="GRI-8U-OrN" kind="show" id="FmM-wN-MZl"/>
+                                    <segue destination="GRI-8U-OrN" kind="show" id="5v5-sZ-cI3"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -1210,6 +1210,16 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="VLb-vI-BZC"/>
+                    <connections>
+                        <outlet property="email" destination="gUG-3E-iF0" id="R5W-cm-1W1"/>
+                        <outlet property="fName" destination="B3j-rT-IlB" id="gYW-aw-ORD"/>
+                        <outlet property="lastName" destination="dxA-X4-RrU" id="A8o-mw-oVo"/>
+                        <outlet property="password" destination="Qc5-Zu-Vt2" id="uDo-7u-JaI"/>
+                        <outlet property="school" destination="rFW-jJ-EdD" id="dPF-z9-GUU"/>
+                        <outlet property="scrollView" destination="hxp-g8-qMe" id="PSv-xh-3Sr"/>
+                        <outlet property="studentID" destination="YOk-ia-yJm" id="aVW-dH-BX7"/>
+                        <outlet property="verifyPwd" destination="cBB-hf-k2G" id="RVa-j9-R0L"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7PR-sQ-fdA" sceneMemberID="firstResponder"/>
             </objects>
@@ -1218,7 +1228,7 @@
         <!--LoginView-->
         <scene sceneID="tZH-qu-8xq">
             <objects>
-                <viewController title="LoginView" id="pBp-6u-Pch" customClass="SignUp" customModule="Ordinem_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="org" title="LoginView" id="pBp-6u-Pch" customClass="SignUp" customModule="Ordinem_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="LYl-8U-4m9"/>
                         <viewControllerLayoutGuide type="bottom" id="Uxu-8P-Sxh"/>
@@ -1561,15 +1571,14 @@
                     </view>
                     <navigationItem key="navigationItem" id="LZ8-xl-A1V"/>
                     <connections>
-                        <outlet property="orgID" destination="tXa-Uz-pmE" id="cpa-wY-clc"/>
-                        <outlet property="orgName" destination="fcO-k2-Fyn" id="h7n-b0-aTx"/>
-                        <outlet property="orgType" destination="St8-mR-Xq3" id="7hL-1A-jU6"/>
-                        <outlet property="sEmail" destination="HT6-CE-Av7" id="dnn-9L-tFS"/>
-                        <outlet property="sPassword" destination="R3Y-Dj-o9t" id="AKX-YK-2Xf"/>
-                        <outlet property="scrollView" destination="QRk-Nq-nKr" id="e2p-wL-sM8"/>
-                        <outlet property="skewl" destination="kRk-II-xcT" id="FK3-77-wjN"/>
-                        <outlet property="studentID" destination="tXa-Uz-pmE" id="5LZ-EX-c10"/>
-                        <outlet property="vPassword" destination="9DO-sT-XOW" id="eO3-dg-DYc"/>
+                        <outlet property="orgID" destination="tXa-Uz-pmE" id="bYj-2U-MsV"/>
+                        <outlet property="orgName" destination="fcO-k2-Fyn" id="DiV-ar-Ym6"/>
+                        <outlet property="orgType" destination="St8-mR-Xq3" id="Ahb-hd-DGX"/>
+                        <outlet property="sEmail" destination="HT6-CE-Av7" id="Nx4-Re-CSk"/>
+                        <outlet property="sPassword" destination="R3Y-Dj-o9t" id="4B1-xv-oGs"/>
+                        <outlet property="skewl" destination="kRk-II-xcT" id="ZCM-jX-9Vw"/>
+                        <outlet property="theScrollView" destination="QRk-Nq-nKr" id="tYM-mQ-Wrz"/>
+                        <outlet property="vPassword" destination="9DO-sT-XOW" id="l4U-wy-dAq"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jhX-O4-wuY" sceneMemberID="firstResponder"/>
@@ -2940,7 +2949,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hmd-bg-DLQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2599" y="-929"/>
+            <point key="canvasLocation" x="2081" y="-935"/>
         </scene>
         <!--LoginView-->
         <scene sceneID="54G-pv-zxN">
@@ -3635,10 +3644,10 @@
         <image name="yesRSVP.png" width="400" height="400"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="nfL-pc-w1k"/>
-        <segue reference="QBo-m3-9Fv"/>
         <segue reference="29i-wZ-AfY"/>
+        <segue reference="QBo-m3-9Fv"/>
         <segue reference="Vhc-Va-qEs"/>
-        <segue reference="FmM-wN-MZl"/>
+        <segue reference="Ms9-WR-CVn"/>
+        <segue reference="nfL-pc-w1k"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -11,6 +11,7 @@
 		181E52051E309F37006859CA /* eventTemp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181E52041E309F37006859CA /* eventTemp.swift */; };
 		181E52071E31498D006859CA /* PersonOrdinem.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 181E52061E31498D006859CA /* PersonOrdinem.jpg */; };
 		181E520B1E314E83006859CA /* HouseOrdinem c.png in Resources */ = {isa = PBXBuildFile; fileRef = 181E520A1E314E83006859CA /* HouseOrdinem c.png */; };
+		181E520D1E32C391006859CA /* sSignUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181E520C1E32C391006859CA /* sSignUp.swift */; };
 		381F3E0B1E0733D9002366A8 /* MyData.plist in Resources */ = {isa = PBXBuildFile; fileRef = 381F3E091E0733D9002366A8 /* MyData.plist */; };
 		381F3E0C1E0733D9002366A8 /* PlistManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 381F3E0A1E0733D9002366A8 /* PlistManager.swift */; };
 		381F3E0E1E07780E002366A8 /* PointView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 381F3E0D1E07780E002366A8 /* PointView.swift */; };
@@ -80,6 +81,7 @@
 		181E52041E309F37006859CA /* eventTemp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = eventTemp.swift; sourceTree = "<group>"; };
 		181E52061E31498D006859CA /* PersonOrdinem.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = PersonOrdinem.jpg; sourceTree = "<group>"; };
 		181E520A1E314E83006859CA /* HouseOrdinem c.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "HouseOrdinem c.png"; sourceTree = "<group>"; };
+		181E520C1E32C391006859CA /* sSignUp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = sSignUp.swift; sourceTree = "<group>"; };
 		381F3E091E0733D9002366A8 /* MyData.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = MyData.plist; sourceTree = "<group>"; };
 		381F3E0A1E0733D9002366A8 /* PlistManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlistManager.swift; sourceTree = "<group>"; };
 		381F3E0D1E07780E002366A8 /* PointView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PointView.swift; sourceTree = "<group>"; };
@@ -200,6 +202,7 @@
 		386C2B621DFE342600F15658 = {
 			isa = PBXGroup;
 			children = (
+				181E520C1E32C391006859CA /* sSignUp.swift */,
 				382225C81E31659A005CC3D5 /* QRCodeReader.swift-master */,
 				181E51FF1E2FE4B5006859CA /* SignUp.swift */,
 				386C2B6D1DFE342600F15658 /* Ordinem_iOS */,
@@ -442,6 +445,7 @@
 				383F44381E021744003F7F28 /* DetailView.swift in Sources */,
 				382226041E31659A005CC3D5 /* QRCodeReaderView.swift in Sources */,
 				38D2BACE1E30407500F78259 /* RewardView.swift in Sources */,
+				181E520D1E32C391006859CA /* sSignUp.swift in Sources */,
 				181E52051E309F37006859CA /* eventTemp.swift in Sources */,
 				381F3E0C1E0733D9002366A8 /* PlistManager.swift in Sources */,
 				382226071E31659A005CC3D5 /* QRCodeReaderViewControllerBuilder.swift in Sources */,
@@ -607,13 +611,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = JTE4SBMYPN;
 				INFOPLIST_FILE = Ordinem_iOS/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.Ordinem.Ordinem-iOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "58b817da-58c2-4ed4-b340-a1675f279cd8";
+				PROVISIONING_PROFILE = "49addaff-0b5e-47c7-b780-554dc007226d";
 				PROVISIONING_PROFILE_SPECIFIER = Ordinem;
 				SWIFT_VERSION = 3.0;
 			};
@@ -623,15 +628,15 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
-				DEVELOPMENT_TEAM = JTE4SBMYPN;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = Ordinem_iOS/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.Ordinem.Ordinem-iOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "2051f105-5462-4422-b73c-1819ca616327";
-				PROVISIONING_PROFILE_SPECIFIER = "XC: *";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;

@@ -106,7 +106,7 @@ class HomeView: UIViewController, UITableViewDelegate, UITableViewDataSource, QR
         
         // Or by using the closure pattern
         readerVC.completionBlock = { (result: QRCodeReaderResult?) in
-            print(result)
+            print(result!)
         }
         
         // Presents the readerVC as modal form sheet
