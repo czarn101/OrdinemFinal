@@ -9,6 +9,15 @@
 import Foundation
 import UIKit
 
+extension Double {
+    /// Rounds the double to decimal places value
+    func roundTo(places:Int) -> Double {
+        let divisor = pow(10.0, Double(places))
+        return (self * divisor).rounded() / divisor
+    }
+}
+
+
 public class RewardView: UIViewController {
     
     
@@ -17,18 +26,26 @@ public class RewardView: UIViewController {
     @IBOutlet weak var slider: UISlider!
     @IBOutlet weak var label4Slider: UILabel!
     
+    
+    
     var c = ""
     var r = ""
+    
+    let appDelegate: AppDelegate = UIApplication.shared.delegate as! AppDelegate
+    
+    
+    
     
     @IBAction func actionSlider(_ sender: UISlider) {
         
         let currentValue = Int(slider.value)
-        let current = currentValue/10
-        let rounded = (round(Double(current/100))*100)
-        label4Slider.text = "\(currentValue) pts = $\(Double(rounded))"
+        let value = Double(currentValue)
+        let current = Double(value/10).roundTo(places: 2)
+        let v = (String(format:"%.02f", current))
+        label4Slider.text = "\(currentValue) pts = $\(v)"
         
         c = String(currentValue)
-        r = String(rounded)
+        r = String(current)
     }
     
 
@@ -62,7 +79,7 @@ public class RewardView: UIViewController {
     
     override public func viewDidLoad() {
         super.viewDidLoad()
-        
+        appDelegate.rewardView = self
 
     }
     
