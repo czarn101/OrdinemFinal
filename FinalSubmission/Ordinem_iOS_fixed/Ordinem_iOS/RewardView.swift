@@ -68,9 +68,6 @@ public class RewardView: UIViewController {
     
     func getPrizeInfo(){
         rewardName = prizeName
-        points.text = c
-        result.text = r
-        
         
         
         
