@@ -29,6 +29,18 @@ class eventTemp: UIViewController {
     @IBOutlet weak var theScrollView: UIScrollView!
     
     
+    @IBOutlet weak var stepper: UIStepper!
+    
+    @IBOutlet weak var label4Stepper: UILabel!
+    
+    @IBAction func stepperPressed(_ sender: UIStepper) {
+        let currentValue = Int(stepper.value)
+        label4Stepper.text = String(currentValue)
+        
+    }
+    
+    
+    
     func keyboardWillShow(notification:NSNotification){
         //give room at the bottom of the scroll view, so it doesn't cover up anything the user needs to tap
         var userInfo = notification.userInfo!

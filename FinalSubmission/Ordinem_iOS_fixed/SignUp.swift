@@ -23,17 +23,9 @@ class SignUp: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
     @IBOutlet weak var vPassword: UITextField!
     
     
-
-    
-    
     @IBOutlet weak var theScrollView: UIScrollView!
     
-    
-    @IBOutlet weak var studentButton: UIButton!
-    @IBOutlet weak var orgButton: UIButton!
-    
-    
-    
+
     
     func keyboardWillShow(notification:NSNotification){
         //give room at the bottom of the scroll view, so it doesn't cover up anything the user needs to tap
