@@ -8,7 +8,12 @@
 
 import UIKit
 
-class sSignUp: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate  {
+class sSignUp: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate, UIImagePickerControllerDelegate,
+UINavigationControllerDelegate  {
+    
+    
+    
+    
 
     @IBOutlet weak var fName: UITextField!
     @IBOutlet weak var lastName: UITextField!
@@ -19,6 +24,27 @@ class sSignUp: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate  {
     @IBOutlet weak var verifyPwd: UITextField!
     
     @IBOutlet weak var scrollView: UIScrollView!
+    
+    
+    @IBOutlet weak var imagePicked: UIImageView!
+    
+    
+    @IBAction func openPhotoLibraryButton(_ sender: UIButton) {
+        if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.photoLibrary) {
+            let imagePicker = UIImagePickerController()
+            imagePicker.delegate = self
+            imagePicker.sourceType = UIImagePickerControllerSourceType.photoLibrary;
+            imagePicker.allowsEditing = true
+            self.present(imagePicker, animated: true, completion: nil)
+
+        }
+    }
+    
+    func imagePickerController(picker: UIImagePickerController, didFinishPickingImage image: UIImage!, editingInfo: [NSObject : AnyObject]!) {
+        imagePicked.image = image
+        self.dismiss(animated: true, completion: nil);
+    }
+    
     
     
     func closekeyboard() {

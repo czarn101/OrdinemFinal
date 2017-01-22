@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		180DF19F1E3555EE00C6A534 /* newReward.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180DF19E1E3555EE00C6A534 /* newReward.swift */; };
+		180DF1A11E3560F200C6A534 /* 15241220_10209558826025939_5307161208986096884_n.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 180DF1A01E3560F200C6A534 /* 15241220_10209558826025939_5307161208986096884_n.jpg */; };
 		181E52001E2FE4B5006859CA /* SignUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181E51FF1E2FE4B5006859CA /* SignUp.swift */; };
 		181E52051E309F37006859CA /* eventTemp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181E52041E309F37006859CA /* eventTemp.swift */; };
 		181E52071E31498D006859CA /* PersonOrdinem.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 181E52061E31498D006859CA /* PersonOrdinem.jpg */; };
@@ -77,6 +79,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		180DF19E1E3555EE00C6A534 /* newReward.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = newReward.swift; sourceTree = "<group>"; };
+		180DF1A01E3560F200C6A534 /* 15241220_10209558826025939_5307161208986096884_n.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 15241220_10209558826025939_5307161208986096884_n.jpg; sourceTree = "<group>"; };
 		181E51FF1E2FE4B5006859CA /* SignUp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUp.swift; sourceTree = "<group>"; };
 		181E52011E308DAB006859CA /* camera.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = camera.png; sourceTree = "<group>"; };
 		181E52041E309F37006859CA /* eventTemp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = eventTemp.swift; sourceTree = "<group>"; };
@@ -234,6 +238,7 @@
 				386C2BA81DFE6AFF00F15658 /* LemonMilk.otf */,
 				181E52011E308DAB006859CA /* camera.png */,
 				382225C41E315BC9005CC3D5 /* camera_bold.png */,
+				180DF1A01E3560F200C6A534 /* 15241220_10209558826025939_5307161208986096884_n.jpg */,
 				382225C61E315E9D005CC3D5 /* scan_button.png */,
 				386C2BAA1DFE6F0500F15658 /* textBox.png */,
 				386C2BA61DFE6A1F00F15658 /* OrdinemChapmanLogo.png */,
@@ -248,6 +253,7 @@
 				386C2B6E1DFE342600F15658 /* AppDelegate.swift */,
 				386C2B701DFE342600F15658 /* LoginView.swift */,
 				386C2B721DFE342600F15658 /* Main.storyboard */,
+				180DF19E1E3555EE00C6A534 /* newReward.swift */,
 				181E52041E309F37006859CA /* eventTemp.swift */,
 				38D2BACD1E30407500F78259 /* RewardView.swift */,
 				381F3E0D1E07780E002366A8 /* PointView.swift */,
@@ -397,6 +403,7 @@
 				381F3E0B1E0733D9002366A8 /* MyData.plist in Resources */,
 				181E520F1E3305E4006859CA /* ChapmanLogo.png in Resources */,
 				382226001E31659A005CC3D5 /* QRCodeReader.swift.podspec in Resources */,
+				180DF1A11E3560F200C6A534 /* 15241220_10209558826025939_5307161208986096884_n.jpg in Resources */,
 				386C2B791DFE342600F15658 /* LaunchScreen.storyboard in Resources */,
 				386C2BA51DFE651800F15658 /* GUI_Background.png in Resources */,
 				386C2B9F1DFE64D300F15658 /* OrdinemLogo_white.png in Resources */,
@@ -452,6 +459,7 @@
 				181E520D1E32C391006859CA /* sSignUp.swift in Sources */,
 				181E52051E309F37006859CA /* eventTemp.swift in Sources */,
 				381F3E0C1E0733D9002366A8 /* PlistManager.swift in Sources */,
+				180DF19F1E3555EE00C6A534 /* newReward.swift in Sources */,
 				382226071E31659A005CC3D5 /* QRCodeReaderViewControllerBuilder.swift in Sources */,
 				382226091E31659A005CC3D5 /* ReaderOverlayView.swift in Sources */,
 				386C2BB11DFEA43800F15658 /* EventCell.swift in Sources */,
