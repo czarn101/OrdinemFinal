@@ -57,13 +57,9 @@ UINavigationControllerDelegate  {
         var keyboardFrame:CGRect = (userInfo[UIKeyboardFrameBeginUserInfoKey] as! NSValue).cgRectValue
         keyboardFrame = self.view.convert(keyboardFrame, from: nil)
         
-        
-        var contentInset2:UIEdgeInsets = self.scrollView.contentInset
-        
-        
-        
-        contentInset2.bottom = keyboardFrame.size.height
-        self.scrollView.contentInset = contentInset2
+        var contentInset:UIEdgeInsets = self.scrollView.contentInset
+        contentInset.bottom = keyboardFrame.size.height
+        self.scrollView.contentInset = contentInset
     }
 
     func keyboardWillHide(notification:NSNotification){
@@ -142,6 +138,9 @@ UINavigationControllerDelegate  {
         email.inputAccessoryView = toolBar
         password.inputAccessoryView = toolBar
         verifyPwd.inputAccessoryView = toolBar
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name:NSNotification.Name.UIKeyboardWillShow, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name:NSNotification.Name.UIKeyboardWillHide, object: nil)
     }
 
     override func didReceiveMemoryWarning() {
@@ -152,37 +151,28 @@ UINavigationControllerDelegate  {
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         if textField == fName{
-            lastName.becomeFirstResponder()
+            lastName!.becomeFirstResponder()
         }
         else if textField == lastName{
-            studentID.becomeFirstResponder()
+            studentID!.becomeFirstResponder()
         }
         else if textField == studentID{
-            school.becomeFirstResponder()
+            school!.becomeFirstResponder()
         }
         else if textField == school{
-            email.becomeFirstResponder()
+            email!.becomeFirstResponder()
         }
         else if textField == email{
-            password.becomeFirstResponder()
+            password!.becomeFirstResponder()
         }
         else if textField == password{
-            verifyPwd.becomeFirstResponder()
+            verifyPwd!.becomeFirstResponder()
         }
         else{
-            verifyPwd.resignFirstResponder()
+            verifyPwd!.resignFirstResponder()
         }
         return true
     }
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

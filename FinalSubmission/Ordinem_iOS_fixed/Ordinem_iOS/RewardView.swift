@@ -49,6 +49,7 @@ public class RewardView: UIViewController {
     }
     
 
+    @IBOutlet weak var theScrollView: UIScrollView!
     
     @IBOutlet weak var rewardName: UILabel!
     
@@ -64,6 +65,8 @@ public class RewardView: UIViewController {
     @IBAction func checkClick(_ sender: UIButton) {
         getPrizeInfo()
     }
+    
+    
     
     
     func getPrizeInfo(){

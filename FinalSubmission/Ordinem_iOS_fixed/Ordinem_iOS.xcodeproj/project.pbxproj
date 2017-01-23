@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		180DF19F1E3555EE00C6A534 /* newReward.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180DF19E1E3555EE00C6A534 /* newReward.swift */; };
 		180DF1A11E3560F200C6A534 /* 15241220_10209558826025939_5307161208986096884_n.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 180DF1A01E3560F200C6A534 /* 15241220_10209558826025939_5307161208986096884_n.jpg */; };
+		180DF1A31E35C06500C6A534 /* addPoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180DF1A21E35C06500C6A534 /* addPoints.swift */; };
+		180DF1A51E35CC0500C6A534 /* pantherBucksRewards.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180DF1A41E35CC0500C6A534 /* pantherBucksRewards.swift */; };
+		180DF1A71E35CD2600C6A534 /* otherRewards.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180DF1A61E35CD2600C6A534 /* otherRewards.swift */; };
 		181E52001E2FE4B5006859CA /* SignUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181E51FF1E2FE4B5006859CA /* SignUp.swift */; };
 		181E52051E309F37006859CA /* eventTemp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181E52041E309F37006859CA /* eventTemp.swift */; };
 		181E52071E31498D006859CA /* PersonOrdinem.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 181E52061E31498D006859CA /* PersonOrdinem.jpg */; };
@@ -81,6 +84,9 @@
 /* Begin PBXFileReference section */
 		180DF19E1E3555EE00C6A534 /* newReward.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = newReward.swift; sourceTree = "<group>"; };
 		180DF1A01E3560F200C6A534 /* 15241220_10209558826025939_5307161208986096884_n.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 15241220_10209558826025939_5307161208986096884_n.jpg; sourceTree = "<group>"; };
+		180DF1A21E35C06500C6A534 /* addPoints.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = addPoints.swift; sourceTree = "<group>"; };
+		180DF1A41E35CC0500C6A534 /* pantherBucksRewards.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = pantherBucksRewards.swift; sourceTree = "<group>"; };
+		180DF1A61E35CD2600C6A534 /* otherRewards.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = otherRewards.swift; sourceTree = "<group>"; };
 		181E51FF1E2FE4B5006859CA /* SignUp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUp.swift; sourceTree = "<group>"; };
 		181E52011E308DAB006859CA /* camera.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = camera.png; sourceTree = "<group>"; };
 		181E52041E309F37006859CA /* eventTemp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = eventTemp.swift; sourceTree = "<group>"; };
@@ -253,6 +259,9 @@
 				386C2B6E1DFE342600F15658 /* AppDelegate.swift */,
 				386C2B701DFE342600F15658 /* LoginView.swift */,
 				386C2B721DFE342600F15658 /* Main.storyboard */,
+				180DF1A41E35CC0500C6A534 /* pantherBucksRewards.swift */,
+				180DF1A61E35CD2600C6A534 /* otherRewards.swift */,
+				180DF1A21E35C06500C6A534 /* addPoints.swift */,
 				180DF19E1E3555EE00C6A534 /* newReward.swift */,
 				181E52041E309F37006859CA /* eventTemp.swift */,
 				38D2BACD1E30407500F78259 /* RewardView.swift */,
@@ -458,7 +467,10 @@
 				38D2BACE1E30407500F78259 /* RewardView.swift in Sources */,
 				181E520D1E32C391006859CA /* sSignUp.swift in Sources */,
 				181E52051E309F37006859CA /* eventTemp.swift in Sources */,
+				180DF1A71E35CD2600C6A534 /* otherRewards.swift in Sources */,
 				381F3E0C1E0733D9002366A8 /* PlistManager.swift in Sources */,
+				180DF1A31E35C06500C6A534 /* addPoints.swift in Sources */,
+				180DF1A51E35CC0500C6A534 /* pantherBucksRewards.swift in Sources */,
 				180DF19F1E3555EE00C6A534 /* newReward.swift in Sources */,
 				382226071E31659A005CC3D5 /* QRCodeReaderViewControllerBuilder.swift in Sources */,
 				382226091E31659A005CC3D5 /* ReaderOverlayView.swift in Sources */,

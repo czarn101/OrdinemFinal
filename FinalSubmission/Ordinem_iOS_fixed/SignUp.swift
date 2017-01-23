@@ -34,19 +34,17 @@ class SignUp: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
         keyboardFrame = self.view.convert(keyboardFrame, from: nil)
         
         var contentInset:UIEdgeInsets = self.theScrollView.contentInset
-        
-
         contentInset.bottom = keyboardFrame.size.height
         self.theScrollView.contentInset = contentInset
-        
-        
     }
     
     func keyboardWillHide(notification:NSNotification){
         let contentInset:UIEdgeInsets = UIEdgeInsets.zero
         self.theScrollView.contentInset = contentInset
         
+        
     }
+    
     
     
     var list = ["Chapman"]
@@ -136,7 +134,8 @@ class SignUp: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
         toolBar.setItems([flexibleSpace, doneButton], animated: false)
         
   
-        
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name:NSNotification.Name.UIKeyboardWillShow, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name:NSNotification.Name.UIKeyboardWillHide, object: nil)
         
         orgName.inputAccessoryView = toolBar
         orgType.inputAccessoryView = toolBar
@@ -163,25 +162,25 @@ class SignUp: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         
         if textField == orgName{
-            orgType.becomeFirstResponder()
+            orgType!.becomeFirstResponder()
         }
         else if textField == orgType{
-            orgID.becomeFirstResponder()
+            orgID!.becomeFirstResponder()
         }
         else if textField == orgID{
-            skewl.becomeFirstResponder()
+            skewl!.becomeFirstResponder()
         }
         else if textField == skewl{
-            sEmail.becomeFirstResponder()
+            sEmail!.becomeFirstResponder()
         }
         else if textField == sEmail{
-            sPassword.becomeFirstResponder()
+            sPassword!.becomeFirstResponder()
         }
         else if textField == sPassword{
-            vPassword.becomeFirstResponder()
+            vPassword!.becomeFirstResponder()
         }
         else{
-            vPassword.resignFirstResponder()
+            vPassword!.resignFirstResponder()
         }
         return true
     }
