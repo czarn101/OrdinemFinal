@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		180DF19F1E3555EE00C6A534 /* newReward.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180DF19E1E3555EE00C6A534 /* newReward.swift */; };
-		180DF1A11E3560F200C6A534 /* 15241220_10209558826025939_5307161208986096884_n.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 180DF1A01E3560F200C6A534 /* 15241220_10209558826025939_5307161208986096884_n.jpg */; };
 		180DF1A31E35C06500C6A534 /* addPoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180DF1A21E35C06500C6A534 /* addPoints.swift */; };
 		180DF1A51E35CC0500C6A534 /* pantherBucksRewards.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180DF1A41E35CC0500C6A534 /* pantherBucksRewards.swift */; };
 		180DF1A71E35CD2600C6A534 /* otherRewards.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180DF1A61E35CD2600C6A534 /* otherRewards.swift */; };
@@ -83,22 +82,21 @@
 
 /* Begin PBXFileReference section */
 		180DF19E1E3555EE00C6A534 /* newReward.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = newReward.swift; sourceTree = "<group>"; };
-		180DF1A01E3560F200C6A534 /* 15241220_10209558826025939_5307161208986096884_n.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 15241220_10209558826025939_5307161208986096884_n.jpg; sourceTree = "<group>"; };
 		180DF1A21E35C06500C6A534 /* addPoints.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = addPoints.swift; sourceTree = "<group>"; };
 		180DF1A41E35CC0500C6A534 /* pantherBucksRewards.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = pantherBucksRewards.swift; sourceTree = "<group>"; };
 		180DF1A61E35CD2600C6A534 /* otherRewards.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = otherRewards.swift; sourceTree = "<group>"; };
 		181E51FF1E2FE4B5006859CA /* SignUp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUp.swift; sourceTree = "<group>"; };
-		181E52011E308DAB006859CA /* camera.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = camera.png; sourceTree = "<group>"; };
+		181E52011E308DAB006859CA /* camera.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = camera.png; path = ../camera.png; sourceTree = "<group>"; };
 		181E52041E309F37006859CA /* eventTemp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = eventTemp.swift; sourceTree = "<group>"; };
-		181E52061E31498D006859CA /* PersonOrdinem.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = PersonOrdinem.jpg; sourceTree = "<group>"; };
-		181E520A1E314E83006859CA /* HouseOrdinem c.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "HouseOrdinem c.png"; sourceTree = "<group>"; };
+		181E52061E31498D006859CA /* PersonOrdinem.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = PersonOrdinem.jpg; path = ../PersonOrdinem.jpg; sourceTree = "<group>"; };
+		181E520A1E314E83006859CA /* HouseOrdinem c.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "HouseOrdinem c.png"; path = "../HouseOrdinem c.png"; sourceTree = "<group>"; };
 		181E520C1E32C391006859CA /* sSignUp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = sSignUp.swift; sourceTree = "<group>"; };
-		181E520E1E3305E4006859CA /* ChapmanLogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ChapmanLogo.png; sourceTree = "<group>"; };
+		181E520E1E3305E4006859CA /* ChapmanLogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ChapmanLogo.png; path = ../ChapmanLogo.png; sourceTree = "<group>"; };
 		381F3E091E0733D9002366A8 /* MyData.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = MyData.plist; sourceTree = "<group>"; };
-		381F3E0A1E0733D9002366A8 /* PlistManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlistManager.swift; sourceTree = "<group>"; };
+		381F3E0A1E0733D9002366A8 /* PlistManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PlistManager.swift; path = "PlistManager files/PlistManager.swift"; sourceTree = "<group>"; };
 		381F3E0D1E07780E002366A8 /* PointView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PointView.swift; sourceTree = "<group>"; };
-		382225C41E315BC9005CC3D5 /* camera_bold.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = camera_bold.png; sourceTree = "<group>"; };
-		382225C61E315E9D005CC3D5 /* scan_button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = scan_button.png; sourceTree = "<group>"; };
+		382225C41E315BC9005CC3D5 /* camera_bold.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = camera_bold.png; path = ../camera_bold.png; sourceTree = "<group>"; };
+		382225C61E315E9D005CC3D5 /* scan_button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = scan_button.png; path = ../scan_button.png; sourceTree = "<group>"; };
 		382225C91E31659A005CC3D5 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		382225CB1E31659A005CC3D5 /* CHANGELOG.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = CHANGELOG.md; sourceTree = "<group>"; };
 		382225CC1E31659A005CC3D5 /* CONTRIBUTORS.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = CONTRIBUTORS.md; sourceTree = "<group>"; };
@@ -129,20 +127,20 @@
 		386C2B8A1DFE342600F15658 /* Ordinem_iOSUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Ordinem_iOSUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		386C2B8E1DFE342600F15658 /* Ordinem_iOSUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ordinem_iOSUITests.swift; sourceTree = "<group>"; };
 		386C2B901DFE342600F15658 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		386C2B9C1DFE64C200F15658 /* OrdinemLogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = OrdinemLogo.png; sourceTree = "<group>"; };
-		386C2B9E1DFE64D300F15658 /* OrdinemLogo_white.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = OrdinemLogo_white.png; sourceTree = "<group>"; };
-		386C2BA01DFE64DD00F15658 /* OrdinemLogoLong_White.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = OrdinemLogoLong_White.png; sourceTree = "<group>"; };
-		386C2BA21DFE64E300F15658 /* OrdinemLogoLong.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = OrdinemLogoLong.png; sourceTree = "<group>"; };
-		386C2BA41DFE651800F15658 /* GUI_Background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = GUI_Background.png; sourceTree = "<group>"; };
-		386C2BA61DFE6A1F00F15658 /* OrdinemChapmanLogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = OrdinemChapmanLogo.png; sourceTree = "<group>"; };
-		386C2BA81DFE6AFF00F15658 /* LemonMilk.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = LemonMilk.otf; sourceTree = "<group>"; };
-		386C2BAA1DFE6F0500F15658 /* textBox.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = textBox.png; sourceTree = "<group>"; };
+		386C2B9C1DFE64C200F15658 /* OrdinemLogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = OrdinemLogo.png; path = ../OrdinemLogo.png; sourceTree = "<group>"; };
+		386C2B9E1DFE64D300F15658 /* OrdinemLogo_white.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = OrdinemLogo_white.png; path = ../OrdinemLogo_white.png; sourceTree = "<group>"; };
+		386C2BA01DFE64DD00F15658 /* OrdinemLogoLong_White.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = OrdinemLogoLong_White.png; path = ../OrdinemLogoLong_White.png; sourceTree = "<group>"; };
+		386C2BA21DFE64E300F15658 /* OrdinemLogoLong.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = OrdinemLogoLong.png; path = ../OrdinemLogoLong.png; sourceTree = "<group>"; };
+		386C2BA41DFE651800F15658 /* GUI_Background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = GUI_Background.png; path = ../GUI_Background.png; sourceTree = "<group>"; };
+		386C2BA61DFE6A1F00F15658 /* OrdinemChapmanLogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = OrdinemChapmanLogo.png; path = ../OrdinemChapmanLogo.png; sourceTree = "<group>"; };
+		386C2BA81DFE6AFF00F15658 /* LemonMilk.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = LemonMilk.otf; path = ../LemonMilk.otf; sourceTree = "<group>"; };
+		386C2BAA1DFE6F0500F15658 /* textBox.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = textBox.png; path = ../textBox.png; sourceTree = "<group>"; };
 		386C2BAC1DFE782E00F15658 /* DatabaseConnector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatabaseConnector.swift; sourceTree = "<group>"; };
 		386C2BAE1DFE9BEA00F15658 /* HomeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		386C2BB01DFEA43800F15658 /* EventCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventCell.swift; sourceTree = "<group>"; };
 		386C2BB41DFF07D800F15658 /* AutoLoginView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AutoLoginView.swift; sourceTree = "<group>"; };
-		386DB3ED1E28785E00F8FF7D /* yesRSVP.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = yesRSVP.png; sourceTree = "<group>"; };
-		386DB3F01E28791300F8FF7D /* noRSVP.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = noRSVP.png; sourceTree = "<group>"; };
+		386DB3ED1E28785E00F8FF7D /* yesRSVP.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = yesRSVP.png; path = ../yesRSVP.png; sourceTree = "<group>"; };
+		386DB3F01E28791300F8FF7D /* noRSVP.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = noRSVP.png; path = ../noRSVP.png; sourceTree = "<group>"; };
 		38D2BACD1E30407500F78259 /* RewardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RewardView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -171,11 +169,34 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		18A5319A1E36C3E9003686D2 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				386DB3F01E28791300F8FF7D /* noRSVP.png */,
+				386DB3ED1E28785E00F8FF7D /* yesRSVP.png */,
+				181E52011E308DAB006859CA /* camera.png */,
+				382225C41E315BC9005CC3D5 /* camera_bold.png */,
+				382225C61E315E9D005CC3D5 /* scan_button.png */,
+				386C2BAA1DFE6F0500F15658 /* textBox.png */,
+				386C2BA61DFE6A1F00F15658 /* OrdinemChapmanLogo.png */,
+				386C2BA41DFE651800F15658 /* GUI_Background.png */,
+				386C2BA21DFE64E300F15658 /* OrdinemLogoLong.png */,
+				386C2BA01DFE64DD00F15658 /* OrdinemLogoLong_White.png */,
+				386C2B9E1DFE64D300F15658 /* OrdinemLogo_white.png */,
+				386C2B9C1DFE64C200F15658 /* OrdinemLogo.png */,
+				181E52061E31498D006859CA /* PersonOrdinem.jpg */,
+				181E520A1E314E83006859CA /* HouseOrdinem c.png */,
+				181E520E1E3305E4006859CA /* ChapmanLogo.png */,
+				386C2BA81DFE6AFF00F15658 /* LemonMilk.otf */,
+			);
+			name = Images;
+			path = "PlistManager files";
+			sourceTree = "<group>";
+		};
 		381F3E081E0733D9002366A8 /* PlistManager files */ = {
 			isa = PBXGroup;
 			children = (
 				381F3E091E0733D9002366A8 /* MyData.plist */,
-				381F3E0A1E0733D9002366A8 /* PlistManager.swift */,
 			);
 			path = "PlistManager files";
 			sourceTree = "<group>";
@@ -237,25 +258,10 @@
 		386C2B6D1DFE342600F15658 /* Ordinem_iOS */ = {
 			isa = PBXGroup;
 			children = (
-				386DB3F01E28791300F8FF7D /* noRSVP.png */,
-				386DB3ED1E28785E00F8FF7D /* yesRSVP.png */,
+				18A5319A1E36C3E9003686D2 /* Images */,
 				381F3E081E0733D9002366A8 /* PlistManager files */,
 				386C2BAC1DFE782E00F15658 /* DatabaseConnector.swift */,
-				386C2BA81DFE6AFF00F15658 /* LemonMilk.otf */,
-				181E52011E308DAB006859CA /* camera.png */,
-				382225C41E315BC9005CC3D5 /* camera_bold.png */,
-				180DF1A01E3560F200C6A534 /* 15241220_10209558826025939_5307161208986096884_n.jpg */,
-				382225C61E315E9D005CC3D5 /* scan_button.png */,
-				386C2BAA1DFE6F0500F15658 /* textBox.png */,
-				386C2BA61DFE6A1F00F15658 /* OrdinemChapmanLogo.png */,
-				386C2BA41DFE651800F15658 /* GUI_Background.png */,
-				386C2BA21DFE64E300F15658 /* OrdinemLogoLong.png */,
-				386C2BA01DFE64DD00F15658 /* OrdinemLogoLong_White.png */,
-				386C2B9E1DFE64D300F15658 /* OrdinemLogo_white.png */,
-				386C2B9C1DFE64C200F15658 /* OrdinemLogo.png */,
-				181E52061E31498D006859CA /* PersonOrdinem.jpg */,
-				181E520A1E314E83006859CA /* HouseOrdinem c.png */,
-				181E520E1E3305E4006859CA /* ChapmanLogo.png */,
+				381F3E0A1E0733D9002366A8 /* PlistManager.swift */,
 				386C2B6E1DFE342600F15658 /* AppDelegate.swift */,
 				386C2B701DFE342600F15658 /* LoginView.swift */,
 				386C2B721DFE342600F15658 /* Main.storyboard */,
@@ -412,7 +418,6 @@
 				381F3E0B1E0733D9002366A8 /* MyData.plist in Resources */,
 				181E520F1E3305E4006859CA /* ChapmanLogo.png in Resources */,
 				382226001E31659A005CC3D5 /* QRCodeReader.swift.podspec in Resources */,
-				180DF1A11E3560F200C6A534 /* 15241220_10209558826025939_5307161208986096884_n.jpg in Resources */,
 				386C2B791DFE342600F15658 /* LaunchScreen.storyboard in Resources */,
 				386C2BA51DFE651800F15658 /* GUI_Background.png in Resources */,
 				386C2B9F1DFE64D300F15658 /* OrdinemLogo_white.png in Resources */,
