@@ -9,12 +9,8 @@
 import UIKit
 
 class sSignUp: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate, UIImagePickerControllerDelegate,
-UINavigationControllerDelegate  {
+UINavigationControllerDelegate, UITextFieldDelegate  {
     
-    
-    
-    
-
     @IBOutlet weak var fName: UITextField!
     @IBOutlet weak var lastName: UITextField!
     @IBOutlet weak var studentID: UITextField!
@@ -46,10 +42,6 @@ UINavigationControllerDelegate  {
     }
     
     
-    
-    func closekeyboard() {
-        self.view.endEditing(true)
-    }
     
     func keyboardWillShow(notification:NSNotification){
         //give room at the bottom of the scroll view, so it doesn't cover up anything the user needs to tap
@@ -93,9 +85,7 @@ UINavigationControllerDelegate  {
         return list[row]
     }
     
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        closekeyboard()
-    }
+
     
     func doneClicked(){
         view.endEditing(true)
@@ -141,7 +131,17 @@ UINavigationControllerDelegate  {
         
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name:NSNotification.Name.UIKeyboardWillShow, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name:NSNotification.Name.UIKeyboardWillHide, object: nil)
+        
+        fName.delegate = self
+        lastName.delegate = self
+        studentID.delegate = self
+        school.delegate = self
+        email.delegate = self
+        password.delegate = self
+        verifyPwd.delegate = self
+        
     }
+
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -150,29 +150,27 @@ UINavigationControllerDelegate  {
     
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        if textField == fName{
-            lastName!.becomeFirstResponder()
+        if textField == self.fName{
+            self.lastName!.becomeFirstResponder()
         }
-        else if textField == lastName{
-            studentID!.becomeFirstResponder()
+        else if textField == self.lastName{
+            self.studentID!.becomeFirstResponder()
         }
-        else if textField == studentID{
-            school!.becomeFirstResponder()
+        else if textField == self.studentID{
+            self.school!.becomeFirstResponder()
         }
-        else if textField == school{
-            email!.becomeFirstResponder()
+        else if textField == self.school{
+            self.email!.becomeFirstResponder()
         }
-        else if textField == email{
-            password!.becomeFirstResponder()
+        else if textField == self.email{
+            self.password!.becomeFirstResponder()
         }
-        else if textField == password{
-            verifyPwd!.becomeFirstResponder()
+        else if textField == self.password{
+            self.verifyPwd!.becomeFirstResponder()
         }
         else{
-            verifyPwd!.resignFirstResponder()
+            self.verifyPwd!.resignFirstResponder()
         }
         return true
     }
-
-
 }

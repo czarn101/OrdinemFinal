@@ -10,7 +10,7 @@ import UIKit
 
 class eventTemp: UIViewController,
     UIImagePickerControllerDelegate,
-UINavigationControllerDelegate {
+UINavigationControllerDelegate, UIPickerViewDataSource, UIPickerViewDelegate {
 
     
     @IBOutlet weak var date: UITextField!
@@ -59,7 +59,31 @@ UINavigationControllerDelegate {
             self.dismiss(animated: true, completion: nil);
         }
         
+    var list = ["Competitive", "Career Development", "Conference", "Educational", "Promotional", "Fundraising", "Other"]
+    var picker1 = UIPickerView()
+
+    @available(iOS 2.0, *)
+    public func numberOfComponents(in pickerView: UIPickerView) -> Int{
+        return 1
+    }
     
+    @available(iOS 2.0, *)
+    public func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int{
+            return list.count
+
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        eventType.text = list[row]
+        
+        
+        
+    }
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return list[row]
+    }
+    
+
     
     
     func keyboardWillShow(notification:NSNotification){
@@ -133,6 +157,11 @@ UINavigationControllerDelegate {
     }
     
     override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        picker1.delegate = self
+        picker1.dataSource = self
+        
         let flexibleSpace = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.flexibleSpace, target: nil, action: nil)
         
         let toolBar = UIToolbar()
@@ -143,13 +172,16 @@ UINavigationControllerDelegate {
         
         toolBar.setItems([flexibleSpace, doneButton], animated: false)
         
+        
+        date.inputAccessoryView = toolBar
+        eDate.inputAccessoryView = toolBar
         location.inputAccessoryView = toolBar
         eventTitle.inputAccessoryView = toolBar
         eventType.inputAccessoryView = toolBar
         additionalInfo.inputAccessoryView = toolBar
 
         
-        super.viewDidLoad()
+
 
         // Do any additional setup after loading the view.
     }
@@ -157,22 +189,22 @@ UINavigationControllerDelegate {
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         if textField == date{
-            eDate.becomeFirstResponder()
+            eDate!.becomeFirstResponder()
         }
         else if textField == eDate{
-            location.becomeFirstResponder()
+            location!.becomeFirstResponder()
         }
         else if textField == location{
-            eventTitle.becomeFirstResponder()
+            eventTitle!.becomeFirstResponder()
         }
         else if textField == eventTitle{
-            eventType.becomeFirstResponder()
+            eventType!.becomeFirstResponder()
         }
         else if textField == eventType{
-            additionalInfo.becomeFirstResponder()
+            additionalInfo!.becomeFirstResponder()
         }
         else{
-            additionalInfo.resignFirstResponder()
+            additionalInfo!.resignFirstResponder()
         }
         return true
     }

@@ -38,6 +38,8 @@ UINavigationControllerDelegate, UIPickerViewDataSource, UIPickerViewDelegate  {
         
     }
     
+
+    
     @IBAction func openPhotoLibraryButton(_ sender: UIButton) {
         if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.photoLibrary) {
             let imagePicker = UIImagePickerController()
@@ -151,6 +153,32 @@ UINavigationControllerDelegate, UIPickerViewDataSource, UIPickerViewDelegate  {
         // Dispose of any resources that can be recreated.
     }
     
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        if textField == awardTitle{
+            costInPts.becomeFirstResponder()
+        }
+        else if textField == costInPts{
+            closureDate.becomeFirstResponder()
+        }
+        else if textField == closureDate{
+            pickupLocation.becomeFirstResponder()
+        }
+        else if textField == pickupLocation{
+            totalPrizes.becomeFirstResponder()
+        }
+        else if textField == totalPrizes{
+            winOrRaffle.becomeFirstResponder()
+        }
+        else if textField == winOrRaffle{
+            addInfo.becomeFirstResponder()
+        }
+        else{
+            addInfo.resignFirstResponder()
+        }
+        
+        
+        return true
+    }
 
     /*
     // MARK: - Navigation

@@ -9,7 +9,7 @@
 import UIKit
 
 
-class SignUp: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
+class SignUp: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate, UITextFieldDelegate {
 
 
     
@@ -106,6 +106,13 @@ class SignUp: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        orgName.delegate = self
+        orgType.delegate = self
+        orgID.delegate = self
+        skewl.delegate = self
+        sEmail.delegate = self
+        sPassword.delegate = self
+        vPassword.delegate = self
         
         
         picker1.tag = 0
@@ -117,7 +124,6 @@ class SignUp: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
         skewl.inputView = picker1
         
 
-        
         picker2.delegate = self
         picker2.dataSource = self
         orgType.inputView = picker2
