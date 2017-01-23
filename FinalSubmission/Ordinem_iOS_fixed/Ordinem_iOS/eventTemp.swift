@@ -8,7 +8,9 @@
 
 import UIKit
 
-class eventTemp: UIViewController {
+class eventTemp: UIViewController,
+    UIImagePickerControllerDelegate,
+UINavigationControllerDelegate {
 
     
     @IBOutlet weak var date: UITextField!
@@ -38,6 +40,25 @@ class eventTemp: UIViewController {
         label4Stepper.text = String(currentValue)
         
     }
+    
+    @IBOutlet weak var imagePicked: UIImageView!
+    
+    @IBAction func buttonPressed(_ sender: UIButton) {
+        if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.photoLibrary) {
+            let imagePicker = UIImagePickerController()
+            imagePicker.delegate = self
+            imagePicker.sourceType = UIImagePickerControllerSourceType.photoLibrary;
+            imagePicker.allowsEditing = true
+            self.present(imagePicker, animated: true, completion: nil)
+        }
+        
+    }
+
+        func imagePickerController(picker: UIImagePickerController, didFinishPickingImage image: UIImage!, editingInfo: [NSObject : AnyObject]!) {
+            imagePicked.image = image
+            self.dismiss(animated: true, completion: nil);
+        }
+        
     
     
     
