@@ -20,6 +20,8 @@
 		18C6589B1E372BDC000896BE /* Prize.png in Resources */ = {isa = PBXBuildFile; fileRef = 18C6589A1E372BDC000896BE /* Prize.png */; };
 		18C6589D1E373484000896BE /* ticket.png in Resources */ = {isa = PBXBuildFile; fileRef = 18C6589C1E373484000896BE /* ticket.png */; };
 		18C6589F1E3735BD000896BE /* gift.png in Resources */ = {isa = PBXBuildFile; fileRef = 18C6589E1E3735BD000896BE /* gift.png */; };
+		18C658A11E37C6FA000896BE /* settings.png in Resources */ = {isa = PBXBuildFile; fileRef = 18C658A01E37C6FA000896BE /* settings.png */; };
+		18C658A31E37E8FC000896BE /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C658A21E37E8FC000896BE /* Settings.swift */; };
 		381F3E0B1E0733D9002366A8 /* MyData.plist in Resources */ = {isa = PBXBuildFile; fileRef = 381F3E091E0733D9002366A8 /* MyData.plist */; };
 		381F3E0C1E0733D9002366A8 /* PlistManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 381F3E0A1E0733D9002366A8 /* PlistManager.swift */; };
 		381F3E0E1E07780E002366A8 /* PointView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 381F3E0D1E07780E002366A8 /* PointView.swift */; };
@@ -98,6 +100,8 @@
 		18C6589A1E372BDC000896BE /* Prize.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Prize.png; sourceTree = "<group>"; };
 		18C6589C1E373484000896BE /* ticket.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ticket.png; sourceTree = "<group>"; };
 		18C6589E1E3735BD000896BE /* gift.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gift.png; sourceTree = "<group>"; };
+		18C658A01E37C6FA000896BE /* settings.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = settings.png; sourceTree = "<group>"; };
+		18C658A21E37E8FC000896BE /* Settings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		381F3E091E0733D9002366A8 /* MyData.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = MyData.plist; sourceTree = "<group>"; };
 		381F3E0A1E0733D9002366A8 /* PlistManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PlistManager.swift; path = "PlistManager files/PlistManager.swift"; sourceTree = "<group>"; };
 		381F3E0D1E07780E002366A8 /* PointView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PointView.swift; sourceTree = "<group>"; };
@@ -197,6 +201,7 @@
 				181E520A1E314E83006859CA /* HouseOrdinem c.png */,
 				181E520E1E3305E4006859CA /* ChapmanLogo.png */,
 				386C2BA81DFE6AFF00F15658 /* LemonMilk.otf */,
+				18C658A01E37C6FA000896BE /* settings.png */,
 			);
 			name = Images;
 			path = "PlistManager files";
@@ -244,6 +249,7 @@
 		386C2B621DFE342600F15658 = {
 			isa = PBXGroup;
 			children = (
+				18C658A21E37E8FC000896BE /* Settings.swift */,
 				181E520C1E32C391006859CA /* sSignUp.swift */,
 				382225C81E31659A005CC3D5 /* QRCodeReader.swift-master */,
 				181E51FF1E2FE4B5006859CA /* SignUp.swift */,
@@ -430,6 +436,7 @@
 				181E520F1E3305E4006859CA /* ChapmanLogo.png in Resources */,
 				382226001E31659A005CC3D5 /* QRCodeReader.swift.podspec in Resources */,
 				386C2B791DFE342600F15658 /* LaunchScreen.storyboard in Resources */,
+				18C658A11E37C6FA000896BE /* settings.png in Resources */,
 				386C2BA51DFE651800F15658 /* GUI_Background.png in Resources */,
 				386C2B9F1DFE64D300F15658 /* OrdinemLogo_white.png in Resources */,
 				386DB3EF1E28785E00F8FF7D /* yesRSVP.png in Resources */,
@@ -490,6 +497,7 @@
 				180DF1A51E35CC0500C6A534 /* pantherBucksRewards.swift in Sources */,
 				180DF19F1E3555EE00C6A534 /* newReward.swift in Sources */,
 				382226071E31659A005CC3D5 /* QRCodeReaderViewControllerBuilder.swift in Sources */,
+				18C658A31E37E8FC000896BE /* Settings.swift in Sources */,
 				382226091E31659A005CC3D5 /* ReaderOverlayView.swift in Sources */,
 				386C2BB11DFEA43800F15658 /* EventCell.swift in Sources */,
 				382226011E31659A005CC3D5 /* README.md in Sources */,

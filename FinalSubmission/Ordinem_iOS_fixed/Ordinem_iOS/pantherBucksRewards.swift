@@ -81,6 +81,11 @@ class pantherBucksRewards: UIViewController, MFMailComposeViewControllerDelegate
         // Dispose of any resources that can be recreated.
     }
     
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        password!.resignFirstResponder()
+        return true
+    }
 
     /*
     // MARK: - Navigation

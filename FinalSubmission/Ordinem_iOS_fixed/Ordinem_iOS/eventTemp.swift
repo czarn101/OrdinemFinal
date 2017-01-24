@@ -186,22 +186,24 @@ UINavigationControllerDelegate, UIPickerViewDataSource, UIPickerViewDelegate, UI
         eventType.delegate = self
         additionalInfo.delegate = self
 
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name:NSNotification.Name.UIKeyboardWillShow, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name:NSNotification.Name.UIKeyboardWillHide, object: nil)
 
         // Do any additional setup after loading the view.
     }
 
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        if textField == date!{
+        if textField == eventTitle!{
+            date!.becomeFirstResponder()
+        }
+        else if textField == date!{
             eDate!.becomeFirstResponder()
         }
         else if textField == eDate!{
             location!.becomeFirstResponder()
         }
         else if textField == location!{
-            eventTitle!.becomeFirstResponder()
-        }
-        else if textField == eventTitle!{
             eventType!.becomeFirstResponder()
         }
         else if textField == eventType!{

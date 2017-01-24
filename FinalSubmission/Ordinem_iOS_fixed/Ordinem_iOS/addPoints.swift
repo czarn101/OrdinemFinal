@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import Foundation
+
 
 class addPoints: UIViewController {
 
@@ -17,17 +19,23 @@ class addPoints: UIViewController {
     @IBOutlet weak var theScrollView: UIScrollView!
     @IBOutlet weak var projectedCost: UILabel!
     
-    var points = Double(1)
+    var points = Int(1)
     var attendance = Double(1)
+    var real = Double(1)
     
     @IBAction func pointStepperAction(_ sender: Any) {
-        countPlaceHolder.text = String(stepper.value)
+        countPlaceHolder.text = String(Int(stepper.value))
         
     }
     
-    func getPoints() -> Double{
-        self.points = Double(countPlaceHolder.text!)!
+    func getPoints() -> Int{
+        self.points = Int(Double(countPlaceHolder.text!)!)
         return self.points
+    }
+    
+    func getPointss() -> Double{
+        self.real = Double(getPoints())
+        return self.real
     }
     
     func attToInt() -> Double{
@@ -36,8 +44,10 @@ class addPoints: UIViewController {
     }
     
     @IBAction func buttonPressed(_ sender: UIButton) {
-        let total = Double(getPoints()*attToInt()*0.05*1.05)
-        projectedCost.text = String(total)
+        let total = Double(getPointss()*attToInt()*0.05*1.05)
+        let r = Double(total).roundTo(places: 2)
+        let k = (String(format:"%.02f", r))
+        projectedCost.text = "$\(k)"
         
     }
     
