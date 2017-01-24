@@ -10,12 +10,11 @@ import UIKit
 
 class eventTemp: UIViewController,
     UIImagePickerControllerDelegate,
-UINavigationControllerDelegate, UIPickerViewDataSource, UIPickerViewDelegate {
+UINavigationControllerDelegate, UIPickerViewDataSource, UIPickerViewDelegate, UITextFieldDelegate, UITextViewDelegate {
 
     
     @IBOutlet weak var date: UITextField!
     let datePicker = UIDatePicker()
-    
     
     @IBOutlet weak var eDate: UITextField!
     
@@ -180,7 +179,12 @@ UINavigationControllerDelegate, UIPickerViewDataSource, UIPickerViewDelegate {
         eventType.inputAccessoryView = toolBar
         additionalInfo.inputAccessoryView = toolBar
 
-        
+        date.delegate = self
+        eDate.delegate = self
+        location.delegate = self
+        eventTitle.delegate = self
+        eventType.delegate = self
+        additionalInfo.delegate = self
 
 
         // Do any additional setup after loading the view.
@@ -188,19 +192,19 @@ UINavigationControllerDelegate, UIPickerViewDataSource, UIPickerViewDelegate {
 
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        if textField == date{
+        if textField == date!{
             eDate!.becomeFirstResponder()
         }
-        else if textField == eDate{
+        else if textField == eDate!{
             location!.becomeFirstResponder()
         }
-        else if textField == location{
+        else if textField == location!{
             eventTitle!.becomeFirstResponder()
         }
-        else if textField == eventTitle{
+        else if textField == eventTitle!{
             eventType!.becomeFirstResponder()
         }
-        else if textField == eventType{
+        else if textField == eventType!{
             additionalInfo!.becomeFirstResponder()
         }
         else{
