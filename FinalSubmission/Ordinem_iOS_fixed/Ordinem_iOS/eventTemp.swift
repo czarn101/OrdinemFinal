@@ -14,7 +14,7 @@ UINavigationControllerDelegate, UIPickerViewDataSource, UIPickerViewDelegate, UI
 
     
     @IBOutlet weak var date: UITextField!
-    let datePicker = UIDatePicker()
+    
     
     @IBOutlet weak var eDate: UITextField!
     
@@ -25,7 +25,9 @@ UINavigationControllerDelegate, UIPickerViewDataSource, UIPickerViewDelegate, UI
     
     @IBOutlet weak var eventType: UITextField!
     
-    @IBOutlet weak var additionalInfo: UITextView!
+    @IBOutlet weak var additionalInfo: UITextField!
+    
+    
     
     @IBOutlet weak var theScrollView: UIScrollView!
     
@@ -58,8 +60,10 @@ UINavigationControllerDelegate, UIPickerViewDataSource, UIPickerViewDelegate, UI
             self.dismiss(animated: true, completion: nil);
         }
         
-    var list = ["Competitive", "Career Development", "Conference", "Educational", "Promotional", "Fundraising", "Other"]
+    var list = ["Competitive", "Career Development", "Conference", "Educational","Entertainment", "Promotional", "Fundraising", "Other"]
+    
     var picker1 = UIPickerView()
+    
 
     @available(iOS 2.0, *)
     public func numberOfComponents(in pickerView: UIPickerView) -> Int{
@@ -84,6 +88,8 @@ UINavigationControllerDelegate, UIPickerViewDataSource, UIPickerViewDelegate, UI
     
 
     
+    let datePicker = UIDatePicker()
+    let datePickerr = UIDatePicker()
     
     func keyboardWillShow(notification:NSNotification){
         //give room at the bottom of the scroll view, so it doesn't cover up anything the user needs to tap
@@ -120,40 +126,54 @@ UINavigationControllerDelegate, UIPickerViewDataSource, UIPickerViewDelegate, UI
     
     
     func createDatePicker(){
-        let toolBar1 = UIToolbar()
-        toolBar1.sizeToFit()
+        let toolBar = UIToolbar()
+        toolBar.sizeToFit()
         
-        let toolBar2 = UIToolbar()
-        toolBar2.sizeToFit()
+        datePickerr.datePickerMode = .time
+
         
-        let doneButton = UIBarButtonItem(barButtonSystemItem: .done, target: date, action: #selector(donePressed))
+        let doneButton = UIBarButtonItem(barButtonSystemItem: .done, target: nil, action: #selector(donePressed))
         
-        let doneButton2 = UIBarButtonItem(barButtonSystemItem: .done, target: eDate, action: #selector(donePressedd))
-        
-        toolBar1.setItems([doneButton], animated: false)
-        toolBar2.setItems([doneButton2], animated: false)
-        
-        
-        date.inputAccessoryView = toolBar1
+        toolBar.setItems([doneButton], animated: false)
+
+     
+        date.inputAccessoryView = toolBar
         
         date.inputView = datePicker
-        
-        
-        eDate.inputAccessoryView = toolBar2
+       
+        eDate.inputAccessoryView = toolBar
             
-        eDate.inputView = datePicker
+        eDate.inputView = datePickerr
         
     }
     
     
     func donePressed(){
-        date.text = "\(datePicker.date)"
-        self.view.endEditing(true)
+        
+        
+        picker1.delegate = self
+        picker1.dataSource = self
+        
+        //Formatting
+        if date.endEditing(true){
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateStyle = .long
+        dateFormatter.timeStyle = .medium
+        
+        date.text = dateFormatter.string(from: datePicker.date)
+        }
+        else{
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateStyle = .none
+            dateFormatter.timeStyle = .medium
+            
+            eDate.text = dateFormatter.string(from: datePickerr.date)
+            self.view.endEditing(true)
+        }
+
     }
-    func donePressedd(){
-        date.text = "\(datePicker.date)"
-        self.view.endEditing(true)
-    }
+    
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -167,23 +187,23 @@ UINavigationControllerDelegate, UIPickerViewDataSource, UIPickerViewDelegate, UI
         
         toolBar.sizeToFit()
         
+        createDatePicker()
+        
         let doneButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.done, target: self, action: #selector(self.doneClicked))
+        
         
         toolBar.setItems([flexibleSpace, doneButton], animated: false)
         
         
-        date.inputAccessoryView = toolBar
-        eDate.inputAccessoryView = toolBar
+
         location.inputAccessoryView = toolBar
         eventTitle.inputAccessoryView = toolBar
         eventType.inputAccessoryView = toolBar
         additionalInfo.inputAccessoryView = toolBar
 
-        date.delegate = self
-        eDate.delegate = self
+        
         location.delegate = self
         eventTitle.delegate = self
-        eventType.delegate = self
         additionalInfo.delegate = self
 
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name:NSNotification.Name.UIKeyboardWillShow, object: nil)
