@@ -195,9 +195,9 @@ public class QRCodeReaderViewController: UIViewController {
   func cancelAction(_ button: UIButton) {
     codeReader.stopScanning()
 
-    if let _completionBlock = completionBlock {
-      _completionBlock(nil)
-    }
+    //if let _completionBlock = completionBlock {
+    //  _completionBlock(nil)
+    //}
 
     delegate?.readerDidCancel(self)
   }

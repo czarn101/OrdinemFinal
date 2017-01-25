@@ -63,5 +63,7 @@
 	</dict>
 	<key>NSCameraUsageDescription</key>
 	<string>The camera is needed to scan QR codes.</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>Photo Library access needed to select profile pictures.</string>
 </dict>
 </plist>

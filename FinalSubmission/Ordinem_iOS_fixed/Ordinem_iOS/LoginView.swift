@@ -20,6 +20,8 @@ class LoginView: UIViewController, UITextFieldDelegate {
     @IBOutlet var createButton: UIButton?
     @IBOutlet var tapView: UIView?
     @IBOutlet var loadingMon: UIActivityIndicatorView?
+    //@IBOutlet var accountType: UISwitch?
+    @IBOutlet var accountTitle: UILabel?
     
     let dbc: DatabaseConnector = DatabaseConnector()
     let appDelegate: AppDelegate = UIApplication.shared.delegate as! AppDelegate
@@ -34,6 +36,13 @@ class LoginView: UIViewController, UITextFieldDelegate {
         }
     }
     
+    @IBAction func toggleAccountType(sender: UISwitch) {
+        if sender.isOn {
+            accountTitle?.text = "Student Login Portal"
+        } else {
+            accountTitle?.text = "Organization Login Portal"
+        }
+    }
     
     func loginSuccess() {
         print("Success")
