@@ -181,6 +181,8 @@ UINavigationControllerDelegate, UIPickerViewDataSource, UIPickerViewDelegate, UI
         picker1.delegate = self
         picker1.dataSource = self
         
+        eventType.inputView = picker1
+        
         let flexibleSpace = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.flexibleSpace, target: nil, action: nil)
         
         let toolBar = UIToolbar()
