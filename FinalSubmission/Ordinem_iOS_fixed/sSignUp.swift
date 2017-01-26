@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import FirebaseAuth
+import FirebaseDatabase
 
 class sSignUp: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate, UIImagePickerControllerDelegate,
 UINavigationControllerDelegate, UITextFieldDelegate  {
@@ -24,6 +26,8 @@ UINavigationControllerDelegate, UITextFieldDelegate  {
     
     @IBOutlet weak var imagePicked: UIImageView!
     
+    let appDelegate: AppDelegate = UIApplication.shared.delegate as! AppDelegate
+    
     
     @IBAction func openPhotoLibraryButton(_ sender: UIButton) {
         if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.photoLibrary) {
@@ -36,11 +40,21 @@ UINavigationControllerDelegate, UITextFieldDelegate  {
         }
     }
     
-    func imagePickerController(picker: UIImagePickerController, didFinishPickingImage image: UIImage!, editingInfo: [NSObject : AnyObject]!) {
+    /*func imagePickerController(picker: UIImagePickerController, didFinishPickingImage image: UIImage!, editingInfo: [NSObject : AnyObject]!) {
         imagePicked.image = image
         self.dismiss(animated: true, completion: nil);
-    }
+    }*/
     
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
+        if let image = info[UIImagePickerControllerEditedImage] as? UIImage {//2
+            imagePicked.contentMode = .scaleAspectFit
+            imagePicked.image = image
+        } else{
+            print("Something went wrong")
+        }
+        
+        self.dismiss(animated: true, completion: nil)
+    }
     
     
     func keyboardWillShow(notification:NSNotification){
@@ -87,8 +101,21 @@ UINavigationControllerDelegate, UITextFieldDelegate  {
     
 
     
-    func doneClicked(){
+    @IBAction func doneClicked(){
         view.endEditing(true)
+        if checkFields() {
+            // CREATE NEW USER
+            FIRAuth.auth()?.createUser(withEmail: self.email!.text!, password: self.password!.text!) { (user, error) in
+                if error != nil {
+                    print(error.debugDescription)
+                } else {
+                    self.appDelegate.mainUser = user
+                    self.appDelegate.username = self.fName.text
+                    self.appDelegate.pointBalance = "0"
+                    self.performSegue(withIdentifier: "slogin", sender: self)
+                }
+            }
+        }
     }
     
     var list = ["Chapman"]
@@ -172,5 +199,31 @@ UINavigationControllerDelegate, UITextFieldDelegate  {
             self.verifyPwd!.resignFirstResponder()
         }
         return true
+    }
+    
+    func checkFields() -> Bool {
+        if "" == self.fName.text {
+            return false
+        }
+        else if "" == self.lastName.text {
+            return false
+        }
+        else if "" == self.studentID.text {
+            return false
+        }
+        else if "" == self.school.text {
+            return false
+        }
+        else if "" == self.email.text {
+            return false
+        }
+        else if "" == self.password.text {
+            return false
+        }
+        else if "" == self.verifyPwd.text{
+            return false
+        } else {
+            return true
+        }
     }
 }

@@ -10,6 +10,8 @@ import UIKit
 import Foundation
 import SystemConfiguration
 import Firebase
+import FirebaseAuth
+import FirebaseDatabase
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -29,6 +31,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     var shouldAutoLogin: Bool = true
 
+    var mainUser: FIRUser?
+    var ref: FIRDatabaseReference?
     
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
@@ -36,7 +40,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         PlistManager.sharedInstance.startPlistManager()
         
         FIRApp.configure()
-        
+        ref = FIRDatabase.database().reference()
         return true
     }
 
