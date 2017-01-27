@@ -134,10 +134,7 @@ class LoginView: UIViewController, UITextFieldDelegate {
     @IBAction func backToLogin(segue: UIStoryboardSegue) {
         
     }
-    
-    
-    
-    
+
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         if textField == emailField{

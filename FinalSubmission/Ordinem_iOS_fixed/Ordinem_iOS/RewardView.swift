@@ -18,6 +18,10 @@ extension Double {
 }
 
 
+@IBAction func backHome(segue: UIStoryboardSegue) {
+    
+}
+
 public class RewardView: UIViewController {
     
     

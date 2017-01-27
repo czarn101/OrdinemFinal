@@ -81,7 +81,9 @@ UINavigationControllerDelegate, UIPickerViewDataSource, UIPickerViewDelegate  {
         
     }
     
-    
+    @IBAction func backHome(segue: UIStoryboardSegue) {
+        
+    }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         winOrRaffle.text = list[row]

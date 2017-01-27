@@ -174,6 +174,9 @@ UINavigationControllerDelegate, UIPickerViewDataSource, UIPickerViewDelegate, UI
     }
     
 
+    @IBAction func backHome(segue: UIStoryboardSegue) {
+        
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()

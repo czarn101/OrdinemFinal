@@ -50,7 +50,9 @@ public class PointView: UIViewController {
         self.performSegue(withIdentifier: "logout", sender: self)
         
     }
-    
+    @IBAction func backHome(segue: UIStoryboardSegue) {
+        
+    }
     override public func viewDidLoad() {
         super.viewDidLoad()
         self.pointBal?.text = appDelegate.pointBalance
