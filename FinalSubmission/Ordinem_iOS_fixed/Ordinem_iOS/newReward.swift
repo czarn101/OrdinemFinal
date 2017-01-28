@@ -39,6 +39,9 @@ UINavigationControllerDelegate, UIPickerViewDataSource, UIPickerViewDelegate  {
     }
     
 
+    @IBAction func newReward(segue: UIStoryboardSegue) {
+        
+    }
     
     @IBAction func openPhotoLibraryButton(_ sender: UIButton) {
         if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.photoLibrary) {

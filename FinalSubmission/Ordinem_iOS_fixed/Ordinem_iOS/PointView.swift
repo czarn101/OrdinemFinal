@@ -42,6 +42,10 @@ public class PointView: UIViewController {
     */
     
     
+    @IBAction func backedHome(segue: UIStoryboardSegue) {
+        
+    }
+    
     
     let appDelegate: AppDelegate = UIApplication.shared.delegate as! AppDelegate
     

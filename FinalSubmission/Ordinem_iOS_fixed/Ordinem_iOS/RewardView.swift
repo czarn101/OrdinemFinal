@@ -18,9 +18,6 @@ extension Double {
 }
 
 
-@IBAction func backHome(segue: UIStoryboardSegue) {
-    
-}
 
 public class RewardView: UIViewController {
     
@@ -38,7 +35,9 @@ public class RewardView: UIViewController {
     let appDelegate: AppDelegate = UIApplication.shared.delegate as! AppDelegate
     
     
-    
+    @IBAction func cashout(segue: UIStoryboardSegue) {
+        
+    }
     
     @IBAction func actionSlider(_ sender: UISlider) {
         
@@ -51,6 +50,7 @@ public class RewardView: UIViewController {
         c = String(currentValue)
         r = String(current)
     }
+    
     
 
     @IBOutlet weak var theScrollView: UIScrollView!

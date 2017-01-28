@@ -13,10 +13,30 @@ import MessageUI
 
 class otherRewards: UIViewController, MFMailComposeViewControllerDelegate, UITextFieldDelegate{
 
+    
+    @IBOutlet weak var image: UIImageView!
+    
+    @IBOutlet weak var name: UILabel!
+    
+    @IBOutlet weak var type: UILabel!
+    
+    @IBOutlet weak var currentContestants: UILabel!
+    
+    @IBOutlet weak var endDate: UILabel!
+    
+    @IBOutlet weak var pointCost: UILabel!
+    
+    @IBOutlet weak var awardsAvailable: UILabel!
+    
+    
+    
     @IBOutlet weak var theScrollView: UIScrollView!
     @IBOutlet weak var password: UITextField!
     
 
+    @IBAction func submitPressed(_ sender: UIButton) {
+        
+    }
     
     func keyboardWillShow(notification:NSNotification){
         //give room at the bottom of the scroll view, so it doesn't cover up anything the user needs to tap

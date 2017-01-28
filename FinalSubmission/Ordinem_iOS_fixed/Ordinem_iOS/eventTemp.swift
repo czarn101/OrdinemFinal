@@ -174,7 +174,7 @@ UINavigationControllerDelegate, UIPickerViewDataSource, UIPickerViewDelegate, UI
     }
     
 
-    @IBAction func backHome(segue: UIStoryboardSegue) {
+    @IBAction func createEvent(segue: UIStoryboardSegue) {
         
     }
     

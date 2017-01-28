@@ -13,6 +13,18 @@ import MessageUI
 
 class pantherBucksRewards: UIViewController, MFMailComposeViewControllerDelegate, UITextFieldDelegate {
     
+    @IBOutlet weak var image: UIImageView!
+    
+    @IBOutlet weak var pantherBucks: UILabel!
+    
+    @IBOutlet weak var pointCost: UILabel!
+    
+    @IBOutlet weak var rewardDollar: UILabel!
+    
+    @IBAction func submitPressed(_ sender: UIButton) {
+    }
+    
+    
     @IBOutlet weak var theScrollView: UIScrollView!
 
     func closekeyboard() {
