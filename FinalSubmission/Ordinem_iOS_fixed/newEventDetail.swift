@@ -29,11 +29,20 @@ class newEventDetail: UIViewController {
     @IBAction func accepted(_ sender: UIButton) {
     }
     
-    @IBOutlet weak var rejected: UIButton!
+    
+    
+    private var appDelegate: AppDelegate = UIApplication.shared.delegate as! AppDelegate
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        self.eventTitle?.text = self.appDelegate.selectedEvent![1] as? String
+        self.information?.text = self.appDelegate.selectedEvent![2] as? String
+        self.orgNameDetails?.text = self.appDelegate.selectedEvent![3] as? String
+        //This will need some adjustments
+        self.Date?.text = (self.appDelegate.selectedEvent![4] as! String) + " " + (self.appDelegate.selectedEvent![5] as! String)
+        self.location?.text = self.appDelegate.selectedEvent![6] as? String
+        self.pts4Attending?.text = self.appDelegate.selectedEvent![7] as? String
         // Do any additional setup after loading the view.
     }
 

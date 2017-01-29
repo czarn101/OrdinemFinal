@@ -11,8 +11,9 @@ import UIKit
 
 public class DetailView: UIViewController {
     
+    @IBOutlet weak var image: UIImageView!
     @IBOutlet var eventTitle: UILabel?
-    @IBOutlet var eventDescription: UILabel?
+    @IBOutlet var eventDescription: UITextView?
     @IBOutlet var hostName: UILabel?
     @IBOutlet var eventDateTime: UILabel?
     @IBOutlet var location: UILabel?
