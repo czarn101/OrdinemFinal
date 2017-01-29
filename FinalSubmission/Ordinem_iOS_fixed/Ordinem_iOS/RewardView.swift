@@ -41,6 +41,8 @@ public class RewardView: UIViewController {
     
     @IBAction func actionSlider(_ sender: UISlider) {
         
+        
+        
         let currentValue = Int(slider.value)
         let value = Double(currentValue)
         let current = Double(value/10).roundTo(places: 2)
@@ -76,14 +78,14 @@ public class RewardView: UIViewController {
     func getPrizeInfo(){
         rewardName = prizeName
         
-        
-        
-        
     }
     
     override public func viewDidLoad() {
         super.viewDidLoad()
         appDelegate.rewardView = self
+        if (Int(appDelegate.pointBalance!)! < 100){
+            slider.isEnabled = false
+        }
 
     }
     
