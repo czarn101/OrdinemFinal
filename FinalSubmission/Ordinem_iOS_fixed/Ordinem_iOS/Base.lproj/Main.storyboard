@@ -974,6 +974,9 @@
                                         </constraints>
                                         <fontDescription key="fontDescription" name="LemonMilk" family="Lemon/Milk" pointSize="17"/>
                                         <state key="normal" title="Sign Up"/>
+                                        <connections>
+                                            <action selector="doneClicked" destination="htr-6a-Oic" eventType="touchUpInside" id="WA5-wr-Fid"/>
+                                        </connections>
                                     </button>
                                     <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hxp-g8-qMe">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
@@ -5530,7 +5533,7 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="Zwy-yC-Ryb"/>
-        <segue reference="67H-Ht-WpW"/>
+        <segue reference="F5w-Ls-Uqy"/>
         <segue reference="QQm-0l-TjM"/>
         <segue reference="mbt-fX-omf"/>
     </inferredMetricsTieBreakers>
