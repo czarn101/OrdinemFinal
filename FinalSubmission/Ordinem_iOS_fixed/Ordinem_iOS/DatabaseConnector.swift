@@ -8,6 +8,8 @@
 
 import Foundation
 import UIKit
+import FirebaseDatabase
+import FirebaseAuth
 
 public class DatabaseConnector {
     
@@ -15,6 +17,18 @@ public class DatabaseConnector {
     var dict: NSMutableDictionary = NSMutableDictionary()
 
     let appDelegate: AppDelegate = UIApplication.shared.delegate as! AppDelegate
+    
+    func addUser(user: FIRUser, fname: String, lname: String, id: String, school: String) {
+        self.appDelegate.ref?.child("users").child(user.uid).setValue(["fname": fname,
+                                                                       "lname": lname,
+                                                                       "studentID": id,
+                                                                       "school": school,
+                                                                       "pointBalance": 0])
+    }
+    
+    func addOrd(user: FIRUser) {
+
+    }
     
     func getEvents() {
         let myUrl = URL(string: "http://ordinem.ddns.net/api.php/events")!

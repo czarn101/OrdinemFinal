@@ -30,7 +30,9 @@ class LoginView: UIViewController, UITextFieldDelegate {
         if checkFields() {
             loadingMon?.isHidden = false
             loadingMon?.startAnimating()
-            dbc.userLogin(email: (emailField?.text)!, password: (passField?.text)!)
+            //dbc.userLogin(email: (emailField?.text)!, password: (passField?.text)!)
+            appDelegate.username = "Demo"
+            loginSuccess()
         } else {
             print("Incorrect Username/Password")
         }
@@ -39,8 +41,10 @@ class LoginView: UIViewController, UITextFieldDelegate {
     @IBAction func toggleAccountType(sender: UISwitch) {
         if sender.isOn {
             accountTitle?.text = "Student Login Portal"
+            appDelegate.isOrg = false
         } else {
             accountTitle?.text = "Organization Login Portal"
+            appDelegate.isOrg = true
         }
     }
     

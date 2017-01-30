@@ -75,6 +75,11 @@
 		386C2BB51DFF07D800F15658 /* AutoLoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 386C2BB41DFF07D800F15658 /* AutoLoginView.swift */; };
 		386DB3EF1E28785E00F8FF7D /* yesRSVP.png in Resources */ = {isa = PBXBuildFile; fileRef = 386DB3ED1E28785E00F8FF7D /* yesRSVP.png */; };
 		386DB3F11E28791300F8FF7D /* noRSVP.png in Resources */ = {isa = PBXBuildFile; fileRef = 386DB3F01E28791300F8FF7D /* noRSVP.png */; };
+		3899421D1E3F0B9E001AD80B /* sample.png in Resources */ = {isa = PBXBuildFile; fileRef = 3899421C1E3F0B9E001AD80B /* sample.png */; };
+		389942221E3F0DF0001AD80B /* CIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3899421E1E3F0DF0001AD80B /* CIColorExtension.swift */; };
+		389942231E3F0DF0001AD80B /* CIImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3899421F1E3F0DF0001AD80B /* CIImageExtension.swift */; };
+		389942241E3F0DF0001AD80B /* QRCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 389942201E3F0DF0001AD80B /* QRCode.swift */; };
+		389942251E3F0DF0001AD80B /* UIImageViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 389942211E3F0DF0001AD80B /* UIImageViewExtension.swift */; };
 		38D2BACE1E30407500F78259 /* RewardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38D2BACD1E30407500F78259 /* RewardView.swift */; };
 		38F0AB241E383E4C00AE7ECD /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 38F0AB231E383E4C00AE7ECD /* GoogleService-Info.plist */; };
 		5BB231D67447603B05629AF2 /* Pods_Ordinem_iOSTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8B8F523B39247267650ADC7 /* Pods_Ordinem_iOSTests.framework */; };
@@ -179,6 +184,11 @@
 		386C2BB41DFF07D800F15658 /* AutoLoginView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AutoLoginView.swift; sourceTree = "<group>"; };
 		386DB3ED1E28785E00F8FF7D /* yesRSVP.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = yesRSVP.png; path = ../yesRSVP.png; sourceTree = "<group>"; };
 		386DB3F01E28791300F8FF7D /* noRSVP.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = noRSVP.png; path = ../noRSVP.png; sourceTree = "<group>"; };
+		3899421C1E3F0B9E001AD80B /* sample.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sample.png; sourceTree = "<group>"; };
+		3899421E1E3F0DF0001AD80B /* CIColorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CIColorExtension.swift; sourceTree = "<group>"; };
+		3899421F1E3F0DF0001AD80B /* CIImageExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CIImageExtension.swift; sourceTree = "<group>"; };
+		389942201E3F0DF0001AD80B /* QRCode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QRCode.swift; sourceTree = "<group>"; };
+		389942211E3F0DF0001AD80B /* UIImageViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImageViewExtension.swift; sourceTree = "<group>"; };
 		38D2BACD1E30407500F78259 /* RewardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RewardView.swift; sourceTree = "<group>"; };
 		38F0AB231E383E4C00AE7ECD /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		56F54734ED4BD227B7783D0E /* Pods_Ordinem_iOSUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Ordinem_iOSUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -320,6 +330,11 @@
 		386C2B6D1DFE342600F15658 /* Ordinem_iOS */ = {
 			isa = PBXGroup;
 			children = (
+				3899421E1E3F0DF0001AD80B /* CIColorExtension.swift */,
+				3899421F1E3F0DF0001AD80B /* CIImageExtension.swift */,
+				389942201E3F0DF0001AD80B /* QRCode.swift */,
+				389942211E3F0DF0001AD80B /* UIImageViewExtension.swift */,
+				3899421C1E3F0B9E001AD80B /* sample.png */,
 				38F0AB231E383E4C00AE7ECD /* GoogleService-Info.plist */,
 				18A5319A1E36C3E9003686D2 /* Images */,
 				381F3E081E0733D9002366A8 /* PlistManager files */,
@@ -526,6 +541,7 @@
 				181E52071E31498D006859CA /* PersonOrdinem.jpg in Resources */,
 				382225FE1E31659A005CC3D5 /* LICENSE in Resources */,
 				382225F11E31659A005CC3D5 /* .gitignore in Resources */,
+				3899421D1E3F0B9E001AD80B /* sample.png in Resources */,
 				181E520B1E314E83006859CA /* HouseOrdinem c.png in Resources */,
 				386C2B761DFE342600F15658 /* Assets.xcassets in Resources */,
 				18C6589B1E372BDC000896BE /* Prize.png in Resources */,
@@ -686,10 +702,13 @@
 				382226051E31659A005CC3D5 /* QRCodeReaderViewContainer.swift in Sources */,
 				382226021E31659A005CC3D5 /* QRCodeReader.swift in Sources */,
 				382226081E31659A005CC3D5 /* QRCodeReaderViewControllerDelegate.swift in Sources */,
+				389942251E3F0DF0001AD80B /* UIImageViewExtension.swift in Sources */,
+				389942241E3F0DF0001AD80B /* QRCode.swift in Sources */,
 				382226031E31659A005CC3D5 /* QRCodeReaderResult.swift in Sources */,
 				386C2BAF1DFE9BEA00F15658 /* HomeView.swift in Sources */,
 				382226061E31659A005CC3D5 /* QRCodeReaderViewController.swift in Sources */,
 				381F3E0E1E07780E002366A8 /* PointView.swift in Sources */,
+				389942231E3F0DF0001AD80B /* CIImageExtension.swift in Sources */,
 				188B74851E3C2C600057A459 /* adminNewOrgs.swift in Sources */,
 				382225F41E31659A005CC3D5 /* CONTRIBUTORS.md in Sources */,
 				383F44381E021744003F7F28 /* DetailView.swift in Sources */,
@@ -704,6 +723,7 @@
 				180DF1A51E35CC0500C6A534 /* pantherBucksRewards.swift in Sources */,
 				180DF19F1E3555EE00C6A534 /* newReward.swift in Sources */,
 				188B748B1E3C2EF40057A459 /* orgDetails.swift in Sources */,
+				389942221E3F0DF0001AD80B /* CIColorExtension.swift in Sources */,
 				188B748D1E3C2F380057A459 /* newEventDetail.swift in Sources */,
 				382226071E31659A005CC3D5 /* QRCodeReaderViewControllerBuilder.swift in Sources */,
 				18C658A31E37E8FC000896BE /* Settings.swift in Sources */,

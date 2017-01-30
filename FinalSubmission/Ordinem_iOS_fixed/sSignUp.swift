@@ -27,6 +27,7 @@ UINavigationControllerDelegate, UITextFieldDelegate  {
     @IBOutlet weak var imagePicked: UIImageView!
     
     let appDelegate: AppDelegate = UIApplication.shared.delegate as! AppDelegate
+    let dbc: DatabaseConnector = DatabaseConnector()
     
     
     @IBAction func openPhotoLibraryButton(_ sender: UIButton) {
@@ -110,6 +111,7 @@ UINavigationControllerDelegate, UITextFieldDelegate  {
                     print(error.debugDescription)
                 } else {
                     self.appDelegate.mainUser = user
+                    self.dbc.addUser(user: user!, fname: self.fName!.text!, lname: self.lastName!.text!, id: self.studentID!.text!, school: self.school!.text!)
                     self.appDelegate.username = self.fName.text
                     self.appDelegate.pointBalance = "0"
                     self.performSegue(withIdentifier: "slogin", sender: self)

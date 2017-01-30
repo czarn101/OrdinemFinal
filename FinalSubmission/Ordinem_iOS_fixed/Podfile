@@ -9,6 +9,8 @@ target 'Ordinem_iOS' do
   pod 'Firebase/Core'
   pod 'Firebase/Auth'
   pod 'Firebase/Database'
+  pod 'Stripe'
+#  pod 'QRCode'
 
   target 'Ordinem_iOSTests' do
     inherit! :search_paths

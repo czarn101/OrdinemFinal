@@ -33,6 +33,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var mainUser: FIRUser?
     var ref: FIRDatabaseReference?
+    var isOrg: Bool?
     
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
@@ -41,6 +42,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         FIRApp.configure()
         ref = FIRDatabase.database().reference()
+        isOrg = false
         return true
     }
 

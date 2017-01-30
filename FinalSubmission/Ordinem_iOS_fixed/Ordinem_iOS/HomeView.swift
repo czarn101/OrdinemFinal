@@ -36,6 +36,7 @@ class HomeView: UIViewController, UITableViewDelegate, UITableViewDataSource, QR
         pointLabel?.text = appDelegate.pointBalance
         nameLabel?.text = "Welcome, "+appDelegate.username!+"!"
         dbc.getEvents()
+        loadContents(events: [["11","Test Event","Some random details.", "OGCoder club", "Jan 31st", "7:00 PM", "My crib", "50"]])
         // Do any additional setup after loading the view, typically from a nib.
     }
     
