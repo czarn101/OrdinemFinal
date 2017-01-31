@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		180DF19F1E3555EE00C6A534 /* newReward.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180DF19E1E3555EE00C6A534 /* newReward.swift */; };
-		180DF1A31E35C06500C6A534 /* addPoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180DF1A21E35C06500C6A534 /* addPoints.swift */; };
 		180DF1A51E35CC0500C6A534 /* pantherBucksRewards.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180DF1A41E35CC0500C6A534 /* pantherBucksRewards.swift */; };
 		180DF1A71E35CD2600C6A534 /* otherRewards.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180DF1A61E35CD2600C6A534 /* otherRewards.swift */; };
 		181E52001E2FE4B5006859CA /* SignUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181E51FF1E2FE4B5006859CA /* SignUp.swift */; };
@@ -32,6 +31,8 @@
 		18C658A11E37C6FA000896BE /* settings.png in Resources */ = {isa = PBXBuildFile; fileRef = 18C658A01E37C6FA000896BE /* settings.png */; };
 		18C658A31E37E8FC000896BE /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C658A21E37E8FC000896BE /* Settings.swift */; };
 		18C658A51E381E50000896BE /* EventConfirmation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C658A41E381E50000896BE /* EventConfirmation.swift */; };
+		18F4EA6B1E3FFAD500A6AF10 /* getMorePoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F4EA6A1E3FFAD500A6AF10 /* getMorePoints.swift */; };
+		18F4EA711E401A9800A6AF10 /* bankInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F4EA701E401A9800A6AF10 /* bankInfo.swift */; };
 		381F3E0B1E0733D9002366A8 /* MyData.plist in Resources */ = {isa = PBXBuildFile; fileRef = 381F3E091E0733D9002366A8 /* MyData.plist */; };
 		381F3E0C1E0733D9002366A8 /* PlistManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 381F3E0A1E0733D9002366A8 /* PlistManager.swift */; };
 		381F3E0E1E07780E002366A8 /* PointView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 381F3E0D1E07780E002366A8 /* PointView.swift */; };
@@ -107,7 +108,6 @@
 /* Begin PBXFileReference section */
 		10EE0C736EC074AE640D49E9 /* Pods-Ordinem_iOSUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Ordinem_iOSUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Ordinem_iOSUITests/Pods-Ordinem_iOSUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		180DF19E1E3555EE00C6A534 /* newReward.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = newReward.swift; sourceTree = "<group>"; };
-		180DF1A21E35C06500C6A534 /* addPoints.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = addPoints.swift; sourceTree = "<group>"; };
 		180DF1A41E35CC0500C6A534 /* pantherBucksRewards.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = pantherBucksRewards.swift; sourceTree = "<group>"; };
 		180DF1A61E35CD2600C6A534 /* otherRewards.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = otherRewards.swift; sourceTree = "<group>"; };
 		181E51FF1E2FE4B5006859CA /* SignUp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUp.swift; sourceTree = "<group>"; };
@@ -132,6 +132,8 @@
 		18C658A01E37C6FA000896BE /* settings.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = settings.png; sourceTree = "<group>"; };
 		18C658A21E37E8FC000896BE /* Settings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		18C658A41E381E50000896BE /* EventConfirmation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventConfirmation.swift; sourceTree = "<group>"; };
+		18F4EA6A1E3FFAD500A6AF10 /* getMorePoints.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = getMorePoints.swift; sourceTree = "<group>"; };
+		18F4EA701E401A9800A6AF10 /* bankInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = bankInfo.swift; path = Ordinem_iOS/bankInfo.swift; sourceTree = "<group>"; };
 		2B6FE5E1754F995E8CD83925 /* Pods-Ordinem_iOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Ordinem_iOSTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Ordinem_iOSTests/Pods-Ordinem_iOSTests.debug.xcconfig"; sourceTree = "<group>"; };
 		2E747F188CC80A63C5BD9C3D /* Pods-Ordinem_iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Ordinem_iOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-Ordinem_iOS/Pods-Ordinem_iOS.release.xcconfig"; sourceTree = "<group>"; };
 		340937569364D3D1BD538C32 /* Pods-Ordinem_iOSUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Ordinem_iOSUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Ordinem_iOSUITests/Pods-Ordinem_iOSUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -303,6 +305,7 @@
 				188B748C1E3C2F380057A459 /* newEventDetail.swift */,
 				188B748E1E3C32200057A459 /* wonInfo.swift */,
 				188B74901E3C32610057A459 /* rafflesInfo.swift */,
+				18F4EA701E401A9800A6AF10 /* bankInfo.swift */,
 				18C658A41E381E50000896BE /* EventConfirmation.swift */,
 				18C658A21E37E8FC000896BE /* Settings.swift */,
 				181E520C1E32C391006859CA /* sSignUp.swift */,
@@ -345,9 +348,9 @@
 				188B74821E3C28640057A459 /* rafflesEntered.swift */,
 				386C2B701DFE342600F15658 /* LoginView.swift */,
 				386C2B721DFE342600F15658 /* Main.storyboard */,
+				18F4EA6A1E3FFAD500A6AF10 /* getMorePoints.swift */,
 				180DF1A41E35CC0500C6A534 /* pantherBucksRewards.swift */,
 				180DF1A61E35CD2600C6A534 /* otherRewards.swift */,
-				180DF1A21E35C06500C6A534 /* addPoints.swift */,
 				180DF19E1E3555EE00C6A534 /* newReward.swift */,
 				181E52041E309F37006859CA /* eventTemp.swift */,
 				38D2BACD1E30407500F78259 /* RewardView.swift */,
@@ -716,10 +719,10 @@
 				38D2BACE1E30407500F78259 /* RewardView.swift in Sources */,
 				181E520D1E32C391006859CA /* sSignUp.swift in Sources */,
 				181E52051E309F37006859CA /* eventTemp.swift in Sources */,
+				18F4EA711E401A9800A6AF10 /* bankInfo.swift in Sources */,
 				188B748F1E3C32200057A459 /* wonInfo.swift in Sources */,
 				180DF1A71E35CD2600C6A534 /* otherRewards.swift in Sources */,
 				381F3E0C1E0733D9002366A8 /* PlistManager.swift in Sources */,
-				180DF1A31E35C06500C6A534 /* addPoints.swift in Sources */,
 				180DF1A51E35CC0500C6A534 /* pantherBucksRewards.swift in Sources */,
 				180DF19F1E3555EE00C6A534 /* newReward.swift in Sources */,
 				188B748B1E3C2EF40057A459 /* orgDetails.swift in Sources */,
@@ -739,6 +742,7 @@
 				386C2BAD1DFE782E00F15658 /* DatabaseConnector.swift in Sources */,
 				188B74811E3C28250057A459 /* winnerPrizes.swift in Sources */,
 				386C2B6F1DFE342600F15658 /* AppDelegate.swift in Sources */,
+				18F4EA6B1E3FFAD500A6AF10 /* getMorePoints.swift in Sources */,
 				18C658A51E381E50000896BE /* EventConfirmation.swift in Sources */,
 				181E52001E2FE4B5006859CA /* SignUp.swift in Sources */,
 				3822260B1E31659A005CC3D5 /* ToggleTorchButton.swift in Sources */,

@@ -1,17 +1,20 @@
 //
-//  addPoints.swift
+//  getMorePoints.swift
 //  Ordinem_iOS
 //
-//  Created by Drew Thomas on 1/22/17.
+//  Created by Drew Thomas on 1/30/17.
 //  Copyright © 2017 Ordinem. All rights reserved.
 //
 
 import UIKit
 import Foundation
+import Stripe
 
-
-class addPoints: UIViewController {
-
+class getMorePoints: UIViewController, STPPaymentCardTextFieldDelegate {
+    
+    
+    
+    
     @IBOutlet weak var countPlaceHolder: UILabel!
     @IBOutlet weak var projectedAttendance: UITextField!
     
@@ -23,9 +26,8 @@ class addPoints: UIViewController {
     var attendance = Double(1)
     var real = Double(1)
     
-    @IBAction func pointStepperAction(_ sender: Any) {
+    @IBAction func pointStepperA(_ sender: Any) {
         countPlaceHolder.text = String(Int(stepper.value))
-        
     }
     
     func getPoints() -> Int{
@@ -51,12 +53,23 @@ class addPoints: UIViewController {
         
     }
     
+    
+    @IBOutlet weak var buyButton: UIButton!
+
+    
+    @IBAction func calcHome(segue: UIStoryboardSegue) {
+        
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        super.viewDidLoad()
+        
+
+        
         stepper.maximumValue = 99
         stepper.stepValue = 1
-
+        
         
         let flexibleSpace = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.flexibleSpace, target: nil, action: nil)
         
@@ -75,10 +88,10 @@ class addPoints: UIViewController {
         
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name:NSNotification.Name.UIKeyboardWillShow, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name:NSNotification.Name.UIKeyboardWillHide, object: nil)
-
+        
         // Do any additional setup after loading the view.
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -104,15 +117,19 @@ class addPoints: UIViewController {
         let contentInset:UIEdgeInsets = UIEdgeInsets.zero
         self.theScrollView.contentInset = contentInset
     }
-
+    
+    
+    
+    
+    
     /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using segue.destinationViewController.
+     // Pass the selected object to the new view controller.
+     }
+     */
+    
 }

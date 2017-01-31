@@ -12,6 +12,7 @@ import SystemConfiguration
 import Firebase
 import FirebaseAuth
 import FirebaseDatabase
+import Stripe
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -43,6 +44,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         FIRApp.configure()
         ref = FIRDatabase.database().reference()
         isOrg = false
+        //test publishKey
+        STPPaymentConfiguration.shared().publishableKey = "pk_test_5lzFaXyZ9a32h55v8Ar3pc5T"
         return true
     }
 
@@ -100,5 +103,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let needsConnection = (flags.rawValue & UInt32(kSCNetworkFlagsConnectionRequired)) != 0
         return (isReachable && !needsConnection)
     }
+    
 }
 
