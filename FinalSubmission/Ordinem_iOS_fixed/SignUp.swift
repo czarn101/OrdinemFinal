@@ -7,9 +7,10 @@
 //
 
 import UIKit
+import FirebaseAuth
+import FirebaseDatabase
 
-
-class SignUp: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate, UITextFieldDelegate {
+class SignUp: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate, UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
 
     
@@ -25,7 +26,34 @@ class SignUp: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate, UI
     
     @IBOutlet weak var theScrollView: UIScrollView!
     
-
+    
+    @IBOutlet weak var imaged: UIImageView!
+    @IBAction func openProfileLibrary(_ sender: UIButton) {
+        
+        if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.photoLibrary) {
+            let imagePicker = UIImagePickerController()
+            imagePicker.delegate = self
+            imagePicker.sourceType = UIImagePickerControllerSourceType.photoLibrary;
+            imagePicker.allowsEditing = true
+            self.present(imagePicker, animated: true, completion: nil)
+            
+        }
+        
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
+        if let image = info[UIImagePickerControllerEditedImage] as? UIImage {//2
+            imaged.contentMode = .scaleAspectFit
+            imaged.image = image
+        } else{
+            print("Something went wrong")
+        }
+    }
+    
+    let appDelegate: AppDelegate = UIApplication.shared.delegate as! AppDelegate
+    let dbc: DatabaseConnector = DatabaseConnector()
+    
+    
     
     func keyboardWillShow(notification:NSNotification){
         //give room at the bottom of the scroll view, so it doesn't cover up anything the user needs to tap
@@ -105,6 +133,21 @@ class SignUp: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate, UI
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        if checkFields() {
+            // CREATE NEW USER
+            FIRAuth.auth()?.createUser(withEmail: self.sEmail!.text!, password: self.sPassword!.text!) { (user, error) in
+                if error != nil {
+                    print(error.debugDescription)
+                } else {
+                    self.appDelegate.mainUser = user
+                    self.dbc.addUser(user: user!, fname: self.orgName!.text!, lname: self.orgType!.text!, id: self.orgID!.text!, school: self.skewl!.text!)
+                    self.appDelegate.username = self.orgName.text
+                    self.appDelegate.pointBalance = "0"
+                    self.performSegue(withIdentifier: "slogin", sender: self)
+                }
+            }
+        }
+        
         
         orgName.delegate = self
         orgType.delegate = self
@@ -191,4 +234,51 @@ class SignUp: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate, UI
         return true
     }
 
+    func checkFields() -> Bool {
+        if "" == self.orgName.text {
+            let alert = UIAlertController(title: "Alert", message: "Please Enter First Name", preferredStyle: UIAlertControllerStyle.alert)
+            alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+            return false
+        }
+        else if "" == self.orgType.text {
+            let alert = UIAlertController(title: "Alert", message: "Please Enter Last Name", preferredStyle: UIAlertControllerStyle.alert)
+            alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+            return false
+        }
+        else if "" == self.orgID.text {
+            let alert = UIAlertController(title: "Alert", message: "Incorrect Student ID", preferredStyle: UIAlertControllerStyle.alert)
+            alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+            return false
+        }
+        else if "" == self.skewl.text {
+            let alert = UIAlertController(title: "Alert", message: "Please Select Your School", preferredStyle: UIAlertControllerStyle.alert)
+            alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+            return false
+        }
+        else if "" == self.sEmail.text {
+            let alert = UIAlertController(title: "Alert", message: "Incorrect Student Email", preferredStyle: UIAlertControllerStyle.alert)
+            alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+            return false
+        }
+        else if "" == self.sPassword.text {
+            let alert = UIAlertController(title: "Alert", message: "Please Enter Your Password", preferredStyle: UIAlertControllerStyle.alert)
+            alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+            return false
+        }
+        else if self.sPassword.text != self.vPassword.text{
+            let alert = UIAlertController(title: "Alert", message: "Passwords do not match", preferredStyle: UIAlertControllerStyle.alert)
+            alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+            return false
+        } else {
+            return true
+        }
+    }
+    
 }
