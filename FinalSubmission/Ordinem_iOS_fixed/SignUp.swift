@@ -12,9 +12,6 @@ import FirebaseDatabase
 
 class SignUp: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate, UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
-
-    
-    
     @IBOutlet weak var orgName: UITextField!
     @IBOutlet weak var orgType: UITextField!
     @IBOutlet weak var orgID: UITextField!
@@ -22,12 +19,12 @@ class SignUp: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate, UI
     @IBOutlet weak var sEmail: UITextField!
     @IBOutlet weak var sPassword: UITextField!
     @IBOutlet weak var vPassword: UITextField!
-    
-    
     @IBOutlet weak var theScrollView: UIScrollView!
-    
-    
     @IBOutlet weak var imaged: UIImageView!
+    
+    let appDelegate: AppDelegate = UIApplication.shared.delegate as! AppDelegate
+    let dbc: DatabaseConnector = DatabaseConnector()
+    
     @IBAction func openProfileLibrary(_ sender: UIButton) {
         
         if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.photoLibrary) {
@@ -36,24 +33,34 @@ class SignUp: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate, UI
             imagePicker.sourceType = UIImagePickerControllerSourceType.photoLibrary;
             imagePicker.allowsEditing = true
             self.present(imagePicker, animated: true, completion: nil)
-            
         }
-        
     }
     
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
+    private func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
         if let image = info[UIImagePickerControllerEditedImage] as? UIImage {//2
             imaged.contentMode = .scaleAspectFit
             imaged.image = image
-        } else{
+        } else {
             print("Something went wrong")
         }
     }
     
-    let appDelegate: AppDelegate = UIApplication.shared.delegate as! AppDelegate
-    let dbc: DatabaseConnector = DatabaseConnector()
-    
-    
+    @IBAction func createAccount(sender: UIButton) {
+        if checkFields() {
+            // CREATE NEW USER
+            FIRAuth.auth()?.createUser(withEmail: self.sEmail!.text!, password: self.sPassword!.text!) { (user, error) in
+                if error != nil {
+                    print(error.debugDescription)
+                } else {
+                    self.appDelegate.mainUser = user
+                    self.dbc.addUser(user: user!, fname: self.orgName!.text!, lname: self.orgType!.text!, id: self.orgID!.text!, school: self.skewl!.text!)
+                    self.appDelegate.username = self.orgName.text
+                    self.appDelegate.pointBalance = "0"
+                    self.performSegue(withIdentifier: "slogin", sender: self)
+                }
+            }
+        }
+    }
     
     func keyboardWillShow(notification:NSNotification){
         //give room at the bottom of the scroll view, so it doesn't cover up anything the user needs to tap
@@ -133,20 +140,7 @@ class SignUp: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate, UI
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        if checkFields() {
-            // CREATE NEW USER
-            FIRAuth.auth()?.createUser(withEmail: self.sEmail!.text!, password: self.sPassword!.text!) { (user, error) in
-                if error != nil {
-                    print(error.debugDescription)
-                } else {
-                    self.appDelegate.mainUser = user
-                    self.dbc.addUser(user: user!, fname: self.orgName!.text!, lname: self.orgType!.text!, id: self.orgID!.text!, school: self.skewl!.text!)
-                    self.appDelegate.username = self.orgName.text
-                    self.appDelegate.pointBalance = "0"
-                    self.performSegue(withIdentifier: "slogin", sender: self)
-                }
-            }
-        }
+        
         
         
         orgName.delegate = self

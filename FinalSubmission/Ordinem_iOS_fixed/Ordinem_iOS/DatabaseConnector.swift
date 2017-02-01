@@ -26,7 +26,7 @@ public class DatabaseConnector {
                                                                        "pointBalance": 0])
     }
     
-    func addOrd(user: FIRUser) {
+    func addOrg(user: FIRUser) {
 
     }
     
