@@ -53,9 +53,8 @@ class SignUp: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate, UI
                     print(error.debugDescription)
                 } else {
                     self.appDelegate.mainUser = user
-                    self.dbc.addUser(user: user!, fname: self.orgName!.text!, lname: self.orgType!.text!, id: self.orgID!.text!, school: self.skewl!.text!)
+                    self.dbc.addOrg(user: user!, orgName: self.orgName!.text!, orgType: self.orgType!.text!, id: self.orgID!.text!, school: self.skewl!.text!)
                     self.appDelegate.username = self.orgName.text
-                    self.appDelegate.pointBalance = "0"
                     self.performSegue(withIdentifier: "slogin", sender: self)
                 }
             }

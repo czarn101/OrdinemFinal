@@ -244,6 +244,41 @@ UINavigationControllerDelegate, UIPickerViewDataSource, UIPickerViewDelegate, UI
         // Dispose of any resources that can be recreated.
     }
     
+    
+    func checkFields() -> Bool {
+        if "" == self.eventTitle.text {
+            let alert = UIAlertController(title: "Alert", message: "Please Enter Event Title", preferredStyle: UIAlertControllerStyle.alert)
+            alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+            return false
+        }
+        else if "" == self.eventType.text {
+            let alert = UIAlertController(title: "Alert", message: "Please Select Event Type", preferredStyle: UIAlertControllerStyle.alert)
+            alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+            return false
+        }
+        else if "" == self.date.text {
+            let alert = UIAlertController(title: "Alert", message: "Please Enter Start Time", preferredStyle: UIAlertControllerStyle.alert)
+            alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+            return false
+        }
+        else if "" == self.eDate.text {
+            let alert = UIAlertController(title: "Alert", message: "Please Enter the End Time", preferredStyle: UIAlertControllerStyle.alert)
+            alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+            return false
+        }
+        else if "" == self.location.text {
+            let alert = UIAlertController(title: "Alert", message: "Please Enter The Location of the Event", preferredStyle: UIAlertControllerStyle.alert)
+            alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+            return false
+        } else {
+            return true
+        }
+    }
 
     /*
     // MARK: - Navigation

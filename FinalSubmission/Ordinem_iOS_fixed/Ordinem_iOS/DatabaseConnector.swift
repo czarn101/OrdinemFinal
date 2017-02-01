@@ -26,9 +26,38 @@ public class DatabaseConnector {
                                                                        "pointBalance": 0])
     }
     
-    func addOrg(user: FIRUser) {
+    func addOrg(user: FIRUser, orgName: String, orgType: String, id: String, school: String) {
+        self.appDelegate.ref?.child("orgs").child(user.uid).setValue(["orgName": orgName,
+                                                                       "orgType": orgType,
+                                                                       "schoolID": id,
+                                                                       "school": school
+                                                                       ])
 
     }
+    func addReward(user: FIRUser, awardTitle: String, pointCost: Int, closeDate: String, pickupLocation: String, prizeAmount: Int, raffleVWin: String, addInfo: String, verified: Bool) {
+        self.appDelegate.ref?.child("awards").child(user.uid).setValue(["awardTitle": awardTitle,
+                                                                       "pointCost": pointCost,
+                                                                       "closeDate": closeDate,
+                                                                       "pickupLocation": pickupLocation,
+                                                                       "prizeAmount": prizeAmount,
+                                                                       "raffleVWin":raffleVWin, "addInfo" : addInfo,
+                                                                       "verified": verified
+            ])
+        
+    }
+    
+    func addEvent(user: FIRUser, eventTitle: String, startDate: Date, endDate: Date, location: String, eventType: String, additionalInfo: String, ptsForAttending: Int, verified: Bool) {
+        self.appDelegate.ref?.child("awards").child(user.uid).setValue(["eventTitle": eventTitle,
+                                                                        "startDate": startDate,
+                                                                        "endDate": endDate,
+                                                                        "location": location,
+                                                                        "eventType": eventType,
+                                                                        "additionalInfo":additionalInfo, "ptsForAttending" : ptsForAttending,
+                                                                        "verified": verified
+            ])
+        
+    }
+    
     
     func getEvents() {
         let myUrl = URL(string: "http://ordinem.ddns.net/api.php/events")!

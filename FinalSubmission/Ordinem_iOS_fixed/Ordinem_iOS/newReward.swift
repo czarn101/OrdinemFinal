@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import FirebaseAuth
+import Firebase
 
 class newReward: UIViewController,
     UIImagePickerControllerDelegate,
@@ -38,6 +40,7 @@ UINavigationControllerDelegate, UIPickerViewDataSource, UIPickerViewDelegate  {
         
     }
     
+
 
     @IBAction func newReward(segue: UIStoryboardSegue) {
         
@@ -183,6 +186,47 @@ UINavigationControllerDelegate, UIPickerViewDataSource, UIPickerViewDelegate  {
         
         
         return true
+    }
+
+    func checkFields() -> Bool {
+        if "" == self.awardTitle.text {
+            let alert = UIAlertController(title: "Alert", message: "Please Enter Reward Title", preferredStyle: UIAlertControllerStyle.alert)
+            alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+            return false
+        }
+        else if "" == self.costInPts.text {
+            let alert = UIAlertController(title: "Alert", message: "Please Cost in Points", preferredStyle: UIAlertControllerStyle.alert)
+            alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+            return false
+        }
+        else if "" == self.closureDate.text {
+            let alert = UIAlertController(title: "Alert", message: "Please Enter Closure Date", preferredStyle: UIAlertControllerStyle.alert)
+            alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+            return false
+        }
+        else if "" == self.pickupLocation.text {
+            let alert = UIAlertController(title: "Alert", message: "Please Enter Pickup Location", preferredStyle: UIAlertControllerStyle.alert)
+            alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+            return false
+        }
+        else if "" == self.totalPrizes.text {
+            let alert = UIAlertController(title: "Alert", message: "Please Enter The Total Prizes Offered", preferredStyle: UIAlertControllerStyle.alert)
+            alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+            return false
+        }
+        else if "" == self.winOrRaffle.text {
+            let alert = UIAlertController(title: "Alert", message: "Please Select Win or Raffle", preferredStyle: UIAlertControllerStyle.alert)
+            alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+            return false
+        } else {
+            return true
+        }
     }
 
     /*
