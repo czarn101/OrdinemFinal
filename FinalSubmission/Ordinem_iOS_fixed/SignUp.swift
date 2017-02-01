@@ -75,10 +75,7 @@ class SignUp: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate, UI
     func keyboardWillHide(notification:NSNotification){
         let contentInset:UIEdgeInsets = UIEdgeInsets.zero
         self.theScrollView.contentInset = contentInset
-        
-        
     }
-    
     
     
     var list = ["Chapman"]

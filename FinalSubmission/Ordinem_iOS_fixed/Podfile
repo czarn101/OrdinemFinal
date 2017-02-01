@@ -10,8 +10,8 @@ target 'Ordinem_iOS' do
   pod 'Firebase/Auth'
   pod 'Firebase/Database'
   pod 'Stripe'
-  pod 'FBSDKCoreKit'
-  pod 'FBSDKLoginKit'
+  #pod 'FBSDKCoreKit'
+  #  pod 'FBSDKLoginKit'
 #  pod 'QRCode'
 
   target 'Ordinem_iOSTests' do

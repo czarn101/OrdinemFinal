@@ -65,5 +65,25 @@
 	<string>The camera is needed to scan QR codes.</string>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>Photo Library access needed to select profile pictures.</string>
+    <key>CFBundleURLTypes</key>
+    <array>
+        <dict>
+            <key>CFBundleURLSchemes</key>
+            <array>
+                <string>fb141428956365407</string>
+            </array>
+        </dict>
+    </array>
+    <key>FacebookAppID</key>
+    <string>141428956365407</string>
+    <key>FacebookDisplayName</key>
+    <string>Ordinem</string>
+    <key>LSApplicationQueriesSchemes</key>
+    <array>
+        <string>fbapi</string>
+        <string>fb-messenger-api</string>
+        <string>fbauth2</string>
+        <string>fbshareextension</string>
+    </array>
 </dict>
 </plist>

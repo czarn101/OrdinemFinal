@@ -4,21 +4,6 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>Bolts.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
-		<key>FBSDKCoreKit.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
-		<key>FBSDKLoginKit.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
 		<key>Pods-Ordinem_iOS.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -47,11 +32,6 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>18290B6EF88F27368ACA665143EEBBA2</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
 		<key>1A8F12F9307A34F446E19BBA16888126</key>
 		<dict>
 			<key>primary</key>
@@ -62,27 +42,17 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>2E303C3CE7513908EE880D9CA833AFAE</key>
+		<key>28E23C98A860F0BE6426A6E46BEC6685</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>69FF113AE7996A021010B48B7C8ADF2A</key>
+		<key>5D75B1392E496B8348D42487F1DE38A6</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>6EDC37F3FA92533C6AC3562458AA91F1</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>9D0F2E5EA1B46A5D72FFD42B0B39DBBC</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>ED08D5B06C10A417E1ADD8B31700E430</key>
+		<key>8BB4BFF49D569C5E3A3D2814BAD957B7</key>
 		<dict>
 			<key>primary</key>
 			<true/>

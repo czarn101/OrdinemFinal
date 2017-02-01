@@ -55,6 +55,11 @@
 		3822260A1E31659A005CC3D5 /* SwitchCameraButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 382225EF1E31659A005CC3D5 /* SwitchCameraButton.swift */; };
 		3822260B1E31659A005CC3D5 /* ToggleTorchButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 382225F01E31659A005CC3D5 /* ToggleTorchButton.swift */; };
 		383F44381E021744003F7F28 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 383F44371E021744003F7F28 /* DetailView.swift */; };
+		385F2A4F1E427345009316EB /* Stripe.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 385F2A4B1E427345009316EB /* Stripe.framework */; };
+		385F2A531E427520009316EB /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 385F2A511E427520009316EB /* FBSDKCoreKit.framework */; };
+		385F2A541E427520009316EB /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 385F2A521E427520009316EB /* FBSDKLoginKit.framework */; };
+		385F2A561E427990009316EB /* FBLoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385F2A551E427990009316EB /* FBLoginView.swift */; };
+		385F2A581E4283A2009316EB /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 385F2A571E4283A2009316EB /* Bolts.framework */; };
 		386C2B6F1DFE342600F15658 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 386C2B6E1DFE342600F15658 /* AppDelegate.swift */; };
 		386C2B711DFE342600F15658 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 386C2B701DFE342600F15658 /* LoginView.swift */; };
 		386C2B741DFE342600F15658 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 386C2B721DFE342600F15658 /* Main.storyboard */; };
@@ -159,6 +164,12 @@
 		382225EF1E31659A005CC3D5 /* SwitchCameraButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwitchCameraButton.swift; sourceTree = "<group>"; };
 		382225F01E31659A005CC3D5 /* ToggleTorchButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToggleTorchButton.swift; sourceTree = "<group>"; };
 		383F44371E021744003F7F28 /* DetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
+		385F2A4B1E427345009316EB /* Stripe.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Stripe.framework; path = "../../../../../Library/Developer/Xcode/DerivedData/Ordinem_iOS-gvptuficknbphtciuldfljwmbffy/Build/Products/Debug-iphonesimulator/Stripe/Stripe.framework"; sourceTree = "<group>"; };
+		385F2A511E427520009316EB /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
+		385F2A521E427520009316EB /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
+		385F2A551E427990009316EB /* FBLoginView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FBLoginView.swift; sourceTree = "<group>"; };
+		385F2A571E4283A2009316EB /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
+		385F2A591E428B0D009316EB /* Ordinem_iOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Ordinem_iOS.entitlements; sourceTree = "<group>"; };
 		386C2B6B1DFE342600F15658 /* Ordinem_iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Ordinem_iOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		386C2B6E1DFE342600F15658 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		386C2B701DFE342600F15658 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
@@ -205,6 +216,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				385F2A581E4283A2009316EB /* Bolts.framework in Frameworks */,
+				385F2A4F1E427345009316EB /* Stripe.framework in Frameworks */,
+				385F2A531E427520009316EB /* FBSDKCoreKit.framework in Frameworks */,
+				385F2A541E427520009316EB /* FBSDKLoginKit.framework in Frameworks */,
 				D1D2D99AF6AAEAC0F6D11C37 /* Pods_Ordinem_iOS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -333,6 +348,7 @@
 		386C2B6D1DFE342600F15658 /* Ordinem_iOS */ = {
 			isa = PBXGroup;
 			children = (
+				385F2A591E428B0D009316EB /* Ordinem_iOS.entitlements */,
 				3899421E1E3F0DF0001AD80B /* CIColorExtension.swift */,
 				3899421F1E3F0DF0001AD80B /* CIImageExtension.swift */,
 				389942201E3F0DF0001AD80B /* QRCode.swift */,
@@ -348,6 +364,7 @@
 				188B74821E3C28640057A459 /* rafflesEntered.swift */,
 				386C2B701DFE342600F15658 /* LoginView.swift */,
 				386C2B721DFE342600F15658 /* Main.storyboard */,
+				385F2A551E427990009316EB /* FBLoginView.swift */,
 				18F4EA6A1E3FFAD500A6AF10 /* getMorePoints.swift */,
 				180DF1A41E35CC0500C6A534 /* pantherBucksRewards.swift */,
 				180DF1A61E35CD2600C6A534 /* otherRewards.swift */,
@@ -400,6 +417,10 @@
 		D8588E493B03D0AE2809C193 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				385F2A571E4283A2009316EB /* Bolts.framework */,
+				385F2A511E427520009316EB /* FBSDKCoreKit.framework */,
+				385F2A521E427520009316EB /* FBSDKLoginKit.framework */,
+				385F2A4B1E427345009316EB /* Stripe.framework */,
 				DB1B1AD98A57A243D53E28E8 /* Pods_Ordinem_iOS.framework */,
 				F8B8F523B39247267650ADC7 /* Pods_Ordinem_iOSTests.framework */,
 				56F54734ED4BD227B7783D0E /* Pods_Ordinem_iOSUITests.framework */,
@@ -485,6 +506,11 @@
 						CreatedOnToolsVersion = 8.1;
 						DevelopmentTeam = JTE4SBMYPN;
 						ProvisioningStyle = Manual;
+						SystemCapabilities = {
+							com.apple.Keychain = {
+								enabled = 1;
+							};
+						};
 					};
 					386C2B7E1DFE342600F15658 = {
 						CreatedOnToolsVersion = 8.1;
@@ -715,6 +741,7 @@
 				188B74851E3C2C600057A459 /* adminNewOrgs.swift in Sources */,
 				382225F41E31659A005CC3D5 /* CONTRIBUTORS.md in Sources */,
 				383F44381E021744003F7F28 /* DetailView.swift in Sources */,
+				385F2A561E427990009316EB /* FBLoginView.swift in Sources */,
 				382226041E31659A005CC3D5 /* QRCodeReaderView.swift in Sources */,
 				38D2BACE1E30407500F78259 /* RewardView.swift in Sources */,
 				181E520D1E32C391006859CA /* sSignUp.swift in Sources */,
@@ -900,8 +927,14 @@
 			baseConfigurationReference = D8158729A37F852D16F2F22B /* Pods-Ordinem_iOS.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = Ordinem_iOS/Ordinem_iOS.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = JTE4SBMYPN;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = Ordinem_iOS/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -918,8 +951,14 @@
 			baseConfigurationReference = 2E747F188CC80A63C5BD9C3D /* Pods-Ordinem_iOS.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = Ordinem_iOS/Ordinem_iOS.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = "";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = Ordinem_iOS/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

@@ -57,7 +57,6 @@ UINavigationControllerDelegate, UITextFieldDelegate  {
         self.dismiss(animated: true, completion: nil)
     }
     
-    
     func keyboardWillShow(notification:NSNotification){
         //give room at the bottom of the scroll view, so it doesn't cover up anything the user needs to tap
         var userInfo = notification.userInfo!

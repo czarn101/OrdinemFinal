@@ -19,7 +19,7 @@ public class DatabaseConnector {
     let appDelegate: AppDelegate = UIApplication.shared.delegate as! AppDelegate
     
     func addUser(user: FIRUser, fname: String, lname: String, id: String, school: String) {
-        self.appDelegate.ref?.child("users").child(user.uid).setValue(["fname": fname,
+        self.appDelegate.ref?.child("chapman").child("users").child(user.uid).setValue(["fname": fname,
                                                                        "lname": lname,
                                                                        "studentID": id,
                                                                        "school": school,
@@ -27,15 +27,15 @@ public class DatabaseConnector {
     }
     
     func addOrg(user: FIRUser, orgName: String, orgType: String, id: String, school: String) {
-        self.appDelegate.ref?.child("orgs").child(user.uid).setValue(["orgName": orgName,
+        self.appDelegate.ref?.child("chapman").child("orgs").child(user.uid).setValue(["orgName": orgName,
                                                                        "orgType": orgType,
                                                                        "schoolID": id,
                                                                        "school": school
                                                                        ])
 
     }
-    func addReward(user: FIRUser, awardTitle: String, pointCost: Int, closeDate: String, pickupLocation: String, prizeAmount: Int, raffleVWin: String, addInfo: String, verified: Bool) {
-        self.appDelegate.ref?.child("awards").child(user.uid).setValue(["awardTitle": awardTitle,
+    func addReward(user: FIRUser, rewardTitle: String, pointCost: Int, closeDate: String, pickupLocation: String, prizeAmount: Int, raffleVWin: String, addInfo: String, verified: Bool) {
+        self.appDelegate.ref?.child("chapman").child("rewards").child(user.uid).setValue(["rewardTitle": rewardTitle,
                                                                        "pointCost": pointCost,
                                                                        "closeDate": closeDate,
                                                                        "pickupLocation": pickupLocation,
@@ -47,22 +47,22 @@ public class DatabaseConnector {
     }
     
     func addEvent(user: FIRUser, eventTitle: String, startDate: Date, endDate: Date, location: String, eventType: String, additionalInfo: String, ptsForAttending: Int, verified: Bool) {
-        self.appDelegate.ref?.child("awards").child(user.uid).setValue(["eventTitle": eventTitle,
+        self.appDelegate.ref?.child("chapman").child("events").childByAutoId().setValue(["eventTitle": eventTitle,
                                                                         "startDate": startDate,
                                                                         "endDate": endDate,
                                                                         "location": location,
                                                                         "eventType": eventType,
-                                                                        "additionalInfo":additionalInfo, "ptsForAttending" : ptsForAttending,
-                                                                        "verified": verified
+                                                                        "additionalInfo":additionalInfo,
+                                                                        "ptsForAttending" : ptsForAttending,
+                                                                        "verified": verified,
+                                                                        "orgID": user.uid
             ])
-        
     }
-    
     
     func getEvents() {
         let myUrl = URL(string: "http://ordinem.ddns.net/api.php/events")!
-        let request = NSMutableURLRequest(url:myUrl);
-        request.httpMethod = "GET";
+        let request = NSMutableURLRequest(url:myUrl)
+        request.httpMethod = "GET"
         
         let task = URLSession.shared.dataTask(with: request as URLRequest) {
             data, response, error in
