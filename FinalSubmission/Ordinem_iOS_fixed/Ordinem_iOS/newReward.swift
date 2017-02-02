@@ -28,6 +28,18 @@ UINavigationControllerDelegate, UIPickerViewDataSource, UIPickerViewDelegate  {
     
     @IBOutlet weak var theScrollView: UIScrollView!
     
+    @IBAction func complete(_ sender: UIButton) {
+        if checkFields(){
+            handleSet()
+        }
+    }
+    
+    func handleSet(){
+        let ref = FIRDatabase.database().reference().child("Rewards")
+        let childRef = ref.childByAutoId()
+        let values = ["Title":awardTitle, "Point Cost":costInPts,"End Date":closureDate, "Location":pickupLocation, "Prize Number  Offered":totalPrizes,"Win vs Raffle": winOrRaffle, "Additional Info":addInfo, "Verified":false] as [String : Any]
+        childRef.updateChildValues(values)
+    }
     
     @IBAction func openCameraButton(_ sender: UIButton) {
         if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.camera) {

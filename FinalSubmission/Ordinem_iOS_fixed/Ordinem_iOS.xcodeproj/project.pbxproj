@@ -16,6 +16,7 @@
 		181E520B1E314E83006859CA /* HouseOrdinem c.png in Resources */ = {isa = PBXBuildFile; fileRef = 181E520A1E314E83006859CA /* HouseOrdinem c.png */; };
 		181E520D1E32C391006859CA /* sSignUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181E520C1E32C391006859CA /* sSignUp.swift */; };
 		181E520F1E3305E4006859CA /* ChapmanLogo.png in Resources */ = {isa = PBXBuildFile; fileRef = 181E520E1E3305E4006859CA /* ChapmanLogo.png */; };
+		1886E5251E42B48E00001D5C /* userVOrg.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1886E5241E42B48E00001D5C /* userVOrg.swift */; };
 		188B74811E3C28250057A459 /* winnerPrizes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188B74801E3C28250057A459 /* winnerPrizes.swift */; };
 		188B74831E3C28640057A459 /* rafflesEntered.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188B74821E3C28640057A459 /* rafflesEntered.swift */; };
 		188B74851E3C2C600057A459 /* adminNewOrgs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188B74841E3C2C600057A459 /* adminNewOrgs.swift */; };
@@ -122,6 +123,7 @@
 		181E520A1E314E83006859CA /* HouseOrdinem c.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "HouseOrdinem c.png"; path = "../HouseOrdinem c.png"; sourceTree = "<group>"; };
 		181E520C1E32C391006859CA /* sSignUp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = sSignUp.swift; sourceTree = "<group>"; };
 		181E520E1E3305E4006859CA /* ChapmanLogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ChapmanLogo.png; path = ../ChapmanLogo.png; sourceTree = "<group>"; };
+		1886E5241E42B48E00001D5C /* userVOrg.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = userVOrg.swift; sourceTree = "<group>"; };
 		188B74801E3C28250057A459 /* winnerPrizes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = winnerPrizes.swift; sourceTree = "<group>"; };
 		188B74821E3C28640057A459 /* rafflesEntered.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = rafflesEntered.swift; sourceTree = "<group>"; };
 		188B74841E3C2C600057A459 /* adminNewOrgs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = adminNewOrgs.swift; sourceTree = "<group>"; };
@@ -313,6 +315,7 @@
 		386C2B621DFE342600F15658 = {
 			isa = PBXGroup;
 			children = (
+				1886E5241E42B48E00001D5C /* userVOrg.swift */,
 				188B74841E3C2C600057A459 /* adminNewOrgs.swift */,
 				188B74861E3C2CEF0057A459 /* adminNewEvent.swift */,
 				188B74881E3C2DB50057A459 /* rewardVerification.swift */,
@@ -748,6 +751,7 @@
 				181E52051E309F37006859CA /* eventTemp.swift in Sources */,
 				18F4EA711E401A9800A6AF10 /* bankInfo.swift in Sources */,
 				188B748F1E3C32200057A459 /* wonInfo.swift in Sources */,
+				1886E5251E42B48E00001D5C /* userVOrg.swift in Sources */,
 				180DF1A71E35CD2600C6A534 /* otherRewards.swift in Sources */,
 				381F3E0C1E0733D9002366A8 /* PlistManager.swift in Sources */,
 				180DF1A51E35CC0500C6A534 /* pantherBucksRewards.swift in Sources */,

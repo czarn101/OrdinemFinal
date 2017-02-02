@@ -135,7 +135,7 @@ class LoginView: UIViewController, UITextFieldDelegate {
         self.passField?.text = ""
     }
     
-    @IBAction func backToLogin(segue: UIStoryboardSegue) {
+    @IBAction func backToLogging(segue: UIStoryboardSegue) {
         
     }
 

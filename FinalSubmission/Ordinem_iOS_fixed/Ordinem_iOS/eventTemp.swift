@@ -7,11 +7,26 @@
 //
 
 import UIKit
+import Firebase
+
 
 class eventTemp: UIViewController,
     UIImagePickerControllerDelegate,
 UINavigationControllerDelegate, UIPickerViewDataSource, UIPickerViewDelegate, UITextFieldDelegate, UITextViewDelegate {
 
+    
+    @IBAction func complete(_ sender: UIButton) {
+        handleSet()
+    }
+    
+    func handleSet(){
+        if checkFields(){
+        let ref = FIRDatabase.database().reference().child("events")
+        let childRef = ref.childByAutoId()
+        let values = ["title":eventTitle, "Start Time":date,"End Time":eDate, "Location":location, "event Type":eventType,"Additional Info": additionalInfo, "Points Offered":label4Stepper, "Verified":false] as [String : Any]
+        childRef.updateChildValues(values)
+        }
+    }
     
     @IBOutlet weak var date: UITextField!
     
