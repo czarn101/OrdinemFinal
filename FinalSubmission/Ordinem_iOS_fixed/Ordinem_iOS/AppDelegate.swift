@@ -12,6 +12,7 @@ import SystemConfiguration
 import Firebase
 import FirebaseAuth
 import FirebaseDatabase
+import FirebaseStorage
 import Stripe
 import FBSDKCoreKit
 
@@ -35,7 +36,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var mainUser: FIRUser?
     var ref: FIRDatabaseReference?
+    var storage: FIRStorageReference?
     var isOrg: Bool?
+    
+    
     
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
@@ -44,6 +48,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         FIRApp.configure()
         ref = FIRDatabase.database().reference()
+        storage = FIRStorage.storage().reference()
         isOrg = false
         //test publishKey
         STPPaymentConfiguration.shared().publishableKey = "pk_test_5lzFaXyZ9a32h55v8Ar3pc5T"
