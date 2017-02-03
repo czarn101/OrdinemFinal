@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="JSV-9r-caV">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="JSV-9r-caV">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -22,7 +22,7 @@
         <scene sceneID="Dd9-8E-NO8">
             <objects>
                 <navigationController navigationBarHidden="YES" id="JSV-9r-caV" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="dcc-JC-rh7">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="dcc-JC-rh7">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -157,13 +157,13 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Don't have an account?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JzG-IL-ANi">
-                                <rect key="frame" x="62" y="338.5" width="118" height="15"/>
+                                <rect key="frame" x="62" y="339" width="118" height="15"/>
                                 <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="11"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Chapman University" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MF2-Wf-rDk">
-                                <rect key="frame" x="66" y="139.5" width="243" height="24"/>
+                                <rect key="frame" x="66" y="139" width="243" height="24"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="MF2-Wf-rDk" secondAttribute="height" multiplier="81:8" id="NAG-Gm-A0L"/>
                                 </constraints>
@@ -172,7 +172,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="OrdinemChapmanLogo.png" translatesAutoresizingMaskIntoConstraints="NO" id="cNz-p2-EkJ">
-                                <rect key="frame" x="66" y="70" width="243" height="69.5"/>
+                                <rect key="frame" x="66" y="70" width="243" height="69"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="cNz-p2-EkJ" secondAttribute="height" multiplier="7:2" id="mHw-NK-tuK"/>
                                 </constraints>
@@ -182,14 +182,14 @@
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </view>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="textBox.png" translatesAutoresizingMaskIntoConstraints="NO" id="1fm-ec-jIH">
-                                <rect key="frame" x="62" y="286" width="250" height="48.5"/>
+                                <rect key="frame" x="62" y="286" width="250" height="49"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="1fm-ec-jIH" secondAttribute="height" multiplier="293:57" id="HVL-ab-meY"/>
                                     <constraint firstAttribute="width" constant="250" id="Wwm-Ol-EMF"/>
                                 </constraints>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="textBox.png" translatesAutoresizingMaskIntoConstraints="NO" id="xyA-aP-Y0o">
-                                <rect key="frame" x="63" y="221.5" width="250" height="48.5"/>
+                                <rect key="frame" x="63" y="221" width="250" height="49"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="250" id="1hm-Nn-Mbx"/>
                                     <constraint firstAttribute="width" secondItem="xyA-aP-Y0o" secondAttribute="height" multiplier="293:57" id="mMg-WC-Nan"/>
@@ -222,7 +222,7 @@
                                 </connections>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kdm-XN-cZh">
-                                <rect key="frame" x="71" y="221.5" width="30" height="16"/>
+                                <rect key="frame" x="71" y="221" width="30" height="16"/>
                                 <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="12"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
@@ -263,10 +263,10 @@
                                 </state>
                             </button>
                             <activityIndicatorView hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="APb-SX-c4E">
-                                <rect key="frame" x="169" y="384.5" width="37" height="37"/>
+                                <rect key="frame" x="169" y="385" width="37" height="37"/>
                             </activityIndicatorView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1bu-Zb-5hL">
-                                <rect key="frame" x="185" y="337.5" width="118" height="16"/>
+                                <rect key="frame" x="185" y="338" width="118" height="16"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="16" id="C98-uh-nVj"/>
                                 </constraints>
@@ -277,13 +277,13 @@
                                 </connections>
                             </button>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YV9-hm-lZN">
-                                <rect key="frame" x="63" y="178.5" width="51" height="31"/>
+                                <rect key="frame" x="63" y="178" width="51" height="31"/>
                                 <connections>
                                     <action selector="toggleAccountTypeWithSender:" destination="BYZ-38-t0r" eventType="valueChanged" id="v2b-nT-zWw"/>
                                 </connections>
                             </switch>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Student Login Portal" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tjJ-0i-Krm">
-                                <rect key="frame" x="120" y="181.5" width="173" height="25"/>
+                                <rect key="frame" x="120" y="181" width="173" height="25"/>
                                 <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="19"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
@@ -476,7 +476,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <searchBar contentMode="redraw" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lJ9-WG-3vj">
-                                                    <rect key="frame" x="-3" y="0.0" width="372" height="44"/>
+                                                    <rect key="frame" x="-3" y="0.0" width="371" height="44"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                                     <textInputTraits key="textInputTraits"/>
                                                 </searchBar>
@@ -707,7 +707,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Current Point Balance" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MTA-KU-Zxn">
-                                <rect key="frame" x="16" y="196.5" width="343" height="94.5"/>
+                                <rect key="frame" x="16" y="196" width="343" height="95"/>
                                 <fontDescription key="fontDescription" name="LemonMilk" family="Lemon/Milk" pointSize="35"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
@@ -3486,7 +3486,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Orginaztion Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gV2-dh-fyK">
-                                                    <rect key="frame" x="82" y="8" width="172.5" height="23"/>
+                                                    <rect key="frame" x="82" y="8" width="173" height="23"/>
                                                     <fontDescription key="fontDescription" name="LemonMilk" family="Lemon/Milk" pointSize="17"/>
                                                     <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
@@ -4138,7 +4138,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Admin Organization Manager" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MPS-Vd-eux">
-                                <rect key="frame" x="16" y="78" width="330.5" height="27"/>
+                                <rect key="frame" x="16" y="78" width="331" height="27"/>
                                 <fontDescription key="fontDescription" name="LemonMilk" family="Lemon/Milk" pointSize="20"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
@@ -4909,7 +4909,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Won" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kpS-pM-pFX">
-                                                    <rect key="frame" x="82" y="38" width="42.5" height="23"/>
+                                                    <rect key="frame" x="82" y="38" width="43" height="23"/>
                                                     <fontDescription key="fontDescription" name="LemonMilk" family="Lemon/Milk" pointSize="17"/>
                                                     <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
@@ -4967,7 +4967,7 @@
                                 </prototypes>
                             </tableView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your Rewards" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A5a-kI-BFv">
-                                <rect key="frame" x="96" y="42.5" width="183" height="27"/>
+                                <rect key="frame" x="96" y="42" width="183" height="27"/>
                                 <fontDescription key="fontDescription" name="LemonMilk" family="Lemon/Milk" pointSize="24"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
@@ -5355,7 +5355,7 @@
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Reward Type" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jaj-iW-pN0">
-                                        <rect key="frame" x="131.5" y="310" width="113.5" height="23"/>
+                                        <rect key="frame" x="131" y="310" width="114" height="23"/>
                                         <fontDescription key="fontDescription" name="LemonMilk" family="Lemon/Milk" pointSize="17"/>
                                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
@@ -5742,10 +5742,10 @@
         <image name="yesRSVP.png" width="400" height="400"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Zwy-yC-Ryb"/>
-        <segue reference="QBo-m3-9Fv"/>
+        <segue reference="67H-Ht-WpW"/>
         <segue reference="QQm-0l-TjM"/>
         <segue reference="Ms9-WR-CVn"/>
+        <segue reference="Zwy-yC-Ryb"/>
         <segue reference="mbt-fX-omf"/>
     </inferredMetricsTieBreakers>
 </document>

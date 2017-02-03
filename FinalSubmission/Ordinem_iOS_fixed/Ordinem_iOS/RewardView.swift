@@ -82,10 +82,7 @@ public class RewardView: UIViewController {
     
     override public func viewDidLoad() {
         super.viewDidLoad()
-        appDelegate.rewardView = self
-        if (Int(appDelegate.pointBalance!)! < 100){
-            slider.isEnabled = false
-        }
+
 
     }
     
