@@ -23,7 +23,7 @@ UINavigationControllerDelegate, UIPickerViewDataSource, UIPickerViewDelegate, UI
         if checkFields(){
         let ref = FIRDatabase.database().reference().child("events")
         let childRef = ref.childByAutoId()
-        let values = ["title":eventTitle, "Start Time":date,"End Time":eDate, "Location":location, "event Type":eventType,"Additional Info": additionalInfo, "Points Offered":label4Stepper, "Verified":false] as [String : Any]
+        let values = ["title":eventTitle, "startTime":date,"endTime":eDate,"location":location, "eventType":eventType,"additionalInfo": additionalInfo, "pointsOffered":label4Stepper, "verified":false] as [String : Any]
         childRef.updateChildValues(values)
         }
     }

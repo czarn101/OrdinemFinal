@@ -114,6 +114,8 @@ UINavigationControllerDelegate, UITextFieldDelegate  {
                     self.appDelegate.username = self.fName.text
                     self.appDelegate.pointBalance = "0"
                     self.performSegue(withIdentifier: "slogin", sender: self)
+                    
+                    
                 }
             }
         }
