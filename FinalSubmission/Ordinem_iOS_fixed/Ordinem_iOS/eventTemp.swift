@@ -8,6 +8,7 @@
 
 import UIKit
 import Firebase
+import FirebaseStorage
 
 
 class eventTemp: UIViewController,
@@ -15,16 +16,43 @@ class eventTemp: UIViewController,
 UINavigationControllerDelegate, UIPickerViewDataSource, UIPickerViewDelegate, UITextFieldDelegate, UITextViewDelegate {
 
     
+    let appDelegate: AppDelegate = UIApplication.shared.delegate as! AppDelegate
+    let dbc: DatabaseConnector = DatabaseConnector()
+    
+    
     @IBAction func complete(_ sender: UIButton) {
         handleSet()
     }
     
     func handleSet(){
         if checkFields(){
-        let ref = FIRDatabase.database().reference().child("events")
-        let childRef = ref.childByAutoId()
-        let values = ["title":eventTitle, "startTime":date,"endTime":eDate,"location":location, "eventType":eventType,"additionalInfo": additionalInfo, "pointsOffered":label4Stepper, "verified":false] as [String : Any]
-        childRef.updateChildValues(values)
+            self.appDelegate.mainUser = FIRAuth.auth()!.currentUser
+
+            let cUser = self.appDelegate.mainUser
+            
+            var profileImageUrl = ""
+            
+            //IMAGE INFORMATION
+            let imageName = NSUUID().uuidString
+            let storageRef = FIRStorage.storage().reference().child("profile_Image").child("\(imageName).png")
+            
+            if let uploadData = UIImagePNGRepresentation(self.imagePicked.image!){
+                storageRef.put(uploadData, metadata: nil, completion: {
+                    (metadata, error) in
+                    if error != nil{
+                        print(error.debugDescription)
+                        return
+                    }
+                    else{
+                        profileImageUrl = (metadata?.downloadURL()?.absoluteString)!
+                    }
+                    
+                })
+            }
+            
+
+
+            self.dbc.addEvent(user: cUser!, eventTitle: eventTitle!.text!, startDate: date!.text!, endDate: eDate!.text!, location: location!.text!, eventType: eventType!.text!, additionalInfo: additionalInfo!.text!, eventImage: profileImageUrl, ptsForAttending: Int(stepper.value), verified: false)
         }
     }
     

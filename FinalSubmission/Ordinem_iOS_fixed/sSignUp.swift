@@ -9,6 +9,7 @@
 import UIKit
 import FirebaseAuth
 import FirebaseDatabase
+import FirebaseStorage
 
 class sSignUp: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate, UIImagePickerControllerDelegate,
 UINavigationControllerDelegate, UITextFieldDelegate  {
@@ -102,15 +103,38 @@ UINavigationControllerDelegate, UITextFieldDelegate  {
 
     
     @IBAction func doneClicked(){
+        
         view.endEditing(true)
         if checkFields() {
             // CREATE NEW USER
+            
+
             FIRAuth.auth()?.createUser(withEmail: self.email!.text!, password: self.password!.text!) { (user, error) in
                 if error != nil {
                     print(error.debugDescription)
                 } else {
+                    var profileImageUrl = ""
+                    
+                    //IMAGE INFORMATION
+                    let imageName = NSUUID().uuidString
+                    let storageRef = FIRStorage.storage().reference().child("profile_Image").child("\(imageName).png")
+                    
+                    if let uploadData = UIImagePNGRepresentation(self.imagePicked.image!){
+                        storageRef.put(uploadData, metadata: nil, completion: {
+                            (metadata, error) in
+                            if error != nil{
+                                print(error.debugDescription)
+                                return
+                            }
+                            else{
+                                profileImageUrl = (metadata?.downloadURL()?.absoluteString)!
+                            }
+                            
+                        })
+                    }
+                    
                     self.appDelegate.mainUser = user
-                    self.dbc.addUser(user: user!, fname: self.fName!.text!, lname: self.lastName!.text!, id: self.studentID!.text!, school: self.school!.text!)
+                    self.dbc.addUser(user: user!, fname: self.fName!.text!, lname: self.lastName!.text!, id: self.studentID!.text!, school: self.school!.text!, profileImage: profileImageUrl)
                     self.appDelegate.username = self.fName.text
                     self.appDelegate.pointBalance = "0"
                     self.performSegue(withIdentifier: "slogin", sender: self)

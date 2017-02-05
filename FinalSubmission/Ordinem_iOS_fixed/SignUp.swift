@@ -9,6 +9,7 @@
 import UIKit
 import FirebaseAuth
 import FirebaseDatabase
+import FirebaseStorage
 
 class SignUp: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate, UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
@@ -52,8 +53,29 @@ class SignUp: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate, UI
                 if error != nil {
                     print(error.debugDescription)
                 } else {
+                    
+                    var profileImageUrl = ""
+                    
+                    //IMAGE INFORMATION
+                    let imageName = NSUUID().uuidString
+                    let storageRef = FIRStorage.storage().reference().child("profile_Image").child("\(imageName).png")
+                    
+                    if let uploadData = UIImagePNGRepresentation(self.imaged.image!){
+                        storageRef.put(uploadData, metadata: nil, completion: {
+                            (metadata, error) in
+                            if error != nil{
+                                print(error.debugDescription)
+                                return
+                            }
+                            else{
+                                profileImageUrl = (metadata?.downloadURL()?.absoluteString)!
+                            }
+                            
+                        })
+                    }
+
                     self.appDelegate.mainUser = user
-                    self.dbc.addOrg(user: user!, orgName: self.orgName!.text!, orgType: self.orgType!.text!, id: self.orgID!.text!, school: self.skewl!.text!)
+                    self.dbc.addOrg(user: user!, orgName: self.orgName!.text!, orgType: self.orgType!.text!, id: self.orgID!.text!, school: self.skewl!.text!, profileImage: profileImageUrl)
                     self.appDelegate.username = self.orgName.text
                     self.performSegue(withIdentifier: "slogin", sender: self)
                 }

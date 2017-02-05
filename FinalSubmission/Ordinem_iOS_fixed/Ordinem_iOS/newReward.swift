@@ -9,11 +9,14 @@
 import UIKit
 import FirebaseAuth
 import Firebase
+import FirebaseStorage
 
 class newReward: UIViewController,
     UIImagePickerControllerDelegate,
 UINavigationControllerDelegate, UIPickerViewDataSource, UIPickerViewDelegate  {
 
+    let appDelegate: AppDelegate = UIApplication.shared.delegate as! AppDelegate
+    let dbc: DatabaseConnector = DatabaseConnector()
     
     @IBOutlet weak var imagePicked: UIImageView!
     
@@ -35,10 +38,34 @@ UINavigationControllerDelegate, UIPickerViewDataSource, UIPickerViewDelegate  {
     }
     
     func handleSet(){
-        let ref = FIRDatabase.database().reference().child("Rewards")
-        let childRef = ref.childByAutoId()
-        let values = ["Title":awardTitle, "Point Cost":costInPts,"End Date":closureDate, "Location":pickupLocation, "Prize Number  Offered":totalPrizes,"Win vs Raffle": winOrRaffle, "Additional Info":addInfo, "Verified":false] as [String : Any]
-        childRef.updateChildValues(values)
+        if checkFields(){
+            self.appDelegate.mainUser = FIRAuth.auth()!.currentUser
+            
+            let cUser = FIRAuth.auth()!.currentUser
+
+            
+            var profileImageUrl = ""
+            
+            //IMAGE INFORMATION
+            let imageName = NSUUID().uuidString
+            let storageRef = FIRStorage.storage().reference().child("profile_Image").child("\(imageName).png")
+            
+            if let uploadData = UIImagePNGRepresentation(self.imagePicked.image!){
+                storageRef.put(uploadData, metadata: nil, completion: {
+                    (metadata, error) in
+                    if error != nil{
+                        print(error.debugDescription)
+                        return
+                    }
+                    else{
+                        profileImageUrl = (metadata?.downloadURL()?.absoluteString)!
+                    }
+                    
+                })
+            }
+            
+            self.dbc.addReward(user: cUser!, rewardTitle: awardTitle!.text!, pointCost: Int(totalPrizes.text!)!, closeDate: closureDate!.text!, pickupLocation: pickupLocation!.text!, prizeAmount: Int(costInPts.text!)!, raffleVWin: winOrRaffle!.text!, eventImage: profileImageUrl, addInfo: addInfo!.text!, verified: false)
+        }
     }
     
     @IBAction func openCameraButton(_ sender: UIButton) {

@@ -19,43 +19,33 @@ public class DatabaseConnector {
 
     let appDelegate: AppDelegate = UIApplication.shared.delegate as! AppDelegate
     
-    func addUser(user: FIRUser, fname: String, lname: String, id: String, school: String) {
+    func addUser(user: FIRUser, fname: String, lname: String, id: String, school: String, profileImage: String) {
         
-        //IMAGE INFORMATION
-        let imageName = NSUUID().uuidString
-        let storageRef = FIRStorage.storage().reference().child("profile_Image").child("\(imageName).png")
-        
-        //if let uploadData = UIImagePNGRepresentation(REFERENCE THE NEW USER HERE, NEED THE CONNECTION TO THE SSIGNUP CLASS THOUGH)
-        self.appDelegate.ref?.child("chapman").child("users").child(user.uid).setValue(["fname": fname,
+        self.appDelegate.ref?.child("Chapman").child("Users").child(user.uid).setValue(["fname": fname,
                                                                        "lname": lname,
                                                                        "studentID": id,
                                                                        "school": school,
-                                                                       "pointBalance": 0])
+                                                                       "pointBalance": 0, "profileImage": profileImage])
     }
     
-    func addOrg(user: FIRUser, orgName: String, orgType: String, id: String, school: String) {
+    func addOrg(user: FIRUser, orgName: String, orgType: String, id: String, school: String, profileImage: String) {
         
-        let imageName = NSUUID().uuidString
-        let storageRef = FIRStorage.storage().reference().child("profile_Image").child("\(imageName).png")
-        
-        //if let uploadData = UIImagePNGRepresentation(REFERENCE THE NEW USER HERE, NEED THE CONNECTION TO THE SIGNUP CLASS THOUGH)
 
-        self.appDelegate.ref?.child("chapman").child("orgs").child(user.uid).setValue(["orgName": orgName,
+        self.appDelegate.ref?.child("Chapman").child("Organizations").child(user.uid).setValue(["orgName": orgName,
                                                                        "orgType": orgType,
                                                                        "schoolID": id,
-                                                                       "school": school
+                                                                       "school": school,
+                                                                       "profileImage": profileImage
                                                                        ])
 
     }
-    func addReward(user: FIRUser, rewardTitle: String, pointCost: Int, closeDate: String, pickupLocation: String, prizeAmount: Int, raffleVWin: String, addInfo: String, verified: Bool) {
+    func addReward(user: FIRUser, rewardTitle: String, pointCost: Int, closeDate: String, pickupLocation: String, prizeAmount: Int, raffleVWin: String, eventImage: String, addInfo: String, verified: Bool) {
         
-        let imageName = NSUUID().uuidString
-        let storageRef = FIRStorage.storage().reference().child("reward_image").child("\(imageName).png")
+        let cUser = FIRAuth.auth()!.currentUser
         
-        //if let uploadData = UIImagePNGRepresentation(REFERENCE THE NEW USER HERE, NEED THE CONNECTION TO THE newReward CLASS THOUGH)
-
         
-        self.appDelegate.ref?.child("chapman").child("rewards").child(user.uid).setValue(["rewardTitle": rewardTitle,
+        //CUSER MAY OR MAY OR MAY NOT BE WRONG
+        self.appDelegate.ref?.child("Chapman").child("rewards").child("\(cUser)").setValue(["rewardTitle": rewardTitle,
                                                                        "pointCost": pointCost,
                                                                        "closeDate": closeDate,
                                                                        "pickupLocation": pickupLocation,
@@ -66,14 +56,11 @@ public class DatabaseConnector {
         
     }
     
-    func addEvent(user: FIRUser, eventTitle: String, startDate: Date, endDate: Date, location: String, eventType: String, additionalInfo: String, ptsForAttending: Int, verified: Bool) {
+    func addEvent(user: FIRUser, eventTitle: String, startDate: String, endDate: String, location: String, eventType: String, additionalInfo: String, eventImage: String, ptsForAttending: Int, verified: Bool) {
         
-        let imageName = NSUUID().uuidString
-        let storageRef = FIRStorage.storage().reference().child("event_Image").child("\(imageName).png")
-        
-        //if let uploadData = UIImagePNGRepresentation(REFERENCE THE NEW USER HERE, NEED THE CONNECTION TO THE eventTemp CLASS)
 
-        self.appDelegate.ref?.child("chapman").child("events").childByAutoId().setValue(["eventTitle": eventTitle,
+        let cUser = FIRAuth.auth()!.currentUser
+        self.appDelegate.ref?.child("Chapman").child("Organizations").child("\(cUser)").child("events").childByAutoId().setValue(["eventTitle": eventTitle,
                                                                         "startDate": startDate,
                                                                         "endDate": endDate,
                                                                         "location": location,
