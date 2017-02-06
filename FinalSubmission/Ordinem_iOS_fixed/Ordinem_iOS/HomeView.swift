@@ -9,6 +9,8 @@
 import Foundation
 import AVFoundation
 import UIKit
+import Firebase
+import FirebaseStorage
 
 class HomeView: UIViewController, UITableViewDelegate, UITableViewDataSource, QRCodeReaderViewControllerDelegate {
     
@@ -17,6 +19,10 @@ class HomeView: UIViewController, UITableViewDelegate, UITableViewDataSource, QR
     @IBOutlet var tableView: UITableView?
     
 
+    let cellID = "cellID"
+    
+    var events = [Event]()
+    
     
     private var source: NSArray?
     
@@ -38,6 +44,30 @@ class HomeView: UIViewController, UITableViewDelegate, UITableViewDataSource, QR
         dbc.getEvents()
         loadContents(events: [["11","Test Event","Some random details.", "OGCoder club", "Jan 31st", "7:00 PM-9:00 PM", "My crib", "50"]])
         // Do any additional setup after loading the view, typically from a nib.
+        
+        fetchUser()
+    }
+    
+    func fetchUser(){
+        FIRDatabase.database().reference().child("Chapman").child("Organizaitons").observe(.childAdded, with: { (snapshot) in
+            
+            if let dictionary = snapshot.value as? [String: AnyObject]{
+                let event = Event()
+                event.setValuesForKeys(dictionary)
+                self.events.append(event)
+                
+                //Unsure about what the code right below does.. Just told I should do this
+                //Just something to look at if it's something that'll cause trouble when running
+                
+                DispatchQueue.main.async {
+                    self.tableView?.reloadData()
+                }
+            }
+            
+            
+            
+        }, withCancel: nil)
+        
     }
     
     override func didReceiveMemoryWarning() {
@@ -53,11 +83,7 @@ class HomeView: UIViewController, UITableViewDelegate, UITableViewDataSource, QR
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if self.source != nil {
-            return (self.source?.count)!
-        } else {
-            return 1
-        }
+        return events.count
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -75,8 +101,20 @@ class HomeView: UIViewController, UITableViewDelegate, UITableViewDataSource, QR
             cell.eventTime?.text = (self.source?[indexPath.row] as! NSArray)[4] as? String
             return cell
         } else {
-            let cell: UITableViewCell = UITableViewCell()
-            cell.textLabel?.text = "Loading..."
+            
+            let cell: EventCell = tableView.dequeueReusableCell(withIdentifier: "EventCell") as! EventCell
+            
+            let event = events[indexPath.row]
+            cell.eventName?.text = event.eventTitle
+            //TODO
+            cell.orgName?.text = ""
+            
+            cell.eventPoints?.text = "Points: \(event.ptsForAttending)"
+            cell.eventTime?.text = "\(event.endDate)-\(event.startTime)"
+            
+            //need event image
+            
+            
             cell.textLabel?.textAlignment = .center
             return cell
         }

@@ -49,10 +49,8 @@ UINavigationControllerDelegate, UIPickerViewDataSource, UIPickerViewDelegate, UI
                     
                 })
             }
-            
 
-
-            self.dbc.addEvent(user: cUser!, eventTitle: eventTitle!.text!, startDate: date!.text!, endDate: eDate!.text!, location: location!.text!, eventType: eventType!.text!, additionalInfo: additionalInfo!.text!, eventImage: profileImageUrl, ptsForAttending: Int(stepper.value), verified: false)
+            self.dbc.addEvent(user: cUser!, eventTitle: eventTitle!.text!, startDate: date!.text!, startTime: timeOfEvent, endDate: eDate!.text!, location: location!.text!, eventType: eventType!.text!, additionalInfo: additionalInfo!.text!, eventImage: profileImageUrl, ptsForAttending: Int(stepper.value), verified: false)
         }
     }
     
@@ -78,6 +76,8 @@ UINavigationControllerDelegate, UIPickerViewDataSource, UIPickerViewDelegate, UI
     @IBOutlet weak var stepper: UIStepper!
     
     @IBOutlet weak var label4Stepper: UILabel!
+    
+
     
     @IBAction func stepperPressed(_ sender: UIStepper) {
         let currentValue = Int(stepper.value)
@@ -190,6 +190,7 @@ UINavigationControllerDelegate, UIPickerViewDataSource, UIPickerViewDelegate, UI
         
     }
     
+    var timeOfEvent = ""
     
     func donePressed(){
         
@@ -198,12 +199,16 @@ UINavigationControllerDelegate, UIPickerViewDataSource, UIPickerViewDelegate, UI
         picker1.dataSource = self
         
         //Formatting
+        //Date will always be referenced at the start- cannot exceed past midnight
         if date.endEditing(true){
         let dateFormatter = DateFormatter()
+        let timeFormatter = DateFormatter()
+    
         dateFormatter.dateStyle = .long
-        dateFormatter.timeStyle = .medium
+        timeFormatter.timeStyle = .medium
         
         date.text = dateFormatter.string(from: datePicker.date)
+        timeOfEvent = timeFormatter.string(from: datePicker.date)
         }
         else{
             let dateFormatter = DateFormatter()

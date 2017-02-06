@@ -1865,7 +1865,7 @@
                                 <rect key="frame" x="0.0" y="253" width="375" height="414"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Raffle" rowHeight="100" id="Q3Y-jP-4xn" customClass="EventCell" customModule="Ordinem_iOS" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Raffle" rowHeight="100" id="Q3Y-jP-4xn" customClass="RewardCell" customModule="Ordinem_iOS" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="100"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Q3Y-jP-4xn" id="DQT-I8-E5L">
@@ -1933,10 +1933,15 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="amountLeft" destination="CAd-lb-IVN" id="MJt-93-UKd"/>
+                                            <outlet property="costForReward" destination="W8A-E8-9io" id="It2-zb-ppH"/>
                                             <outlet property="eventName" destination="akx-Jy-kY6" id="Oa7-4o-oJw"/>
                                             <outlet property="eventTime" destination="W8A-E8-9io" id="BXX-cC-U1n"/>
                                             <outlet property="orgName" destination="3ak-7n-ZCa" id="Tde-hJ-ASN"/>
                                             <outlet property="orgPic" destination="OX6-8s-GI2" id="0MV-XK-cJD"/>
+                                            <outlet property="rewardImage" destination="OX6-8s-GI2" id="7tf-he-BYG"/>
+                                            <outlet property="rewardName" destination="akx-Jy-kY6" id="xHv-km-dG5"/>
+                                            <outlet property="rewardType" destination="3ak-7n-ZCa" id="hpK-oP-C3C"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -2019,6 +2024,7 @@
                         <outlet property="label4Slider" destination="V01-fm-b8X" id="bnp-l9-YSy"/>
                         <outlet property="prizeName" destination="dcN-Rc-BSU" id="4eK-rx-ZcL"/>
                         <outlet property="slider" destination="ffV-dn-YrP" id="s2G-tQ-bAZ"/>
+                        <outlet property="tableView" destination="s8Y-JN-i9N" id="1Nm-LM-a1d"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="r1d-CY-gd8" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -4967,7 +4973,7 @@
                                 </prototypes>
                             </tableView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your Rewards" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A5a-kI-BFv">
-                                <rect key="frame" x="96" y="42" width="183" height="27"/>
+                                <rect key="frame" x="96" y="42" width="183" height="28"/>
                                 <fontDescription key="fontDescription" name="LemonMilk" family="Lemon/Milk" pointSize="24"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
@@ -5742,10 +5748,10 @@
         <image name="yesRSVP.png" width="400" height="400"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="yuS-lz-B4i"/>
+        <segue reference="mbt-fX-omf"/>
+        <segue reference="67H-Ht-WpW"/>
         <segue reference="QQm-0l-TjM"/>
         <segue reference="Ms9-WR-CVn"/>
         <segue reference="Zwy-yC-Ryb"/>
-        <segue reference="mbt-fX-omf"/>
     </inferredMetricsTieBreakers>
 </document>

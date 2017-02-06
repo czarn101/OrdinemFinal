@@ -47,7 +47,7 @@ UINavigationControllerDelegate, UITextFieldDelegate  {
         self.dismiss(animated: true, completion: nil);
     }*/
     
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
+    private func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
         if let image = info[UIImagePickerControllerEditedImage] as? UIImage {//2
             imagePicked.contentMode = .scaleAspectFit
             imagePicked.image = image
@@ -117,7 +117,7 @@ UINavigationControllerDelegate, UITextFieldDelegate  {
                     
                     //IMAGE INFORMATION
                     let imageName = NSUUID().uuidString
-                    let storageRef = FIRStorage.storage().reference().child("profile_Image").child("\(imageName).png")
+                    let storageRef = FIRStorage.storage().reference().child("Chapman").child("Users").child("profile_Image").child("\(imageName).png")
                     
                     if let uploadData = UIImagePNGRepresentation(self.imagePicked.image!){
                         storageRef.put(uploadData, metadata: nil, completion: {

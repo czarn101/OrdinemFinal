@@ -31,6 +31,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var pointBalance: String?
     
     var selectedEvent: NSArray?
+    var selectedReward: NSArray?
     
     var shouldAutoLogin: Bool = true
 

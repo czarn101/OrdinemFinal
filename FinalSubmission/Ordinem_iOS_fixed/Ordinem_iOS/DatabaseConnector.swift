@@ -39,13 +39,14 @@ public class DatabaseConnector {
                                                                        ])
 
     }
-    func addReward(user: FIRUser, rewardTitle: String, pointCost: Int, closeDate: String, pickupLocation: String, prizeAmount: Int, raffleVWin: String, eventImage: String, addInfo: String, verified: Bool) {
+    func addReward(user: FIRUser, rewardTitle: String,  pointCost: Int, closeDate: String, pickupLocation: String, prizeAmount: Int, raffleVWin: String, eventImage: String, addInfo: String, verified: Bool) {
         
         let cUser = FIRAuth.auth()!.currentUser
         
         
         //CUSER MAY OR MAY OR MAY NOT BE WRONG
         self.appDelegate.ref?.child("Chapman").child("rewards").child("\(cUser)").setValue(["rewardTitle": rewardTitle,
+                                                                                            
                                                                        "pointCost": pointCost,
                                                                        "closeDate": closeDate,
                                                                        "pickupLocation": pickupLocation,
@@ -56,12 +57,13 @@ public class DatabaseConnector {
         
     }
     
-    func addEvent(user: FIRUser, eventTitle: String, startDate: String, endDate: String, location: String, eventType: String, additionalInfo: String, eventImage: String, ptsForAttending: Int, verified: Bool) {
+    func addEvent(user: FIRUser, eventTitle: String, startDate: String, startTime: String, endDate: String, location: String, eventType: String, additionalInfo: String, eventImage: String, ptsForAttending: Int, verified: Bool) {
         
 
         let cUser = FIRAuth.auth()!.currentUser
         self.appDelegate.ref?.child("Chapman").child("Organizations").child("\(cUser)").child("events").childByAutoId().setValue(["eventTitle": eventTitle,
                                                                         "startDate": startDate,
+                                                                        "startTime":startTime,
                                                                         "endDate": endDate,
                                                                         "location": location,
                                                                         "eventType": eventType,

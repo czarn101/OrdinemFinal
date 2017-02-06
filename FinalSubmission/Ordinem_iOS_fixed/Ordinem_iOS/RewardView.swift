@@ -8,6 +8,8 @@
 
 import Foundation
 import UIKit
+import Firebase
+import FirebaseStorage
 
 extension Double {
     /// Rounds the double to decimal places value
@@ -19,7 +21,15 @@ extension Double {
 
 
 
-public class RewardView: UIViewController {
+public class RewardView: UIViewController, UITableViewDelegate, UITableViewDataSource {
+    
+    @IBOutlet weak var tableView: UITableView!
+    
+    let cellID = "cellID"
+    
+    var rewards = [Reward]()
+    
+    private var source: NSArray?
     
     
     
@@ -33,7 +43,8 @@ public class RewardView: UIViewController {
     var r = ""
     
     let appDelegate: AppDelegate = UIApplication.shared.delegate as! AppDelegate
-    
+    let dbc: DatabaseConnector = DatabaseConnector()
+
     
     @IBAction func cashout(segue: UIStoryboardSegue) {
         
@@ -72,6 +83,12 @@ public class RewardView: UIViewController {
         getPrizeInfo()
     }
     
+    func loadContents(events: NSArray) {
+        print("Data recieved")
+        print(events)
+        source = events
+        tableView?.reloadData()
+    }
     
     
     
@@ -82,12 +99,83 @@ public class RewardView: UIViewController {
     
     override public func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.appDelegate.rewardView = self
+        //NEED EQUIVALENT OF DBC.GETEVENTS
+        //dbc.getEvents()
+        
+        fetchUser()
 
 
     }
+    
     
     override public func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         //code
     }
+    
+    
+    func fetchUser(){
+        FIRDatabase.database().reference().child("Chapman").child("Admin").observe(.childAdded, with: { (snapshot) in
+            
+            if let dictionary = snapshot.value as? [String: AnyObject]{
+                let reward = Reward()
+                reward.setValuesForKeys(dictionary)
+                self.rewards.append(reward)
+                
+                //Unsure about what the code right below does.. Just told I should do this
+                //Just something to look at if it's something that'll cause trouble when running
+                
+                DispatchQueue.main.async {
+                    self.tableView?.reloadData()
+                }
+            }
+            
+            
+            
+        }, withCancel: nil)
+        
+    }
+    public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        //code
+        tableView.deselectRow(at: indexPath, animated: false)
+        self.appDelegate.selectedReward = self.source?[indexPath.row] as? NSArray
+        self.performSegue(withIdentifier: "detail", sender: self)
+    }
+    
+    public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return rewards.count
+    }
+    
+    public func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 100
+    }
+    
+    public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        if self.source != nil {
+            let cell: RewardCell = tableView.dequeueReusableCell(withIdentifier: "RewardCell") as! RewardCell
+            return cell
+        } else {
+            
+            let cell: RewardCell = tableView.dequeueReusableCell(withIdentifier: "EventCell") as! RewardCell
+            
+            let reward = rewards[indexPath.row]
+            cell.rewardName?.text = reward.rewardTitle
+            cell.rewardType?.text = reward.raffleVWin
+            cell.amountLeft?.text = "\(reward.prizeAmount)"
+            cell.costForReward?.text = "\(reward.pointCost)"
+            //need reward image
+            
+            
+            
+            
+            cell.textLabel?.textAlignment = .center
+            return cell
+        }
+    }
+    
+
+    
+    
 }

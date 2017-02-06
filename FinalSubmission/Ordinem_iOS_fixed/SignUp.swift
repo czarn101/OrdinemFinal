@@ -58,7 +58,7 @@ class SignUp: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate, UI
                     
                     //IMAGE INFORMATION
                     let imageName = NSUUID().uuidString
-                    let storageRef = FIRStorage.storage().reference().child("profile_Image").child("\(imageName).png")
+                    let storageRef = FIRStorage.storage().reference().child("Chapman").child("Organizations").child("profile_Image").child("\(imageName).png")
                     
                     if let uploadData = UIImagePNGRepresentation(self.imaged.image!){
                         storageRef.put(uploadData, metadata: nil, completion: {
@@ -154,6 +154,8 @@ class SignUp: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate, UI
     
     func doneClicked(){
         view.endEditing(true)
+        
+        
     }
     
     override func viewDidLoad() {
@@ -205,8 +207,6 @@ class SignUp: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate, UI
         sEmail.inputAccessoryView = toolBar
         sPassword.inputAccessoryView = toolBar
         vPassword.inputAccessoryView = toolBar
-        
-        
 
 
     }

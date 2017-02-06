@@ -2,9 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:eventsObjects.swift">
-   </FileRef>
-   <FileRef
       location = "group:Ordinem_iOS.xcodeproj">
    </FileRef>
    <FileRef
