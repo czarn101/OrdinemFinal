@@ -44,7 +44,6 @@ class HomeView: UIViewController, UITableViewDelegate, UITableViewDataSource, QR
         dbc.getEvents()
         loadContents(events: [["11","Test Event","Some random details.", "OGCoder club", "Jan 31st", "7:00 PM-9:00 PM", "My crib", "50"]])
         // Do any additional setup after loading the view, typically from a nib.
-        
         fetchUser()
     }
     
@@ -108,11 +107,27 @@ class HomeView: UIViewController, UITableViewDelegate, UITableViewDataSource, QR
             cell.eventName?.text = event.eventTitle
             //TODO
             cell.orgName?.text = ""
+            cell.orgPic?.layer.cornerRadius = 33
+            cell.orgPic?.layer.masksToBounds = true
             
             cell.eventPoints?.text = "Points: \(event.ptsForAttending)"
             cell.eventTime?.text = "\(event.endDate)-\(event.startTime)"
             
-            //need event image
+            //IMAGE INFORMATION
+            if let profileImageUrl = event.eventImage{
+                let url = URL(string: profileImageUrl)
+                URLSession.shared.dataTask(with: url!, completionHandler: { (data, response, error) in
+                    if error != nil{
+                        print(error!)
+                        return
+                    }
+                    DispatchQueue.main.async {
+                        cell.orgPic?.image = UIImage(data: data!)
+                    }
+                }).resume()
+
+            }
+
             
             
             cell.textLabel?.textAlignment = .center

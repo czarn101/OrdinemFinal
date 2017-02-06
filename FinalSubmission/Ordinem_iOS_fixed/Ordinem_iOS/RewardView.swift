@@ -165,11 +165,24 @@ public class RewardView: UIViewController, UITableViewDelegate, UITableViewDataS
             cell.rewardType?.text = reward.raffleVWin
             cell.amountLeft?.text = "\(reward.prizeAmount)"
             cell.costForReward?.text = "\(reward.pointCost)"
+            
+            cell.rewardImage?.layer.cornerRadius = 33
+            cell.rewardImage?.layer.masksToBounds = true
             //need reward image
             
-            
-            
-            
+            if let profileImageUrl = reward.eventImage{
+                let url = URL(string: profileImageUrl)
+                URLSession.shared.dataTask(with: url!, completionHandler: { (data, response, error) in
+                    if error != nil{
+                        print(error!)
+                        return
+                    }
+                    DispatchQueue.main.async {
+                        cell.rewardImage?.image = UIImage(data: data!)
+                    }
+                }).resume()
+                
+            }
             cell.textLabel?.textAlignment = .center
             return cell
         }
