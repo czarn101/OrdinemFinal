@@ -60,7 +60,7 @@ public class DatabaseConnector {
     func addEvent(user: FIRUser, eventTitle: String, startDate: String, startTime: String, endDate: String, location: String, eventType: String, additionalInfo: String, eventImage: String, ptsForAttending: Int, verified: Bool) {
         
 
-        let cUser = FIRAuth.auth()!.currentUser
+        let cUser = FIRAuth.auth()?.currentUser
         self.appDelegate.ref?.child("Chapman").child("Organizations").child("\(cUser)").child("events").childByAutoId().setValue(["eventTitle": eventTitle,
                                                                         "startDate": startDate,
                                                                         "startTime":startTime,
@@ -228,6 +228,259 @@ public class DatabaseConnector {
         
     }
     
+    func getRewardName() -> String {
+        var ret = ""
+        let uid = FIRAuth.auth()?.currentUser?.uid
+        FIRDatabase.database().reference().child("Chapman").child("Organizations").child("rewards").child("\(uid!)").observeSingleEvent(of: .value, with: {(snapshot) in
+            
+            if let dictionary = snapshot.value as? [String:AnyObject]{
+                ret = dictionary["rewardTitle"] as! String
+            }
+            
+        }
+            , withCancel: nil)
+        return ret
+    }
+    
+    func getRewardPointCost() -> String {
+        var ret = ""
+        let uid = FIRAuth.auth()?.currentUser?.uid
+        FIRDatabase.database().reference().child("Chapman").child("Organizations").child("\(uid!)").child("events").observeSingleEvent(of: .value, with: {(snapshot) in
+            
+            if let dictionary = snapshot.value as? [String:AnyObject]{
+                ret = dictionary["pointCost"] as! String
+            }
+            
+        }
+            , withCancel: nil)
+        return ret
+    }
+    
+    func getRewardPointCloseDate() -> String {
+        var ret = ""
+        let uid = FIRAuth.auth()?.currentUser?.uid
+        FIRDatabase.database().reference().child("Chapman").child("Organizations").child("\(uid!)").child("events").observeSingleEvent(of: .value, with: {(snapshot) in
+            
+            if let dictionary = snapshot.value as? [String:AnyObject]{
+                ret = dictionary["closeDate"] as! String
+            }
+            
+        }
+            , withCancel: nil)
+        return ret
+    }
+    
+    func getRewardPickupLocation() -> String {
+        var ret = ""
+        let uid = FIRAuth.auth()?.currentUser?.uid
+        FIRDatabase.database().reference().child("Chapman").child("Organizations").child("\(uid!)").child("events").observeSingleEvent(of: .value, with: {(snapshot) in
+            
+            if let dictionary = snapshot.value as? [String:AnyObject]{
+                ret = dictionary["pickupLocation"] as! String
+            }
+            
+        }
+            , withCancel: nil)
+        return ret
+    }
+    
+    func getRewardPrizeAmountLocation() -> String {
+        var ret = ""
+        let uid = FIRAuth.auth()?.currentUser?.uid
+        FIRDatabase.database().reference().child("Chapman").child("Organizations").child("\(uid!)").child("events").observeSingleEvent(of: .value, with: {(snapshot) in
+            
+            if let dictionary = snapshot.value as? [String:AnyObject]{
+                ret = dictionary["prizeAmount"] as! String
+            }
+            
+        }
+            , withCancel: nil)
+        return ret
+    }
+    
+    func getRewardraffleVWin() -> String {
+        var ret = ""
+        let uid = FIRAuth.auth()?.currentUser?.uid
+        FIRDatabase.database().reference().child("Chapman").child("Organizations").child("\(uid!)").child("events").observeSingleEvent(of: .value, with: {(snapshot) in
+            
+            if let dictionary = snapshot.value as? [String:AnyObject]{
+                ret = dictionary["raffleVWin"] as! String
+            }
+            
+        }
+            , withCancel: nil)
+        return ret
+    }
+    
+    func getRewardaddInfo() -> String {
+        var ret = ""
+        let uid = FIRAuth.auth()?.currentUser?.uid
+        FIRDatabase.database().reference().child("Chapman").child("Organizations").child("\(uid!)").child("events").observeSingleEvent(of: .value, with: {(snapshot) in
+            
+            if let dictionary = snapshot.value as? [String:AnyObject]{
+                ret = dictionary["addInfo"] as! String
+            }
+            
+        }
+            , withCancel: nil)
+        return ret
+    }
+    
+    
+    func getRewardverified() -> String {
+        var ret = ""
+        let uid = FIRAuth.auth()?.currentUser?.uid
+        FIRDatabase.database().reference().child("Chapman").child("Organizations").child("\(uid!)").child("events").observeSingleEvent(of: .value, with: {(snapshot) in
+            
+            if let dictionary = snapshot.value as? [String:AnyObject]{
+                ret = dictionary["verified"] as! String
+            }
+            
+        }
+            , withCancel: nil)
+        return ret
+    }
+    
+    func getEventeventTitle() -> String {
+        var ret = ""
+        let uid = FIRAuth.auth()?.currentUser?.uid
+        FIRDatabase.database().reference().child("Chapman").child("Organizations").child("\(uid)").child("events").observeSingleEvent(of: .value, with: {(snapshot) in
+            
+            if let dictionary = snapshot.value as? [String:AnyObject]{
+                ret = dictionary["eventTitle"] as! String
+            }
+            
+        }
+            , withCancel: nil)
+        return ret
+    }
+    
+    func getEventstartDate() -> String {
+        var ret = ""
+        let uid = FIRAuth.auth()?.currentUser?.uid
+        FIRDatabase.database().reference().child("Chapman").child("Organizations").child("\(uid)").child("events").observeSingleEvent(of: .value, with: {(snapshot) in
+            
+            if let dictionary = snapshot.value as? [String:AnyObject]{
+                ret = dictionary["startDate"] as! String
+            }
+            
+        }
+            , withCancel: nil)
+        return ret
+    }
+    
+    func getEventstartTime() -> String {
+        var ret = ""
+        let uid = FIRAuth.auth()?.currentUser?.uid
+        FIRDatabase.database().reference().child("Chapman").child("Organizations").child("\(uid)").child("events").observeSingleEvent(of: .value, with: {(snapshot) in
+            
+            if let dictionary = snapshot.value as? [String:AnyObject]{
+                ret = dictionary["startTime"] as! String
+            }
+            
+        }
+            , withCancel: nil)
+        return ret
+    }
+    
+    func getEventendDate() -> String {
+        var ret = ""
+        let uid = FIRAuth.auth()?.currentUser?.uid
+        FIRDatabase.database().reference().child("Chapman").child("Organizations").child("\(uid)").child("events").observeSingleEvent(of: .value, with: {(snapshot) in
+            
+            if let dictionary = snapshot.value as? [String:AnyObject]{
+                ret = dictionary["endDate"] as! String
+            }
+            
+        }
+            , withCancel: nil)
+        return ret
+    }
+
+    func getEventlocation() -> String {
+        var ret = ""
+        let uid = FIRAuth.auth()?.currentUser?.uid
+        FIRDatabase.database().reference().child("Chapman").child("Organizations").child("\(uid)").child("events").observeSingleEvent(of: .value, with: {(snapshot) in
+            
+            if let dictionary = snapshot.value as? [String:AnyObject]{
+                ret = dictionary["location"] as! String
+            }
+            
+        }
+            , withCancel: nil)
+        return ret
+    }
+    
+    func getEventeventType() -> String {
+        var ret = ""
+        let uid = FIRAuth.auth()?.currentUser?.uid
+        FIRDatabase.database().reference().child("Chapman").child("Organizations").child("\(uid)").child("events").observeSingleEvent(of: .value, with: {(snapshot) in
+            
+            if let dictionary = snapshot.value as? [String:AnyObject]{
+                ret = dictionary["eventType"] as! String
+            }
+            
+        }
+            , withCancel: nil)
+        return ret
+    }
+    
+    func getEventadditionalInfo() -> String {
+        var ret = ""
+        let uid = FIRAuth.auth()?.currentUser?.uid
+        FIRDatabase.database().reference().child("Chapman").child("Organizations").child("\(uid)").child("events").observeSingleEvent(of: .value, with: {(snapshot) in
+            
+            if let dictionary = snapshot.value as? [String:AnyObject]{
+                ret = dictionary["additionalInfo"] as! String
+            }
+            
+        }
+            , withCancel: nil)
+        return ret
+    }
+
+    func getEventptsForAttending() -> Int {
+        var ret = 0
+        let uid = FIRAuth.auth()?.currentUser?.uid
+        FIRDatabase.database().reference().child("Chapman").child("Organizations").child("\(uid)").child("events").observeSingleEvent(of: .value, with: {(snapshot) in
+            
+            if let dictionary = snapshot.value as? [String:AnyObject]{
+                ret = dictionary["ptsForAttending"] as! Int
+            }
+            
+        }
+            , withCancel: nil)
+        return ret
+    }
+    
+    func getEventverified() -> Bool {
+        var ret = false
+        let uid = FIRAuth.auth()?.currentUser?.uid
+        FIRDatabase.database().reference().child("Chapman").child("Organizations").child("\(uid)").child("events").observeSingleEvent(of: .value, with: {(snapshot) in
+            
+            if let dictionary = snapshot.value as? [String:AnyObject]{
+                ret = dictionary["ptsForAttending"] as! Bool
+            }
+            
+        }
+            , withCancel: nil)
+        return ret
+    }
+    
+    func getEventorgID() -> Bool {
+        var ret = false
+        let uid = FIRAuth.auth()?.currentUser?.uid
+        FIRDatabase.database().reference().child("Chapman").child("Organizations").child("\(uid)").child("events").observeSingleEvent(of: .value, with: {(snapshot) in
+            
+            if let dictionary = snapshot.value as? [String:AnyObject]{
+                ret = dictionary["orgID"] as! Bool
+            }
+            
+        }
+            , withCancel: nil)
+        return ret
+    }
+    
     func loginSuccess(email: String, password: String) {
         DispatchQueue.main.async {
             if (self.appDelegate.shouldAutoLogin) {
@@ -240,6 +493,7 @@ public class DatabaseConnector {
             }
         }
     }
+    
     
     func loginFailure() {
         DispatchQueue.main.async {
