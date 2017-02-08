@@ -57,7 +57,7 @@ public class FBLoginView: UIViewController, FBSDKLoginButtonDelegate {
                 print(error2!.localizedDescription)
                 return
             }
-            print("successfully created new account")
+            print("successfully logged in with facebook")
             self.appDelegate.mainUser = user!
             self.appDelegate.username = "FB User"
             self.appDelegate.pointBalance = "0"

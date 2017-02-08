@@ -57,11 +57,11 @@ public class DatabaseConnector {
         
     }
     
-    func addEvent(user: FIRUser, eventTitle: String, startDate: String, startTime: String, endDate: String, location: String, eventType: String, additionalInfo: String, eventImage: String, ptsForAttending: Int, verified: Bool) {
+    func addEvent(user: FIRUser, eventTitle: String, startDate: String, startTime: String, endDate: String, location: String, eventType: String, additionalInfo: String, eventImage: String, ptsForAttending: Int, picURL: String) {
         
 
-        let cUser = FIRAuth.auth()?.currentUser
-        self.appDelegate.ref?.child("Chapman").child("Organizations").child("\(cUser)").child("events").childByAutoId().setValue(["eventTitle": eventTitle,
+        //let cUser = FIRAuth.auth()?.currentUser
+        self.appDelegate.ref?.child("chapman").child("events").child("public").childByAutoId().setValue(["eventTitle": eventTitle,
                                                                         "startDate": startDate,
                                                                         "startTime":startTime,
                                                                         "endDate": endDate,
@@ -69,7 +69,7 @@ public class DatabaseConnector {
                                                                         "eventType": eventType,
                                                                         "additionalInfo":additionalInfo,
                                                                         "ptsForAttending" : ptsForAttending,
-                                                                        "verified": verified,
+                                                                        "picURL": picURL,
                                                                         "orgID": user.uid
             ])
     }

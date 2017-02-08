@@ -36,7 +36,7 @@ UINavigationControllerDelegate, UIPickerViewDataSource, UIPickerViewDelegate, UI
             let imageName = NSUUID().uuidString
             let storageRef = FIRStorage.storage().reference().child("profile_Image").child("\(imageName).png")
             
-            if let uploadData = UIImagePNGRepresentation(self.imagePicked.image!){
+            if let uploadData: Data = UIImagePNGRepresentation(self.imagePicked.image!){
                 storageRef.put(uploadData, metadata: nil, completion: {
                     (metadata, error) in
                     if error != nil{
@@ -45,12 +45,12 @@ UINavigationControllerDelegate, UIPickerViewDataSource, UIPickerViewDelegate, UI
                     }
                     else{
                         profileImageUrl = (metadata?.downloadURL()?.absoluteString)!
+                        self.dbc.addEvent(user: cUser!, eventTitle: self.eventTitle!.text!, startDate: self.date!.text!, startTime: self.timeOfEvent, endDate: self.eDate!.text!, location: self.location!.text!, eventType: self.eventType!.text!, additionalInfo: self.additionalInfo!.text!, eventImage: profileImageUrl, ptsForAttending: Int(self.stepper.value), picURL: profileImageUrl)
                     }
-                    
                 })
+            } else {
+                print("failed to upload picture")
             }
-
-            self.dbc.addEvent(user: cUser!, eventTitle: eventTitle!.text!, startDate: date!.text!, startTime: timeOfEvent, endDate: eDate!.text!, location: location!.text!, eventType: eventType!.text!, additionalInfo: additionalInfo!.text!, eventImage: profileImageUrl, ptsForAttending: Int(stepper.value), verified: false)
         }
     }
     
@@ -191,6 +191,21 @@ UINavigationControllerDelegate, UIPickerViewDataSource, UIPickerViewDelegate, UI
     }
     
     var timeOfEvent = ""
+    
+    @IBAction func updateDateText(sender: UITextField) {
+        let dateFormatter = DateFormatter()
+        let timeFormatter = DateFormatter()
+        date.text = dateFormatter.string(from: datePicker.date)
+        timeOfEvent = timeFormatter.string(from: datePicker.date)
+    }
+
+    @IBAction func updateDateEndText(sender: UITextField) {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateStyle = .none
+        dateFormatter.timeStyle = .medium
+        
+        eDate.text = dateFormatter.string(from: datePickerr.date)
+    }
     
     func donePressed(){
         

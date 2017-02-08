@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="JSV-9r-caV">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="JSV-9r-caV">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -473,7 +473,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <searchBar contentMode="redraw" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lJ9-WG-3vj">
-                                                    <rect key="frame" x="-5" y="0.0" width="370" height="44"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                                     <textInputTraits key="textInputTraits"/>
                                                 </searchBar>
@@ -649,7 +649,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="P8k-q7-q84" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="c4m-8D-xLf" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="606" y="-700"/>
+            <point key="canvasLocation" x="605.60000000000002" y="-700.29985007496259"/>
         </scene>
         <!--Point View-->
         <scene sceneID="04W-Lv-bLr">
@@ -2029,10 +2029,10 @@
             </objects>
             <point key="canvasLocation" x="2646" y="-201"/>
         </scene>
-        <!--LoginView-->
+        <!--Create Event-->
         <scene sceneID="t7n-16-DoC">
             <objects>
-                <viewController title="LoginView" id="WJr-aC-U2O" customClass="eventTemp" customModule="Ordinem_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Create Event" id="WJr-aC-U2O" customClass="eventTemp" customModule="Ordinem_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="tFR-r2-4e0"/>
                         <viewControllerLayoutGuide type="bottom" id="oC9-Bi-anH"/>
@@ -2063,8 +2063,7 @@
                                         <state key="normal" title="Complete"/>
                                         <connections>
                                             <action selector="complete:" destination="WJr-aC-U2O" eventType="touchUpInside" id="xov-wc-qJk"/>
-                                            <action selector="login" destination="BYZ-38-t0r" eventType="touchUpInside" id="Z2H-VZ-tlg"/>
-                                            <segue destination="zd0-TE-ChC" kind="show" id="MPX-Db-Iah"/>
+                                            <segue destination="kCh-5b-jrj" kind="show" id="0wg-mD-XWY"/>
                                         </connections>
                                     </button>
                                     <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FgX-eM-6nV">
@@ -2180,7 +2179,7 @@
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="emailAddress" keyboardAppearance="alert" returnKeyType="next" enablesReturnKeyAutomatically="YES"/>
                                                 <connections>
-                                                    <outlet property="delegate" destination="BYZ-38-t0r" id="p7T-4r-mo6"/>
+                                                    <outlet property="delegate" destination="WJr-aC-U2O" id="oho-FK-M9j"/>
                                                 </connections>
                                             </textField>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Keep Generic" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bMF-am-GkW">
@@ -2192,7 +2191,7 @@
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardAppearance="alert" returnKeyType="next" enablesReturnKeyAutomatically="YES"/>
                                                 <connections>
-                                                    <outlet property="delegate" destination="BYZ-38-t0r" id="b6z-FS-cQe"/>
+                                                    <outlet property="delegate" destination="WJr-aC-U2O" id="jTO-zu-y9e"/>
                                                 </connections>
                                             </textField>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Name of Event" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="l0c-81-qsk">
@@ -2204,7 +2203,7 @@
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardAppearance="alert" returnKeyType="next" enablesReturnKeyAutomatically="YES"/>
                                                 <connections>
-                                                    <outlet property="delegate" destination="BYZ-38-t0r" id="TnA-tA-kBV"/>
+                                                    <outlet property="delegate" destination="WJr-aC-U2O" id="kFt-eW-3m3"/>
                                                 </connections>
                                             </textField>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Select" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YnE-RX-HMF">
@@ -2216,11 +2215,12 @@
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardAppearance="alert" returnKeyType="next" enablesReturnKeyAutomatically="YES"/>
                                                 <connections>
-                                                    <outlet property="delegate" destination="BYZ-38-t0r" id="9Ao-s5-3xM"/>
+                                                    <action selector="updateDateTextWithSender:" destination="WJr-aC-U2O" eventType="editingDidEnd" id="98Q-Qi-hRu"/>
+                                                    <outlet property="delegate" destination="WJr-aC-U2O" id="sUP-lV-jpA"/>
                                                 </connections>
                                             </textField>
                                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Input can be used to identify links, phone numbers,  addresses, or anything you'd like to share!" translatesAutoresizingMaskIntoConstraints="NO" id="616-xG-hl9">
-                                                <rect key="frame" x="65" y="417" width="243" height="67"/>
+                                                <rect key="frame" x="65" y="410" width="243" height="67"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="67" id="0gB-km-t11"/>
                                                 </constraints>
@@ -2251,7 +2251,8 @@
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardAppearance="alert" returnKeyType="next" enablesReturnKeyAutomatically="YES"/>
                                                 <connections>
-                                                    <outlet property="delegate" destination="BYZ-38-t0r" id="EV2-kk-wr4"/>
+                                                    <action selector="updateDateEndTextWithSender:" destination="WJr-aC-U2O" eventType="editingDidEnd" id="fe8-dR-JAJ"/>
+                                                    <outlet property="delegate" destination="WJr-aC-U2O" id="exK-g9-Cs3"/>
                                                 </connections>
                                             </textField>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Tb-8y-dp4">
@@ -2269,7 +2270,7 @@
                                             <constraint firstItem="Wnt-Sv-rtX" firstAttribute="top" secondItem="psr-z0-aRZ" secondAttribute="top" id="0dX-wh-5Vk"/>
                                             <constraint firstItem="Wnt-Sv-rtX" firstAttribute="leading" secondItem="FgX-eM-6nV" secondAttribute="leading" constant="58" id="1Dg-YB-1UA"/>
                                             <constraint firstItem="E5u-Em-0tM" firstAttribute="top" secondItem="FgX-eM-6nV" secondAttribute="top" constant="52" id="1U4-qV-Rxt"/>
-                                            <constraint firstItem="616-xG-hl9" firstAttribute="top" secondItem="mDB-bi-6zi" secondAttribute="bottom" constant="3" id="2sQ-kq-S65"/>
+                                            <constraint firstItem="616-xG-hl9" firstAttribute="top" secondItem="mDB-bi-6zi" secondAttribute="bottom" constant="-4" id="2sQ-kq-S65"/>
                                             <constraint firstItem="osG-fR-kkH" firstAttribute="top" secondItem="c8G-6S-IMt" secondAttribute="bottom" constant="1" id="2to-Ve-sAD"/>
                                             <constraint firstItem="N8f-WW-7OY" firstAttribute="trailing" secondItem="KGd-xH-v50" secondAttribute="trailing" id="5lB-wP-Rf7"/>
                                             <constraint firstItem="KGd-xH-v50" firstAttribute="leading" secondItem="xOa-X3-dcd" secondAttribute="leading" id="6p8-dk-Agg"/>
@@ -2314,7 +2315,7 @@
                                             <constraint firstItem="psr-z0-aRZ" firstAttribute="trailing" secondItem="tyb-cK-obK" secondAttribute="trailing" id="bq5-gX-Zs8"/>
                                             <constraint firstItem="MFm-n1-81S" firstAttribute="leading" secondItem="vct-tg-5I0" secondAttribute="leading" id="cNO-Rt-G3W"/>
                                             <constraint firstItem="N8f-WW-7OY" firstAttribute="leading" secondItem="KGd-xH-v50" secondAttribute="leading" id="cgm-d2-ja9"/>
-                                            <constraint firstItem="cyj-UI-tgi" firstAttribute="top" secondItem="616-xG-hl9" secondAttribute="bottom" constant="6" id="d4S-Lg-YFC"/>
+                                            <constraint firstItem="cyj-UI-tgi" firstAttribute="top" secondItem="616-xG-hl9" secondAttribute="bottom" constant="13" id="d4S-Lg-YFC"/>
                                             <constraint firstItem="a9j-VM-aGW" firstAttribute="top" secondItem="FgX-eM-6nV" secondAttribute="top" constant="15" id="eDd-Vo-kPX"/>
                                             <constraint firstItem="GRD-37-1K0" firstAttribute="top" secondItem="vct-tg-5I0" secondAttribute="bottom" constant="11" id="eLi-HV-YzS"/>
                                             <constraint firstItem="psr-z0-aRZ" firstAttribute="leading" secondItem="FgX-eM-6nV" secondAttribute="leading" constant="68" id="enM-Gc-mte"/>
@@ -3172,10 +3173,10 @@
             </objects>
             <point key="canvasLocation" x="2872.8000000000002" y="-1823.8380809595203"/>
         </scene>
-        <!--HomeView-->
+        <!--Conflictions-->
         <scene sceneID="RaP-vw-B3E">
             <objects>
-                <viewController title="HomeView" id="zd0-TE-ChC" customClass="EventConfirmation" customModule="Ordinem_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Conflictions" id="zd0-TE-ChC" customClass="EventConfirmation" customModule="Ordinem_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="fk6-g5-Sea"/>
                         <viewControllerLayoutGuide type="bottom" id="BYT-Nb-Snb"/>
@@ -4538,13 +4539,13 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Reward Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="54b-mN-TYP">
-                                        <rect key="frame" x="101" y="297" width="180" height="30"/>
+                                        <rect key="frame" x="100" y="297" width="180" height="30"/>
                                         <fontDescription key="fontDescription" name="Futura-Bold" family="Futura" pointSize="23"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100 points" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ece-No-gma">
-                                        <rect key="frame" x="127" y="400" width="129" height="34"/>
+                                        <rect key="frame" x="126" y="400" width="129" height="34"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="34" id="tLG-IT-Ldb"/>
                                         </constraints>
@@ -4970,7 +4971,7 @@
                                 </prototypes>
                             </tableView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your Rewards" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A5a-kI-BFv">
-                                <rect key="frame" x="96" y="42" width="183" height="27"/>
+                                <rect key="frame" x="96" y="43" width="183" height="26"/>
                                 <fontDescription key="fontDescription" name="LemonMilk" family="Lemon/Milk" pointSize="24"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
@@ -5747,9 +5748,9 @@
         <image name="yesRSVP.png" width="400" height="400"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="67H-Ht-WpW"/>
-        <segue reference="sBC-Sy-WIM"/>
         <segue reference="Zwy-yC-Ryb"/>
+        <segue reference="0wg-mD-XWY"/>
+        <segue reference="sBC-Sy-WIM"/>
         <segue reference="6E7-4J-FED"/>
         <segue reference="mbt-fX-omf"/>
     </inferredMetricsTieBreakers>
