@@ -75,6 +75,16 @@ public class DatabaseConnector {
     }
     
     func getEvents() {
+        
+        //DispatchQueue.main.async {
+        //    print("loaded org names")
+         //   print(dataPressed[0][0])
+        //    self.appDelegate.homeView?.loadContents(events: dataPressed as NSArray)
+        //}
+        
+        
+    }
+ /*
         let myUrl = URL(string: "http://ordinem.ddns.net/api.php/events")!
         let request = NSMutableURLRequest(url:myUrl)
         request.httpMethod = "GET"
@@ -176,56 +186,18 @@ public class DatabaseConnector {
             }
         }
         task.resume()
-    }
+    }*/
     
     func userLogin(email: String, password: String) {
-        
-        let myUrl = URL(string: "http://ordinem.ddns.net/api.php/students?filter[]=email,eq,"+email+"&filter[]=password,eq,"+password+"&satisfy=all")!
-        let request = NSMutableURLRequest(url:myUrl);
-        request.httpMethod = "GET";
-        
-        let task = URLSession.shared.dataTask(with: request as URLRequest) {
-            data, response, error in
-            
+        FIRAuth.auth()?.signIn(withEmail: email, password: password) { (user, error) in
+            // ...
             if error != nil {
-                print(error!.localizedDescription)
-                return
-            }
-            
-            do {
-                
-                let json = try JSONSerialization.jsonObject(with: data!, options: .mutableContainers) as? NSDictionary 
-                
-                if let parseJSON = json{
-                    if let students = parseJSON["students"] as? NSDictionary {
-                        if let records = students["records"] as? NSArray {
-                            if records.count > 0 {
-                                DispatchQueue.main.async {
-                                    self.appDelegate.username = (records[0] as! NSArray)[1] as? String
-                                    self.appDelegate.pointBalance = (records[0] as! NSArray)[8] as? String
-                                }
-                                self.loginSuccess(email: email, password: password)
-                            } else {
-                                self.loginFailure()
-                            }
-                        } else {
-                            self.loginFailure()
-                        }
-                    } else {
-                        self.loginFailure()
-                    }
-                } else {
-                    self.loginFailure()
-                    //print(error)
-                }
-            }
-            catch let error as NSError {
-                print(error.localizedDescription)
+                print(error.debugDescription)
                 self.loginFailure()
+            } else {
+                self.loginSuccess(email: email, password: password)
             }
         }
-        task.resume()
-        
     }
     
     func getRewardName() -> String {

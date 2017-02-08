@@ -44,6 +44,11 @@ public class FBLoginView: UIViewController, FBSDKLoginButtonDelegate {
             print(error.localizedDescription)
             return
         }
+        self.facebookLogin()
+        // ...
+    }
+    
+    func facebookLogin() {
         let credential = FIRFacebookAuthProvider.credential(withAccessToken: FBSDKAccessToken.current().tokenString)
         FIRAuth.auth()?.signIn(with: credential) { (user, error2) in
             // ...
@@ -58,15 +63,22 @@ public class FBLoginView: UIViewController, FBSDKLoginButtonDelegate {
             self.appDelegate.pointBalance = "0"
             self.toLogin()
         }
-        // ...
     }
     
     public override func viewDidLoad() {
         super.viewDidLoad()
         //code
-        self.fbLoginButton = FBSDKLoginButton()
+        //self.appDelegate.fbLoginButton = self.fbLoginButton
         self.fbLoginButton!.readPermissions = ["public_profile", "email", "user_friends"]
         self.fbLoginButton!.delegate = self
+        
+        let tempConst: NSLayoutConstraint = NSLayoutConstraint(item: self.fbLoginButton!, attribute: .height, relatedBy: .equal, toItem: self.fbLoginButton, attribute: .height, multiplier: 0, constant: 50)
+        
+        self.fbLoginButton?.addConstraint(tempConst)
+        
+        if (FBSDKAccessToken.current() != nil) {
+            self.facebookLogin()
+        }
         //loginButton.center = CGPoint(x: self.view.center.x, y: (self.view.center.y/2.0))
         //loginButton.
         //self.view.addSubview(loginButton)

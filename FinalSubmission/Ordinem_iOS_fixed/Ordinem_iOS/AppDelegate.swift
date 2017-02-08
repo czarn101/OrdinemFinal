@@ -13,6 +13,7 @@ import Firebase
 import FirebaseAuth
 import FirebaseDatabase
 import FirebaseStorage
+import FBSDKLoginKit
 import Stripe
 import FBSDKCoreKit
 
@@ -40,7 +41,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var storage: FIRStorageReference?
     var isOrg: Bool?
     
-    
+    var fbLoginManager: FBSDKLoginManager?
     
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {

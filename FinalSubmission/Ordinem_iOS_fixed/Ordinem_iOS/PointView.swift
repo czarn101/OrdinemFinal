@@ -8,6 +8,8 @@
 
 import Foundation
 import UIKit
+import FBSDKLoginKit
+import FirebaseAuth
 
 public class PointView: UIViewController {
     
@@ -51,8 +53,15 @@ public class PointView: UIViewController {
     
     @IBAction func logout(sender: UIButton) {
         appDelegate.setLoginState(state: false, email: nil, password: nil)
+        let loginManager = FBSDKLoginManager()
+        loginManager.logOut()
+        let firebaseAuth = FIRAuth.auth()
+        do {
+            try firebaseAuth?.signOut()
+        } catch let signOutError as NSError {
+            print ("Error signing out: %@", signOutError)
+        }
         self.performSegue(withIdentifier: "logout", sender: self)
-        
     }
     @IBAction func backHome(segue: UIStoryboardSegue) {
         

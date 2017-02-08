@@ -64,6 +64,7 @@
 		385F2A541E427520009316EB /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 385F2A521E427520009316EB /* FBSDKLoginKit.framework */; };
 		385F2A561E427990009316EB /* FBLoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385F2A551E427990009316EB /* FBLoginView.swift */; };
 		385F2A581E4283A2009316EB /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 385F2A571E4283A2009316EB /* Bolts.framework */; };
+		386325801E4AD6DB00D2EC51 /* FacebookLoginOverlay.png in Resources */ = {isa = PBXBuildFile; fileRef = 3863257F1E4AD6DB00D2EC51 /* FacebookLoginOverlay.png */; };
 		386C2B6F1DFE342600F15658 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 386C2B6E1DFE342600F15658 /* AppDelegate.swift */; };
 		386C2B711DFE342600F15658 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 386C2B701DFE342600F15658 /* LoginView.swift */; };
 		386C2B741DFE342600F15658 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 386C2B721DFE342600F15658 /* Main.storyboard */; };
@@ -178,6 +179,7 @@
 		385F2A551E427990009316EB /* FBLoginView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FBLoginView.swift; sourceTree = "<group>"; };
 		385F2A571E4283A2009316EB /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
 		385F2A591E428B0D009316EB /* Ordinem_iOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Ordinem_iOS.entitlements; sourceTree = "<group>"; };
+		3863257F1E4AD6DB00D2EC51 /* FacebookLoginOverlay.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = FacebookLoginOverlay.png; sourceTree = "<group>"; };
 		386C2B6B1DFE342600F15658 /* Ordinem_iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Ordinem_iOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		386C2B6E1DFE342600F15658 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		386C2B701DFE342600F15658 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
@@ -254,6 +256,7 @@
 		18A5319A1E36C3E9003686D2 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				3863257F1E4AD6DB00D2EC51 /* FacebookLoginOverlay.png */,
 				18C6589C1E373484000896BE /* ticket.png */,
 				18C6589E1E3735BD000896BE /* gift.png */,
 				18C6589A1E372BDC000896BE /* Prize.png */,
@@ -563,6 +566,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				386325801E4AD6DB00D2EC51 /* FacebookLoginOverlay.png in Resources */,
 				386C2BAB1DFE6F0500F15658 /* textBox.png in Resources */,
 				18C6589D1E373484000896BE /* ticket.png in Resources */,
 				386DB3F11E28791300F8FF7D /* noRSVP.png in Resources */,
