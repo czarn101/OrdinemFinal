@@ -12,22 +12,80 @@ import UIKit
 import Firebase
 import FirebaseStorage
 
-class HomeView: UIViewController, UITableViewDelegate, UITableViewDataSource, QRCodeReaderViewControllerDelegate {
+enum selectedScope:Int{
+    case event = 0
+    case host = 1
+    case type = 2
+    
+    
+}
+
+class HomeView: UIViewController, UITableViewDelegate, UITableViewDataSource, QRCodeReaderViewControllerDelegate, UISearchBarDelegate {
     
     @IBOutlet var pointLabel: UILabel?
     @IBOutlet var nameLabel: UILabel?
     @IBOutlet var tableView: UITableView?
     
+    
+    
+    func generateModelArray() -> [Event]{
+        let modelAry = [Event]()
+        
+        return modelAry
+        
+    }
 
     let cellID = "cellID"
     
     var events = [Event]()
     
+    func searchBarSetup(){
+        let searchBar = UISearchBar(frame: CGRect(x:0,y:0,width:(UIScreen.main.bounds.width),height:70))
+        searchBar.showsScopeBar = true
+        searchBar.scopeButtonTitles = ["Event","Host","Type"]
+        searchBar.selectedScopeButtonIndex = 0
+        
+        searchBar.delegate = self
+        self.tableView?.tableHeaderView = searchBar
+    }
     
-    private var source: NSArray?
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String){
+        if searchText.isEmpty{
+            
+        }
+        
+    }
+    
+    
+    //TODO
+    func filterTableView(ind:Int,text:String){
+        var x = events
+        switch ind {
+        case selectedScope.event.rawValue:
+            x = x.filter({ (mod) -> Bool in
+                return (mod.eventTitle?.contains(text))!
+            })
+            
+        case selectedScope.host.rawValue:
+            x = x.filter({ (mod) -> Bool in
+                return (mod.orgHost?.contains(text))!
+            })
+        case selectedScope.type.rawValue:
+            x = x.filter({ (mod) -> Bool in
+                return (mod.eventType?.contains(text))!
+            })
+
+        default:
+            print("no type")
+        }
+    }
+    
+    public var source: NSArray?
     
     let appDelegate: AppDelegate = UIApplication.shared.delegate as! AppDelegate
     let dbc: DatabaseConnector = DatabaseConnector()
+    
+    
     
     func loadContents(events: NSArray) {
         print("Data recieved")
@@ -106,7 +164,7 @@ class HomeView: UIViewController, UITableViewDelegate, UITableViewDataSource, QR
             let event = events[indexPath.row]
             cell.eventName?.text = event.eventTitle
             //TODO
-            cell.orgName?.text = ""
+            cell.orgName?.text = event.orgHost
             cell.orgPic?.layer.cornerRadius = 33
             cell.orgPic?.layer.masksToBounds = true
             
@@ -127,9 +185,6 @@ class HomeView: UIViewController, UITableViewDelegate, UITableViewDataSource, QR
                 }).resume()
 
             }
-
-            
-            
             cell.textLabel?.textAlignment = .center
             return cell
         }

@@ -10,6 +10,7 @@ import UIKit
 
 class Event: NSObject {
     
+    var orgHost: String?
     var eventTitle: String?
     var startDate: String?
     var startTime: String?
@@ -19,6 +20,4 @@ class Event: NSObject {
     var additionalInfo: String?
     var eventImage: String?
     var ptsForAttending: Int?
-    
-
 }
