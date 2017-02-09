@@ -42,8 +42,11 @@ class HomeView: UIViewController, UITableViewDelegate, UITableViewDataSource, QR
     func searchBarSetup(){
         let searchBar = UISearchBar(frame: CGRect(x:0,y:0,width:(UIScreen.main.bounds.width),height:70))
         searchBar.showsScopeBar = true
+        searchBar.enablesReturnKeyAutomatically = true
+        searchBar.showsCancelButton = true
         searchBar.scopeButtonTitles = ["Event","Host","Type"]
         searchBar.selectedScopeButtonIndex = 0
+        searchBar.placeholder = "Search"
         
         searchBar.delegate = self
         self.tableView?.tableHeaderView = searchBar
@@ -51,8 +54,9 @@ class HomeView: UIViewController, UITableViewDelegate, UITableViewDataSource, QR
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String){
         if searchText.isEmpty{
-            
+            self.tableView?.reloadData()
         }
+        filterTableView(ind: searchBar.selectedScopeButtonIndex, text: searchText)
         
     }
     
@@ -63,16 +67,16 @@ class HomeView: UIViewController, UITableViewDelegate, UITableViewDataSource, QR
         switch ind {
         case selectedScope.event.rawValue:
             x = x.filter({ (mod) -> Bool in
-                return (mod.eventTitle?.contains(text))!
+                return (mod.eventTitle?.caseInsensitiveCompare(text)) != nil
             })
             
         case selectedScope.host.rawValue:
             x = x.filter({ (mod) -> Bool in
-                return (mod.orgHost?.contains(text))!
+                return (((mod.orgHost?.caseInsensitiveCompare(text)) != nil))
             })
         case selectedScope.type.rawValue:
             x = x.filter({ (mod) -> Bool in
-                return (mod.eventType?.contains(text))!
+                return (((mod.eventType?.caseInsensitiveCompare(text)) != nil))
             })
 
         default:
