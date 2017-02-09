@@ -30,6 +30,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var username: String?
     var pointBalance: String?
+    var extraPtsCost: Float?
     
     var selectedEvent: NSArray?
     var selectedReward: NSArray?
@@ -40,6 +41,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var ref: FIRDatabaseReference?
     var storage: FIRStorageReference?
     var isOrg: Bool?
+    
+    
     
     var fbLoginManager: FBSDKLoginManager?
     
@@ -56,6 +59,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         STPPaymentConfiguration.shared().publishableKey = "pk_test_5lzFaXyZ9a32h55v8Ar3pc5T"
         
         FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
+        
+        Stripe.setDefaultPublishableKey("pk_test_IeR8DmaKtT6Gi5W7vvySoCiO")
+        
+        
         
         return true
     }

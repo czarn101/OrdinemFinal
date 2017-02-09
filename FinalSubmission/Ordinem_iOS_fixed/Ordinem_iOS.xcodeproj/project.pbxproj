@@ -132,6 +132,7 @@
 		183ED3901E47CCC400644BE7 /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 		183ED3921E47E1F900644BE7 /* RewardCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RewardCell.swift; sourceTree = "<group>"; };
 		183ED3941E47E3DC00644BE7 /* Reward.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reward.swift; sourceTree = "<group>"; };
+		183F05B41E4C4C610011E7A7 /* Donate-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Donate-Bridging-Header.h"; sourceTree = "<group>"; };
 		1886E5241E42B48E00001D5C /* userVOrg.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = userVOrg.swift; sourceTree = "<group>"; };
 		188B74801E3C28250057A459 /* winnerPrizes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = winnerPrizes.swift; sourceTree = "<group>"; };
 		188B74821E3C28640057A459 /* rafflesEntered.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = rafflesEntered.swift; sourceTree = "<group>"; };
@@ -335,6 +336,7 @@
 				188B748E1E3C32200057A459 /* wonInfo.swift */,
 				188B74901E3C32610057A459 /* rafflesInfo.swift */,
 				18F4EA701E401A9800A6AF10 /* bankInfo.swift */,
+				183F05B41E4C4C610011E7A7 /* Donate-Bridging-Header.h */,
 				18C658A41E381E50000896BE /* EventConfirmation.swift */,
 				18C658A21E37E8FC000896BE /* Settings.swift */,
 				181E520C1E32C391006859CA /* sSignUp.swift */,
@@ -499,6 +501,7 @@
 				386C2B871DFE342600F15658 /* Frameworks */,
 				386C2B881DFE342600F15658 /* Resources */,
 				D19AFA5E3C9032A85020663A /* [CP] Copy Pods Resources */,
+				BD08A8D19EFF5300C1D2567C /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -630,7 +633,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		0DD5EF0C451659CF755859D0 /* [CP] Check Pods Manifest.lock */ = {
@@ -645,7 +648,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		560833741854E35112A21050 /* [CP] Copy Pods Resources */ = {
@@ -676,6 +679,21 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Ordinem_iOS/Pods-Ordinem_iOS-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BD08A8D19EFF5300C1D2567C /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Ordinem_iOSUITests/Pods-Ordinem_iOSUITests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		D19AFA5E3C9032A85020663A /* [CP] Copy Pods Resources */ = {
@@ -720,7 +738,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		F25556D23FD766A7E713A212 /* [CP] Embed Pods Frameworks */ = {

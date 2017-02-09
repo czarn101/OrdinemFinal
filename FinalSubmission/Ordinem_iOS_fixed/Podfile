@@ -11,6 +11,7 @@ target 'Ordinem_iOS' do
   pod 'Firebase/Database'
   pod 'Firebase/Storage'
   pod 'Stripe'
+  pod 'AFNetworking'
   #pod 'FBSDKCoreKit'
   #  pod 'FBSDKLoginKit'
 #  pod 'QRCode'

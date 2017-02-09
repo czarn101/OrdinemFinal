@@ -13,6 +13,8 @@ import Stripe
 class getMorePoints: UIViewController, STPPaymentCardTextFieldDelegate {
     
     
+    let appDelegate: AppDelegate = UIApplication.shared.delegate as! AppDelegate
+    
     
     
     @IBOutlet weak var countPlaceHolder: UILabel!
