@@ -31,17 +31,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var username: String?
     var pointBalance: String?
     
-    var selectedEvent: NSArray?
+    var selectedEvent: NSDictionary?
     var selectedReward: NSArray?
     
     var shouldAutoLogin: Bool = true
 
     var mainUser: FIRUser?
     var ref: FIRDatabaseReference?
-    var storage: FIRStorageReference?
+    var storage: FIRStorage?
+    var storageRef: FIRStorageReference?
     var isOrg: Bool?
     
     var fbLoginManager: FBSDKLoginManager?
+    
+    var profPics: [String : UIImage] = [:]
     
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
@@ -50,7 +53,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         FIRApp.configure()
         ref = FIRDatabase.database().reference()
-        storage = FIRStorage.storage().reference()
+        storage = FIRStorage.storage()
+        storageRef = storage?.reference()
         isOrg = false
         //test publishKey
         STPPaymentConfiguration.shared().publishableKey = "pk_test_5lzFaXyZ9a32h55v8Ar3pc5T"

@@ -59,16 +59,24 @@ public class FBLoginView: UIViewController, FBSDKLoginButtonDelegate {
             }
             print("successfully logged in with facebook")
             self.appDelegate.mainUser = user!
-            self.appDelegate.username = "FB User"
+            self.appDelegate.username = user!.displayName
             self.appDelegate.pointBalance = "0"
             self.toLogin()
         }
+    }
+    
+    public override func loadView() {
+        super.loadView()
+        let loginButtonFrame: CGRect = CGRect(x: 0, y: 0, width: self.view.frame.width, height: 100)
+        self.fbLoginButton = FBSDKLoginButton.init(frame: loginButtonFrame)
+        //(0.1836266259*self.view.frame.width)
     }
     
     public override func viewDidLoad() {
         super.viewDidLoad()
         //code
         //self.appDelegate.fbLoginButton = self.fbLoginButton
+        
         self.fbLoginButton!.readPermissions = ["public_profile", "email", "user_friends"]
         self.fbLoginButton!.delegate = self
         

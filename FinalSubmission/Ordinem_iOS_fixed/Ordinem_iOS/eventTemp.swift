@@ -33,8 +33,8 @@ UINavigationControllerDelegate, UIPickerViewDataSource, UIPickerViewDelegate, UI
             var profileImageUrl = ""
             
             //IMAGE INFORMATION
-            let imageName = NSUUID().uuidString
-            let storageRef = FIRStorage.storage().reference().child("profile_Image").child("\(imageName).png")
+            //let imageName = NSUUID().uuidString
+            let storageRef = FIRStorage.storage().reference().child("profile_Image").child("\(cUser!.uid).png")
             
             if let uploadData: Data = UIImagePNGRepresentation(self.imagePicked.image!){
                 storageRef.put(uploadData, metadata: nil, completion: {
@@ -98,10 +98,26 @@ UINavigationControllerDelegate, UIPickerViewDataSource, UIPickerViewDelegate, UI
         
     }
 
-        func imagePickerController(picker: UIImagePickerController, didFinishPickingImage image: UIImage!, editingInfo: [NSObject : AnyObject]!) {
+    /*private func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
+        if let image = info[UIImagePickerControllerOriginalImage] as? UIImage {
             imagePicked.image = image
-            self.dismiss(animated: true, completion: nil);
+        } else{
+            print("Something went wrong")
         }
+
+        self.dismiss(animated: true, completion: nil);
+    }*/
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
+        if let image = info[UIImagePickerControllerEditedImage] as? UIImage {//2
+            imagePicked.contentMode = .scaleAspectFit
+            imagePicked.image = image
+        } else{
+            print("Something went wrong")
+        }
+        
+        self.dismiss(animated: true, completion: nil)
+    }
         
     var list = ["Competitive", "Career Development", "Conference", "Educational","Entertainment", "Promotional", "Fundraising", "Other"]
     

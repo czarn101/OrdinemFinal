@@ -70,19 +70,49 @@ public class DatabaseConnector {
                                                                         "additionalInfo":additionalInfo,
                                                                         "ptsForAttending" : ptsForAttending,
                                                                         "picURL": picURL,
-                                                                        "orgID": user.uid
+                                                                        "orgID": user.uid,
+                                                                        "orgName": user.displayName!
             ])
     }
     
     func getEvents() {
         
-        //DispatchQueue.main.async {
-        //    print("loaded org names")
-         //   print(dataPressed[0][0])
-        //    self.appDelegate.homeView?.loadContents(events: dataPressed as NSArray)
-        //}
-        
-        
+        self.appDelegate.ref?.child("chapman").child("events").child("public").observeSingleEvent(of: .value, with: { (snapshot) in
+            // Get user value
+            if let result = snapshot.value as? NSDictionary {
+                var finalOutput: [NSDictionary] = []
+                for (key, value) in result {
+                    let newResult: NSMutableDictionary = value as! NSMutableDictionary
+                    newResult["key"] = key as! String
+                    let newResultSolid: NSDictionary = newResult as NSDictionary
+                    finalOutput.append(newResultSolid)
+                    if self.appDelegate.profPics[newResultSolid["orgID"] as! String] == nil {
+                        let picRef = self.appDelegate.storage!.reference(forURL: newResultSolid["picURL"] as! String)
+                        picRef.data(withMaxSize: 1 * 1024 * 1024) { data, error2 in
+                            if let error2 = error2 {
+                                // Uh-oh, an error occurred!
+                                print(error2.localizedDescription)
+                            } else {
+                                // Data for "images/island.jpg" is returned
+                                let image = UIImage(data: data!)
+                                self.appDelegate.profPics[newResultSolid["orgID"] as! String] = image
+                                
+                            }
+                        }
+                    }
+                    DispatchQueue.main.async {
+                        print("loaded org names")
+                        //print((value[0] as! NSDictionary)["eventTitle"] as! String)
+                        self.appDelegate.homeView?.loadContents(events: finalOutput as NSArray)
+                    }
+                }
+            } else {
+                print("unable to load event data")
+                //print(snapshot.value)
+            }
+        }) { (error) in
+            print(error.localizedDescription)
+        }
     }
  /*
         let myUrl = URL(string: "http://ordinem.ddns.net/api.php/events")!

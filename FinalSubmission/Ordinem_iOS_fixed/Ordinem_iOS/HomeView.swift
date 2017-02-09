@@ -26,7 +26,7 @@ class HomeView: UIViewController, UITableViewDelegate, UITableViewDataSource, QR
     @IBOutlet var nameLabel: UILabel?
     @IBOutlet var tableView: UITableView?
     
-    
+    //var refHandle: FIRDatabaseReference
     
     func generateModelArray() -> [Event]{
         let modelAry = [Event]()
@@ -84,7 +84,7 @@ class HomeView: UIViewController, UITableViewDelegate, UITableViewDataSource, QR
         }
     }
     
-    public var source: NSArray?
+    public var source: NSArray = []
     
     let appDelegate: AppDelegate = UIApplication.shared.delegate as! AppDelegate
     let dbc: DatabaseConnector = DatabaseConnector()
@@ -102,14 +102,20 @@ class HomeView: UIViewController, UITableViewDelegate, UITableViewDataSource, QR
         super.viewDidLoad()
         self.appDelegate.homeView = self
         pointLabel?.text = appDelegate.pointBalance
-        nameLabel?.text = "Welcome, "+appDelegate.username!+"!"
-        dbc.getEvents()
-        loadContents(events: [["11","Test Event","Some random details.", "OGCoder club", "Jan 31st", "7:00 PM-9:00 PM", "My crib", "50"]])
+        nameLabel?.text = appDelegate.username!
+        //dbc.getEvents()
+        
+        //loadContents(events: [["11","Test Event","Some random details.", "OGCoder club", "Jan 31st", "7:00 PM-9:00 PM", "My crib", "50"]])
         // Do any additional setup after loading the view, typically from a nib.
-        fetchUser()
+        //fetchUser()
     }
     
-    func fetchUser(){
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        dbc.getEvents()
+    }
+    
+    /*func fetchUser(){
         FIRDatabase.database().reference().child("Chapman").child("Organizaitons").observe(.childAdded, with: { (snapshot) in
             
             if let dictionary = snapshot.value as? [String: AnyObject]{
@@ -129,7 +135,7 @@ class HomeView: UIViewController, UITableViewDelegate, UITableViewDataSource, QR
             
         }, withCancel: nil)
         
-    }
+    }*/
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -139,12 +145,12 @@ class HomeView: UIViewController, UITableViewDelegate, UITableViewDataSource, QR
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         //code
         tableView.deselectRow(at: indexPath, animated: false)
-        self.appDelegate.selectedEvent = self.source?[indexPath.row] as? NSArray
+        self.appDelegate.selectedEvent = self.source[indexPath.row] as? NSDictionary
         self.performSegue(withIdentifier: "detail", sender: self)
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return events.count
+        return source.count
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -152,14 +158,19 @@ class HomeView: UIViewController, UITableViewDelegate, UITableViewDataSource, QR
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if self.source != nil {
+        if self.source.count != 0 {
             let cell: EventCell = tableView.dequeueReusableCell(withIdentifier: "EventCell") as! EventCell
-            cell.eventName?.text = (self.source?[indexPath.row] as! NSArray)[1] as? String
+            cell.eventName?.text = (self.source[indexPath.row] as! NSDictionary)["eventTitle"] as? String
             //cell.eventDescription?.text = (self.source?[indexPath.row] as! NSArray)[2] as? String
             //cell.eventID = source?[indexPath.row][2] as? String
-            cell.orgName?.text = (self.source?[indexPath.row] as! NSArray)[3] as? String
+            cell.orgName?.text = (self.source[indexPath.row] as! NSDictionary)["orgName"] as? String
             //cell.eventDate?.text = (self.source?[indexPath.row] as! NSArray)[4] as? String
-            cell.eventTime?.text = (self.source?[indexPath.row] as! NSArray)[4] as? String
+            cell.eventTime?.text = ((self.source[indexPath.row] as! NSDictionary)["startTime"] as! String) + " - " + ((self.source[indexPath.row] as! NSDictionary)["endDate"] as! String)
+            
+            cell.orgPic?.image = UIImage(data: NSData(contentsOf: URL(string: (self.source[indexPath.row] as! NSDictionary)["picURL"] as! String)!) as! Data)
+                //self.appDelegate.profPics[(self.source[indexPath.row] as! NSDictionary)["orgName"] as! String]
+            
+            cell.eventPoints?.text = (self.source[indexPath.row] as! NSDictionary)["ptsForAttending"] as? String
             return cell
         } else {
             

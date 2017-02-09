@@ -19,17 +19,20 @@ public class DetailView: UIViewController {
     @IBOutlet var location: UILabel?
     @IBOutlet var points: UILabel?
     @IBOutlet var qr_code: UIImageView?
+    @IBOutlet var eventTime: UILabel?
     
     private var appDelegate: AppDelegate = UIApplication.shared.delegate as! AppDelegate
     
     override public func viewDidLoad() {
         super.viewDidLoad()
-        self.eventTitle?.text = self.appDelegate.selectedEvent![1] as? String
-        self.eventDescription?.text = self.appDelegate.selectedEvent![2] as? String
-        self.hostName?.text = self.appDelegate.selectedEvent![3] as? String
-        self.eventDateTime?.text = (self.appDelegate.selectedEvent![4] as! String) + " " + (self.appDelegate.selectedEvent![5] as! String)
-        self.location?.text = self.appDelegate.selectedEvent![6] as? String
-        self.points?.text = self.appDelegate.selectedEvent![7] as? String
+        self.eventTitle?.text = self.appDelegate.selectedEvent!["eventTitle"] as? String
+        self.eventDescription?.text = self.appDelegate.selectedEvent!["additionalInfo"] as? String
+        self.hostName?.text = self.appDelegate.selectedEvent!["orgName"] as? String
+        self.eventDateTime?.text = self.appDelegate.selectedEvent!["startDate"] as? String
+        self.eventTime?.text = (self.appDelegate.selectedEvent!["startTime"] as! String) + " - " + (self.appDelegate.selectedEvent!["endDate"] as! String)
+        self.location?.text = self.appDelegate.selectedEvent!["location"] as? String
+        self.points?.text = self.appDelegate.selectedEvent!["ptsForAttending"] as? String
+        self.image.image = UIImage(data: NSData(contentsOf: URL(string: self.appDelegate.selectedEvent!["picURL"] as! String)!) as! Data)
         if self.appDelegate.isOrg! {
             let qrCode = QRCode(eventTitle!.text!)
             qr_code?.image = qrCode!.image!
