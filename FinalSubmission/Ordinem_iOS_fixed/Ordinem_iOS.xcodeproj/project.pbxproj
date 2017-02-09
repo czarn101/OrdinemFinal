@@ -15,11 +15,16 @@
 		181E52071E31498D006859CA /* PersonOrdinem.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 181E52061E31498D006859CA /* PersonOrdinem.jpg */; };
 		181E520B1E314E83006859CA /* HouseOrdinem c.png in Resources */ = {isa = PBXBuildFile; fileRef = 181E520A1E314E83006859CA /* HouseOrdinem c.png */; };
 		181E520D1E32C391006859CA /* sSignUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181E520C1E32C391006859CA /* sSignUp.swift */; };
-		181E520F1E3305E4006859CA /* ChapmanLogo.png in Resources */ = {isa = PBXBuildFile; fileRef = 181E520E1E3305E4006859CA /* ChapmanLogo.png */; };
 		182A2E651E4BB2AD00A303CC /* SettingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 182A2E641E4BB2AD00A303CC /* SettingCell.swift */; };
 		183ED3911E47CCC400644BE7 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183ED3901E47CCC400644BE7 /* Event.swift */; };
 		183ED3931E47E1F900644BE7 /* RewardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183ED3921E47E1F900644BE7 /* RewardCell.swift */; };
 		183ED3951E47E3DC00644BE7 /* Reward.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183ED3941E47E3DC00644BE7 /* Reward.swift */; };
+		183F05B61E4C685B0011E7A7 /* 30pixGift.png in Resources */ = {isa = PBXBuildFile; fileRef = 183F05B51E4C685B0011E7A7 /* 30pixGift.png */; };
+		183F05B81E4C6AA00011E7A7 /* Profile_Pic.png in Resources */ = {isa = PBXBuildFile; fileRef = 183F05B71E4C6AA00011E7A7 /* Profile_Pic.png */; };
+		183F05BA1E4C6B450011E7A7 /* 30pixProfile.png in Resources */ = {isa = PBXBuildFile; fileRef = 183F05B91E4C6B450011E7A7 /* 30pixProfile.png */; };
+		183F05BC1E4C6D360011E7A7 /* pix30ChapmanLogo.png in Resources */ = {isa = PBXBuildFile; fileRef = 183F05BB1E4C6D360011E7A7 /* pix30ChapmanLogo.png */; };
+		183F05BE1E4C6E2E0011E7A7 /* newpix30ChapmanLogo.png in Resources */ = {isa = PBXBuildFile; fileRef = 183F05BD1E4C6E2E0011E7A7 /* newpix30ChapmanLogo.png */; };
+		185DDDAE1E4C71FE0035CF85 /* userProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185DDDAD1E4C71FE0035CF85 /* userProfile.swift */; };
 		1886E5251E42B48E00001D5C /* userVOrg.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1886E5241E42B48E00001D5C /* userVOrg.swift */; };
 		188B74811E3C28250057A459 /* winnerPrizes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188B74801E3C28250057A459 /* winnerPrizes.swift */; };
 		188B74831E3C28640057A459 /* rafflesEntered.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188B74821E3C28640057A459 /* rafflesEntered.swift */; };
@@ -127,12 +132,17 @@
 		181E52061E31498D006859CA /* PersonOrdinem.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = PersonOrdinem.jpg; path = ../PersonOrdinem.jpg; sourceTree = "<group>"; };
 		181E520A1E314E83006859CA /* HouseOrdinem c.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "HouseOrdinem c.png"; path = "../HouseOrdinem c.png"; sourceTree = "<group>"; };
 		181E520C1E32C391006859CA /* sSignUp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = sSignUp.swift; sourceTree = "<group>"; };
-		181E520E1E3305E4006859CA /* ChapmanLogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ChapmanLogo.png; path = ../ChapmanLogo.png; sourceTree = "<group>"; };
 		182A2E641E4BB2AD00A303CC /* SettingCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingCell.swift; sourceTree = "<group>"; };
 		183ED3901E47CCC400644BE7 /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 		183ED3921E47E1F900644BE7 /* RewardCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RewardCell.swift; sourceTree = "<group>"; };
 		183ED3941E47E3DC00644BE7 /* Reward.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reward.swift; sourceTree = "<group>"; };
 		183F05B41E4C4C610011E7A7 /* Donate-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Donate-Bridging-Header.h"; sourceTree = "<group>"; };
+		183F05B51E4C685B0011E7A7 /* 30pixGift.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 30pixGift.png; sourceTree = "<group>"; };
+		183F05B71E4C6AA00011E7A7 /* Profile_Pic.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Profile_Pic.png; sourceTree = "<group>"; };
+		183F05B91E4C6B450011E7A7 /* 30pixProfile.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 30pixProfile.png; sourceTree = "<group>"; };
+		183F05BB1E4C6D360011E7A7 /* pix30ChapmanLogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pix30ChapmanLogo.png; sourceTree = "<group>"; };
+		183F05BD1E4C6E2E0011E7A7 /* newpix30ChapmanLogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = newpix30ChapmanLogo.png; sourceTree = "<group>"; };
+		185DDDAD1E4C71FE0035CF85 /* userProfile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = userProfile.swift; sourceTree = "<group>"; };
 		1886E5241E42B48E00001D5C /* userVOrg.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = userVOrg.swift; sourceTree = "<group>"; };
 		188B74801E3C28250057A459 /* winnerPrizes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = winnerPrizes.swift; sourceTree = "<group>"; };
 		188B74821E3C28640057A459 /* rafflesEntered.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = rafflesEntered.swift; sourceTree = "<group>"; };
@@ -259,6 +269,11 @@
 		18A5319A1E36C3E9003686D2 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				183F05BD1E4C6E2E0011E7A7 /* newpix30ChapmanLogo.png */,
+				183F05BB1E4C6D360011E7A7 /* pix30ChapmanLogo.png */,
+				183F05B91E4C6B450011E7A7 /* 30pixProfile.png */,
+				183F05B71E4C6AA00011E7A7 /* Profile_Pic.png */,
+				183F05B51E4C685B0011E7A7 /* 30pixGift.png */,
 				3863257F1E4AD6DB00D2EC51 /* FacebookLoginOverlay.png */,
 				18C6589C1E373484000896BE /* ticket.png */,
 				18C6589E1E3735BD000896BE /* gift.png */,
@@ -277,7 +292,6 @@
 				386C2B9C1DFE64C200F15658 /* OrdinemLogo.png */,
 				181E52061E31498D006859CA /* PersonOrdinem.jpg */,
 				181E520A1E314E83006859CA /* HouseOrdinem c.png */,
-				181E520E1E3305E4006859CA /* ChapmanLogo.png */,
 				386C2BA81DFE6AFF00F15658 /* LemonMilk.otf */,
 				18C658A01E37C6FA000896BE /* settings.png */,
 			);
@@ -399,6 +413,7 @@
 				386C2B7A1DFE342600F15658 /* Info.plist */,
 				183ED3901E47CCC400644BE7 /* Event.swift */,
 				183ED3941E47E3DC00644BE7 /* Reward.swift */,
+				185DDDAD1E4C71FE0035CF85 /* userProfile.swift */,
 			);
 			path = Ordinem_iOS;
 			sourceTree = "<group>";
@@ -580,10 +595,12 @@
 				386C2BA91DFE6B3A00F15658 /* LemonMilk.otf in Resources */,
 				381F3E0B1E0733D9002366A8 /* MyData.plist in Resources */,
 				18C6589F1E3735BD000896BE /* gift.png in Resources */,
-				181E520F1E3305E4006859CA /* ChapmanLogo.png in Resources */,
+				183F05BA1E4C6B450011E7A7 /* 30pixProfile.png in Resources */,
 				382226001E31659A005CC3D5 /* QRCodeReader.swift.podspec in Resources */,
+				183F05BC1E4C6D360011E7A7 /* pix30ChapmanLogo.png in Resources */,
 				386C2B791DFE342600F15658 /* LaunchScreen.storyboard in Resources */,
 				18C658A11E37C6FA000896BE /* settings.png in Resources */,
+				183F05B61E4C685B0011E7A7 /* 30pixGift.png in Resources */,
 				38F0AB241E383E4C00AE7ECD /* GoogleService-Info.plist in Resources */,
 				386C2BA51DFE651800F15658 /* GUI_Background.png in Resources */,
 				386C2B9F1DFE64D300F15658 /* OrdinemLogo_white.png in Resources */,
@@ -591,11 +608,13 @@
 				386C2B9D1DFE64C200F15658 /* OrdinemLogo.png in Resources */,
 				181E52071E31498D006859CA /* PersonOrdinem.jpg in Resources */,
 				382225FE1E31659A005CC3D5 /* LICENSE in Resources */,
+				183F05BE1E4C6E2E0011E7A7 /* newpix30ChapmanLogo.png in Resources */,
 				382225F11E31659A005CC3D5 /* .gitignore in Resources */,
 				3899421D1E3F0B9E001AD80B /* sample.png in Resources */,
 				181E520B1E314E83006859CA /* HouseOrdinem c.png in Resources */,
 				386C2B761DFE342600F15658 /* Assets.xcassets in Resources */,
 				18C6589B1E372BDC000896BE /* Prize.png in Resources */,
+				183F05B81E4C6AA00011E7A7 /* Profile_Pic.png in Resources */,
 				386C2BA31DFE64E300F15658 /* OrdinemLogoLong.png in Resources */,
 				386C2B741DFE342600F15658 /* Main.storyboard in Resources */,
 				386C2BA11DFE64DD00F15658 /* OrdinemLogoLong_White.png in Resources */,
@@ -810,6 +829,7 @@
 				183ED3931E47E1F900644BE7 /* RewardCell.swift in Sources */,
 				386C2B6F1DFE342600F15658 /* AppDelegate.swift in Sources */,
 				182A2E651E4BB2AD00A303CC /* SettingCell.swift in Sources */,
+				185DDDAE1E4C71FE0035CF85 /* userProfile.swift in Sources */,
 				183ED3951E47E3DC00644BE7 /* Reward.swift in Sources */,
 				18F4EA6B1E3FFAD500A6AF10 /* getMorePoints.swift in Sources */,
 				18C658A51E381E50000896BE /* EventConfirmation.swift in Sources */,

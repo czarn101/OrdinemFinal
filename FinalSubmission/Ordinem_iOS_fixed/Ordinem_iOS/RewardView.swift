@@ -21,7 +21,7 @@ extension Double {
 
 
 
-public class RewardView: UIViewController, UITableViewDelegate, UITableViewDataSource {
+public class RewardView: UIViewController, UITableViewDelegate, UITableViewDataSource, UITabBarDelegate {
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -38,6 +38,24 @@ public class RewardView: UIViewController, UITableViewDelegate, UITableViewDataS
     @IBOutlet weak var label4Slider: UILabel!
     
     
+    @IBOutlet weak var rewardButtonItem: UITabBarItem!
+    
+    @IBOutlet weak var orgButtonItem: UITabBarItem!
+    
+    @IBOutlet weak var profileButtonItem: UITabBarItem!
+    
+    
+    
+    
+    func handleButts(){
+        if profileButtonItem.isEnabled{
+            performSegue(withIdentifier: "profileSegue", sender: self)
+        }
+        else if orgButtonItem.isEnabled{
+            performSegue(withIdentifier: "rewardView", sender: self)
+        }
+        
+    }
     
     var c = ""
     var r = ""

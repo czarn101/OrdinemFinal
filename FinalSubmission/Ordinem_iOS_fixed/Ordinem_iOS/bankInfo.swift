@@ -8,6 +8,7 @@
 
 import UIKit
 import Stripe
+import AFNetworking
 
 
 
@@ -20,6 +21,8 @@ class bankInfo: UIViewController, STPPaymentCardTextFieldDelegate {
     @IBOutlet weak var expireDateTextField: UITextField!
     
     @IBOutlet weak var cvcTextField: UITextField!
+    
+    var underlyingError: NSError? = nil
     
     @IBAction func donate(sender: AnyObject) {
         
@@ -41,7 +44,7 @@ class bankInfo: UIViewController, STPPaymentCardTextFieldDelegate {
             
         }
 
-        var underlyingError: NSError?
+
         if underlyingError != nil {
             self.spinner.stopAnimating()
             self.handleError(error: underlyingError!)
@@ -68,21 +71,21 @@ class bankInfo: UIViewController, STPPaymentCardTextFieldDelegate {
                       "currency": "usd",
                       "description": self.amountTextField.text!] as [String : Any]
         
-        let manager = AFHTTPRequestOperationManager()
-        manager.POST(URL, parameters: params, success: { (operation, responseObject) -> Void in
+        let manager = AFHTTPSessionManager()
+        
+        manager.post(URL, parameters: params, success: { (operation, responseObject) -> Void in
             
             if let response = responseObject as? [String: String] {
-                UIAlertView(title: response["status"],
-                            message: response["message"],
+                UIAlertView(title: response["Status"],
+                            message: response["Success!"],
                             delegate: nil,
                             cancelButtonTitle: "OK").show()
             }
-            
-        }) { (operation, error) -> Void in
-            self.handleError(error!)
-        }
+        }, failure: nil)
+        
     }
-
+        
+    
 
     func handleError(error: NSError) {
         UIAlertView(title: "Please Try Again",
