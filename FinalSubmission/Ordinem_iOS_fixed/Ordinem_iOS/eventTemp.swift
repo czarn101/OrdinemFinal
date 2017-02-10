@@ -260,6 +260,10 @@ UINavigationControllerDelegate, UIPickerViewDataSource, UIPickerViewDelegate, UI
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        if additionalInfo.isSelected{
+            additionalInfo.text = ""
+        }
+        
         picker1.delegate = self
         picker1.dataSource = self
         
