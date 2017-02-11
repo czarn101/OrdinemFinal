@@ -30,6 +30,9 @@
 		188B748D1E3C2F380057A459 /* newEventDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188B748C1E3C2F380057A459 /* newEventDetail.swift */; };
 		188B748F1E3C32200057A459 /* wonInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188B748E1E3C32200057A459 /* wonInfo.swift */; };
 		188B74911E3C32610057A459 /* rafflesInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188B74901E3C32610057A459 /* rafflesInfo.swift */; };
+		18B3AE671E4FA49100E67516 /* RSVPs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B3AE661E4FA49100E67516 /* RSVPs.swift */; };
+		18B3AE691E4FA76700E67516 /* rsvpCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B3AE681E4FA76700E67516 /* rsvpCell.swift */; };
+		18B3AE6B1E4FA98A00E67516 /* Rsvp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B3AE6A1E4FA98A00E67516 /* Rsvp.swift */; };
 		18C6589B1E372BDC000896BE /* Prize.png in Resources */ = {isa = PBXBuildFile; fileRef = 18C6589A1E372BDC000896BE /* Prize.png */; };
 		18C6589D1E373484000896BE /* ticket.png in Resources */ = {isa = PBXBuildFile; fileRef = 18C6589C1E373484000896BE /* ticket.png */; };
 		18C6589F1E3735BD000896BE /* gift.png in Resources */ = {isa = PBXBuildFile; fileRef = 18C6589E1E3735BD000896BE /* gift.png */; };
@@ -143,6 +146,9 @@
 		188B748C1E3C2F380057A459 /* newEventDetail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = newEventDetail.swift; path = ../newEventDetail.swift; sourceTree = "<group>"; };
 		188B748E1E3C32200057A459 /* wonInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = wonInfo.swift; path = ../wonInfo.swift; sourceTree = "<group>"; };
 		188B74901E3C32610057A459 /* rafflesInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = rafflesInfo.swift; path = ../rafflesInfo.swift; sourceTree = "<group>"; };
+		18B3AE661E4FA49100E67516 /* RSVPs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RSVPs.swift; path = ../RSVPs.swift; sourceTree = "<group>"; };
+		18B3AE681E4FA76700E67516 /* rsvpCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = rsvpCell.swift; sourceTree = "<group>"; };
+		18B3AE6A1E4FA98A00E67516 /* Rsvp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Rsvp.swift; sourceTree = "<group>"; };
 		18C6589A1E372BDC000896BE /* Prize.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Prize.png; sourceTree = "<group>"; };
 		18C6589C1E373484000896BE /* ticket.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ticket.png; sourceTree = "<group>"; };
 		18C6589E1E3735BD000896BE /* gift.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gift.png; sourceTree = "<group>"; };
@@ -351,6 +357,7 @@
 		386C2B6D1DFE342600F15658 /* Ordinem_iOS */ = {
 			isa = PBXGroup;
 			children = (
+				18B3AE661E4FA49100E67516 /* RSVPs.swift */,
 				181E51FF1E2FE4B5006859CA /* SignUp.swift */,
 				1886E5241E42B48E00001D5C /* userVOrg.swift */,
 				188B74841E3C2C600057A459 /* adminNewOrgs.swift */,
@@ -394,11 +401,13 @@
 				383F44371E021744003F7F28 /* DetailView.swift */,
 				386C2BB41DFF07D800F15658 /* AutoLoginView.swift */,
 				386C2BB01DFEA43800F15658 /* EventCell.swift */,
+				18B3AE681E4FA76700E67516 /* rsvpCell.swift */,
 				386C2BAE1DFE9BEA00F15658 /* HomeView.swift */,
 				386C2B751DFE342600F15658 /* Assets.xcassets */,
 				386C2B771DFE342600F15658 /* LaunchScreen.storyboard */,
 				386C2B7A1DFE342600F15658 /* Info.plist */,
 				183ED3901E47CCC400644BE7 /* Event.swift */,
+				18B3AE6A1E4FA98A00E67516 /* Rsvp.swift */,
 				183ED3941E47E3DC00644BE7 /* Reward.swift */,
 			);
 			path = Ordinem_iOS;
@@ -768,16 +777,19 @@
 				386C2BB51DFF07D800F15658 /* AutoLoginView.swift in Sources */,
 				382226051E31659A005CC3D5 /* QRCodeReaderViewContainer.swift in Sources */,
 				382226021E31659A005CC3D5 /* QRCodeReader.swift in Sources */,
+				18B3AE671E4FA49100E67516 /* RSVPs.swift in Sources */,
 				382226081E31659A005CC3D5 /* QRCodeReaderViewControllerDelegate.swift in Sources */,
 				389942251E3F0DF0001AD80B /* UIImageViewExtension.swift in Sources */,
 				389942241E3F0DF0001AD80B /* QRCode.swift in Sources */,
 				382226031E31659A005CC3D5 /* QRCodeReaderResult.swift in Sources */,
 				386C2BAF1DFE9BEA00F15658 /* HomeView.swift in Sources */,
+				18B3AE691E4FA76700E67516 /* rsvpCell.swift in Sources */,
 				382226061E31659A005CC3D5 /* QRCodeReaderViewController.swift in Sources */,
 				386C87DE1E4C334800AF5D78 /* ProfileView.swift in Sources */,
 				381F3E0E1E07780E002366A8 /* PointView.swift in Sources */,
 				389942231E3F0DF0001AD80B /* CIImageExtension.swift in Sources */,
 				188B74851E3C2C600057A459 /* adminNewOrgs.swift in Sources */,
+				18B3AE6B1E4FA98A00E67516 /* Rsvp.swift in Sources */,
 				382225F41E31659A005CC3D5 /* CONTRIBUTORS.md in Sources */,
 				383F44381E021744003F7F28 /* DetailView.swift in Sources */,
 				385F2A561E427990009316EB /* FBLoginView.swift in Sources */,

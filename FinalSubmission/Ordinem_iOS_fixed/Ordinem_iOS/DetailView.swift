@@ -23,6 +23,11 @@ public class DetailView: UIViewController {
     
     private var appDelegate: AppDelegate = UIApplication.shared.delegate as! AppDelegate
     
+    
+    @IBAction func backToDetails(segue: UIStoryboardSegue) {
+        
+    }
+    
     override public func viewDidLoad() {
         super.viewDidLoad()
         self.eventTitle?.text = self.appDelegate.selectedEvent!["eventTitle"] as? String

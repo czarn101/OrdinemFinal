@@ -28,12 +28,25 @@ class HomeView: UIViewController, UITableViewDelegate, UITableViewDataSource, QR
     
     //var refHandle: FIRDatabaseReference
     
+    let modelAry = [Event]()
+    var filteredAry = [Event]()
+    
     func generateModelArray() -> [Event]{
-        let modelAry = [Event]()
+        
         
         return modelAry
         
     }
+    
+    func filterContentForSearchText(searchText: String, scope: String = "All"){
+        filteredAry = modelAry.filter{
+            evnt in return (evnt.orgHost?.lowercased().contains(searchText.lowercased()))!
+        }
+        tableView?.reloadData()
+    }
+    
+    
+    let searchController = UISearchController(searchResultsController: nil)
 
     let cellID = "cellID"
     
@@ -48,6 +61,8 @@ class HomeView: UIViewController, UITableViewDelegate, UITableViewDataSource, QR
         searchBar.selectedScopeButtonIndex = 0
         searchBar.placeholder = "Search"
         
+        
+        definesPresentationContext = true
         searchBar.delegate = self
         self.tableView?.tableHeaderView = searchBar
     }
@@ -104,10 +119,18 @@ class HomeView: UIViewController, UITableViewDelegate, UITableViewDataSource, QR
         pointLabel?.text = appDelegate.pointBalance
         nameLabel?.text = appDelegate.username!
         //dbc.getEvents()
-        
+        searchBarSetup()
         //loadContents(events: [["11","Test Event","Some random details.", "OGCoder club", "Jan 31st", "7:00 PM-9:00 PM", "My crib", "50"]])
         // Do any additional setup after loading the view, typically from a nib.
         //fetchUser()
+        
+        searchController.searchResultsUpdater = self
+        searchController.dimsBackgroundDuringPresentation = false
+        definesPresentationContext = true
+        tableView?.tableHeaderView = searchController.searchBar
+        
+        
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -262,3 +285,10 @@ class HomeView: UIViewController, UITableViewDelegate, UITableViewDataSource, QR
 
     
 }
+
+extension HomeView: UISearchResultsUpdating{
+    func updateSearchResults(for searchController: UISearchController) {
+        filterContentForSearchText(searchText: searchController.searchBar.text!)
+    }
+}
+
