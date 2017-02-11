@@ -12,13 +12,7 @@ import UIKit
 import Firebase
 import FirebaseStorage
 
-enum selectedScope:Int{
-    case event = 0
-    case host = 1
-    case type = 2
-    
-    
-}
+
 
 class HomeView: UIViewController, UITableViewDelegate, UITableViewDataSource, QRCodeReaderViewControllerDelegate, UISearchBarDelegate {
     
@@ -28,10 +22,10 @@ class HomeView: UIViewController, UITableViewDelegate, UITableViewDataSource, QR
     
     //var refHandle: FIRDatabaseReference
     
-    let modelAry = [Event]()
-    var filteredAry = [Event]()
+    var modelAry = [NSDictionary]()
+    var filteredAry = [NSDictionary]()
     
-    func generateModelArray() -> [Event]{
+    func generateModelArray() -> [NSDictionary]{
         
         
         return modelAry
@@ -40,7 +34,7 @@ class HomeView: UIViewController, UITableViewDelegate, UITableViewDataSource, QR
     
     func filterContentForSearchText(searchText: String, scope: String = "All"){
         filteredAry = modelAry.filter{
-            evnt in return (evnt.orgHost?.lowercased().contains(searchText.lowercased()))!
+            evnt in return ((evnt["orgName"] as! String).lowercased().contains(searchText.lowercased()))
         }
         tableView?.reloadData()
     }
@@ -49,56 +43,7 @@ class HomeView: UIViewController, UITableViewDelegate, UITableViewDataSource, QR
     let searchController = UISearchController(searchResultsController: nil)
 
     let cellID = "cellID"
-    
-    var events = [Event]()
-    
-    func searchBarSetup(){
-        let searchBar = UISearchBar(frame: CGRect(x:0,y:0,width:(UIScreen.main.bounds.width),height:70))
-        searchBar.showsScopeBar = true
-        searchBar.enablesReturnKeyAutomatically = true
-        searchBar.showsCancelButton = true
-        searchBar.scopeButtonTitles = ["Event","Host","Type"]
-        searchBar.selectedScopeButtonIndex = 0
-        searchBar.placeholder = "Search"
-        
-        
-        definesPresentationContext = true
-        searchBar.delegate = self
-        self.tableView?.tableHeaderView = searchBar
-    }
-    
-    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String){
-        if searchText.isEmpty{
-            self.tableView?.reloadData()
-        }
-        filterTableView(ind: searchBar.selectedScopeButtonIndex, text: searchText)
-        
-    }
-    
-    
-    //TODO
-    func filterTableView(ind:Int,text:String){
-        var x = events
-        switch ind {
-        case selectedScope.event.rawValue:
-            x = x.filter({ (mod) -> Bool in
-                return (mod.eventTitle?.caseInsensitiveCompare(text)) != nil
-            })
-            
-        case selectedScope.host.rawValue:
-            x = x.filter({ (mod) -> Bool in
-                return (((mod.orgHost?.caseInsensitiveCompare(text)) != nil))
-            })
-        case selectedScope.type.rawValue:
-            x = x.filter({ (mod) -> Bool in
-                return (((mod.eventType?.caseInsensitiveCompare(text)) != nil))
-            })
 
-        default:
-            print("no type")
-        }
-    }
-    
     public var source: NSArray = []
     
     let appDelegate: AppDelegate = UIApplication.shared.delegate as! AppDelegate
@@ -110,6 +55,7 @@ class HomeView: UIViewController, UITableViewDelegate, UITableViewDataSource, QR
         print("Data recieved")
         print(events)
         source = events
+        modelAry = events as! [NSDictionary]
         tableView?.reloadData()
     }
     
@@ -119,7 +65,6 @@ class HomeView: UIViewController, UITableViewDelegate, UITableViewDataSource, QR
         pointLabel?.text = appDelegate.pointBalance
         nameLabel?.text = appDelegate.username!
         //dbc.getEvents()
-        searchBarSetup()
         //loadContents(events: [["11","Test Event","Some random details.", "OGCoder club", "Jan 31st", "7:00 PM-9:00 PM", "My crib", "50"]])
         // Do any additional setup after loading the view, typically from a nib.
         //fetchUser()
@@ -173,6 +118,10 @@ class HomeView: UIViewController, UITableViewDelegate, UITableViewDataSource, QR
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+       if searchController.isActive && searchController.searchBar.text != ""{
+            return filteredAry.count
+        }
+        
         return source.count
     }
     
@@ -181,51 +130,30 @@ class HomeView: UIViewController, UITableViewDelegate, UITableViewDataSource, QR
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if self.source.count != 0 {
-            let cell: EventCell = tableView.dequeueReusableCell(withIdentifier: "EventCell") as! EventCell
-            cell.eventName?.text = (self.source[indexPath.row] as! NSDictionary)["eventTitle"] as? String
-            //cell.eventDescription?.text = (self.source?[indexPath.row] as! NSArray)[2] as? String
-            //cell.eventID = source?[indexPath.row][2] as? String
-            cell.orgName?.text = (self.source[indexPath.row] as! NSDictionary)["orgName"] as? String
-            //cell.eventDate?.text = (self.source?[indexPath.row] as! NSArray)[4] as? String
-            cell.eventTime?.text = ((self.source[indexPath.row] as! NSDictionary)["startTime"] as! String) + " - " + ((self.source[indexPath.row] as! NSDictionary)["endDate"] as! String)
-            
-            cell.orgPic?.image = UIImage(data: NSData(contentsOf: URL(string: (self.source[indexPath.row] as! NSDictionary)["picURL"] as! String)!) as! Data)
-                //self.appDelegate.profPics[(self.source[indexPath.row] as! NSDictionary)["orgName"] as! String]
-            
-            cell.eventPoints?.text = (self.source[indexPath.row] as! NSDictionary)["ptsForAttending"] as? String
-            return cell
-        } else {
-            
-            let cell: EventCell = tableView.dequeueReusableCell(withIdentifier: "EventCell") as! EventCell
-            
-            let event = events[indexPath.row]
-            cell.eventName?.text = event.eventTitle
-            //TODO
-            cell.orgName?.text = event.orgHost
-            cell.orgPic?.layer.cornerRadius = 33
-            cell.orgPic?.layer.masksToBounds = true
-            
-            cell.eventPoints?.text = "Points: \(event.ptsForAttending)"
-            cell.eventTime?.text = "\(event.endDate)-\(event.startTime)"
-            
-            //IMAGE INFORMATION
-            if let profileImageUrl = event.eventImage{
-                let url = URL(string: profileImageUrl)
-                URLSession.shared.dataTask(with: url!, completionHandler: { (data, response, error) in
-                    if error != nil{
-                        print(error!)
-                        return
-                    }
-                    DispatchQueue.main.async {
-                        cell.orgPic?.image = UIImage(data: data!)
-                    }
-                }).resume()
-
-            }
-            cell.textLabel?.textAlignment = .center
-            return cell
+        let cell: EventCell = tableView.dequeueReusableCell(withIdentifier: "EventCell") as! EventCell
+        
+        var eventer: NSDictionary!
+        
+        if searchController.isActive && searchController.searchBar.text != ""{
+           eventer = filteredAry[indexPath.row]
         }
+        else{
+            eventer = (self.source[indexPath.row] as! NSDictionary)
+        }
+        cell.orgPic?.layer.cornerRadius = 33
+        cell.orgPic?.layer.masksToBounds = true
+        cell.eventName?.text = eventer["eventTitle"] as? String
+        //cell.eventDescription?.text = (self.source?[indexPath.row] as! NSArray)[2] as? String
+        //cell.eventID = source?[indexPath.row][2] as? String
+        cell.orgName?.text = eventer["orgName"] as? String
+        //cell.eventDate?.text = (self.source?[indexPath.row] as! NSArray)[4] as? String
+        cell.eventTime?.text = (eventer["startTime"] as! String) + " - " + ((self.source[indexPath.row] as! NSDictionary)["endDate"] as! String)
+        
+        cell.orgPic?.image = UIImage(data: NSData(contentsOf: URL(string: eventer["picURL"] as! String)!) as! Data)
+            //self.appDelegate.profPics[(self.source[indexPath.row] as! NSDictionary)["orgName"] as! String]
+        
+        cell.eventPoints?.text = eventer["ptsForAttending"] as? String
+        return cell
     }
     
     @IBAction func backHome(segue: UIStoryboardSegue) {

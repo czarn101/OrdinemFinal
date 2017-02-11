@@ -25,9 +25,6 @@ public class RewardView: UIViewController, UITableViewDelegate, UITableViewDataS
     
     @IBOutlet weak var tableView: UITableView!
     
-    let cellID = "cellID"
-    
-    var rewards = [Reward]()
     
     private var source: NSArray?
     
@@ -119,10 +116,8 @@ public class RewardView: UIViewController, UITableViewDelegate, UITableViewDataS
     func fetchUser(){
         FIRDatabase.database().reference().child("Chapman").child("Admin").observe(.childAdded, with: { (snapshot) in
             
-            if let dictionary = snapshot.value as? [String: AnyObject]{
-                let reward = Reward()
-                reward.setValuesForKeys(dictionary)
-                self.rewards.append(reward)
+            if (snapshot.value as? [String: AnyObject]) != nil{
+
                 
                 //Unsure about what the code right below does.. Just told I should do this
                 //Just something to look at if it's something that'll cause trouble when running
@@ -145,7 +140,7 @@ public class RewardView: UIViewController, UITableViewDelegate, UITableViewDataS
     }
     
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return rewards.count
+        return 0
     }
     
     public func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -153,6 +148,8 @@ public class RewardView: UIViewController, UITableViewDelegate, UITableViewDataS
     }
     
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell: RewardCell = tableView.dequeueReusableCell(withIdentifier: "RewardCell") as! RewardCell
+
         if self.source != nil {
             let cell: RewardCell = tableView.dequeueReusableCell(withIdentifier: "RewardCell") as! RewardCell
             return cell
@@ -160,35 +157,14 @@ public class RewardView: UIViewController, UITableViewDelegate, UITableViewDataS
             
             let cell: RewardCell = tableView.dequeueReusableCell(withIdentifier: "EventCell") as! RewardCell
             
-            let reward = rewards[indexPath.row]
-            cell.rewardName?.text = reward.rewardTitle
-            cell.rewardType?.text = reward.raffleVWin
-            cell.amountLeft?.text = "\(reward.prizeAmount)"
-            cell.costForReward?.text = "\(reward.pointCost)"
-            
             cell.rewardImage?.layer.cornerRadius = 33
             cell.rewardImage?.layer.masksToBounds = true
             //need reward image
             
-            if let profileImageUrl = reward.eventImage{
-                let url = URL(string: profileImageUrl)
-                URLSession.shared.dataTask(with: url!, completionHandler: { (data, response, error) in
-                    if error != nil{
-                        print(error!)
-                        return
-                    }
-                    DispatchQueue.main.async {
-                        cell.rewardImage?.image = UIImage(data: data!)
-                    }
-                }).resume()
-                
             }
-            cell.textLabel?.textAlignment = .center
             return cell
-        }
+    }
     }
     
 
-    
-    
-}
+
