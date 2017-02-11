@@ -8,6 +8,8 @@
 
 import Foundation
 import UIKit
+import FirebaseAuth
+import FBSDKLoginKit
 
 class AutoLoginView: UIViewController {
     
@@ -49,20 +51,38 @@ class AutoLoginView: UIViewController {
     }
     
     func checkLoginData() {
-        // getting path to LoggedIn.plist
-        print("checking login data")
         let loggedIn: Bool = PlistManager.sharedInstance.getValueForKey(key: "LoggedIn") as! Bool
-        print("Logged in: \(loggedIn)")
-        if loggedIn {
-            //print("is logged in")
+        if FBSDKAccessToken.current() != nil {
+            let credential = FIRFacebookAuthProvider.credential(withAccessToken: FBSDKAccessToken.current().tokenString)
+            FIRAuth.auth()?.signIn(with: credential) { (user, error2) in
+                // ...
+                if error2 != nil {
+                    // ...
+                    print(error2!.localizedDescription)
+                    return
+                }
+                print("successfully logged in with facebook")
+                self.appDelegate.mainUser = user!
+                self.performSegue(withIdentifier: "autoLogin", sender: self)
+            }
+        } else if loggedIn {
             let email = PlistManager.sharedInstance.getValueForKey(key: "Email") as! String
             let password = PlistManager.sharedInstance.getValueForKey(key: "Password") as! String
-            dbc.userLogin(email: email, password: password)
+            FIRAuth.auth()?.signIn(withEmail: email, password: password) { (user, error2) in
+                // ...
+                if error2 != nil {
+                    // ...
+                    print(error2!.localizedDescription)
+                    return
+                }
+                print("successfully logged in with email")
+                self.appDelegate.mainUser = user!
+                self.performSegue(withIdentifier: "autoLogin", sender: self)
+            }
         } else {
-            //print("not logged in yet, preparing to segue to manual login")
-            self.appDelegate.shouldAutoLogin = false
             self.performSegue(withIdentifier: "manualLogin", sender: self)
         }
+
     }
     
     func alert(message: String, title: String = "") {

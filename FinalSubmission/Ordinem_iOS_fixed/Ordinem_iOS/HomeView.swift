@@ -117,7 +117,7 @@ class HomeView: UIViewController, UITableViewDelegate, UITableViewDataSource, QR
         super.viewDidLoad()
         self.appDelegate.homeView = self
         pointLabel?.text = appDelegate.pointBalance
-        nameLabel?.text = appDelegate.username!
+        nameLabel?.text = appDelegate.mainUser?.displayName!
         //dbc.getEvents()
         searchBarSetup()
         //loadContents(events: [["11","Test Event","Some random details.", "OGCoder club", "Jan 31st", "7:00 PM-9:00 PM", "My crib", "50"]])
@@ -181,7 +181,6 @@ class HomeView: UIViewController, UITableViewDelegate, UITableViewDataSource, QR
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if self.source.count != 0 {
             let cell: EventCell = tableView.dequeueReusableCell(withIdentifier: "EventCell") as! EventCell
             cell.eventName?.text = (self.source[indexPath.row] as! NSDictionary)["eventTitle"] as? String
             //cell.eventDescription?.text = (self.source?[indexPath.row] as! NSArray)[2] as? String
@@ -195,37 +194,6 @@ class HomeView: UIViewController, UITableViewDelegate, UITableViewDataSource, QR
             
             cell.eventPoints?.text = (self.source[indexPath.row] as! NSDictionary)["ptsForAttending"] as? String
             return cell
-        } else {
-            
-            let cell: EventCell = tableView.dequeueReusableCell(withIdentifier: "EventCell") as! EventCell
-            
-            let event = events[indexPath.row]
-            cell.eventName?.text = event.eventTitle
-            //TODO
-            cell.orgName?.text = event.orgHost
-            cell.orgPic?.layer.cornerRadius = 33
-            cell.orgPic?.layer.masksToBounds = true
-            
-            cell.eventPoints?.text = "Points: \(event.ptsForAttending)"
-            cell.eventTime?.text = "\(event.endDate)-\(event.startTime)"
-            
-            //IMAGE INFORMATION
-            if let profileImageUrl = event.eventImage{
-                let url = URL(string: profileImageUrl)
-                URLSession.shared.dataTask(with: url!, completionHandler: { (data, response, error) in
-                    if error != nil{
-                        print(error!)
-                        return
-                    }
-                    DispatchQueue.main.async {
-                        cell.orgPic?.image = UIImage(data: data!)
-                    }
-                }).resume()
-
-            }
-            cell.textLabel?.textAlignment = .center
-            return cell
-        }
     }
     
     @IBAction func backHome(segue: UIStoryboardSegue) {

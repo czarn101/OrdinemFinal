@@ -4,34 +4,54 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>AFNetworking.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>6</integer>
+		</dict>
 		<key>Pods-Ordinem_iOS.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
+			<key>orderHint</key>
+			<integer>1</integer>
 		</dict>
 		<key>Pods-Ordinem_iOSTests.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
+			<key>orderHint</key>
+			<integer>2</integer>
 		</dict>
 		<key>Pods-Ordinem_iOSUITests.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
+			<key>orderHint</key>
+			<integer>3</integer>
 		</dict>
 		<key>Stripe-Stripe.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
+			<key>orderHint</key>
+			<integer>5</integer>
 		</dict>
 		<key>Stripe.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
+			<key>orderHint</key>
+			<integer>4</integer>
 		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>0BD659E21DA1CDA96BE2DD70EBA13298</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>1A8F12F9307A34F446E19BBA16888126</key>
 		<dict>
 			<key>primary</key>
@@ -42,12 +62,37 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>287BEC34E88B919892A7D71CFD95F091</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>28E23C98A860F0BE6426A6E46BEC6685</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>2E0243497E48371CB915D200F10FF985</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>4C0DC583E717D381E15A5117F1018A20</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>5D75B1392E496B8348D42487F1DE38A6</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>6978D0BC33A252F597DF6873802C97C6</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>79BE0DDD2888AEEBE5E9AFFA232070DF</key>
 		<dict>
 			<key>primary</key>
 			<true/>
